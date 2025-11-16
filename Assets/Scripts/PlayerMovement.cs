@@ -50,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
-    private bool TryMove(Vector2 direction)
-    {
+    private bool TryMove(Vector2 direction){
+        if(direction != Vector2.zero){
             int count = rb.Cast(
 
                 direction,
@@ -61,13 +61,17 @@ public class PlayerMovement : MonoBehaviour
 
                 
             if(count == 0){
-            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-            return true;
+                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+             return true;
+            
+            }else {
+            return false;
             }
-        else
+        }else
         {
             return false;
         }
+
     }
     
     public void OnMove(InputValue movementValue)
@@ -75,5 +79,9 @@ public class PlayerMovement : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    
+      public void OnAttack()
+    {
+       //print("attacking");
+        animator.SetTrigger("isAttk");
+    } 
 }
