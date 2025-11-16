@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed = 1f;
     public float collisionOffset = 1f;
     public ContactFilter2D movementFilter;
+    public swordAttack SwordAttack;
     Vector2 movementInput;
     Rigidbody2D rb;
     Animator animator;
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }else if (movementInput.x >0){
             spriteRenderer.flipX = false;
+
         }
     }
     private bool TryMove(Vector2 direction){
@@ -84,4 +86,18 @@ public class PlayerMovement : MonoBehaviour
        //print("attacking");
         animator.SetTrigger("isAttk");
     } 
+    public void swordAttack()
+    {
+        if(spriteRenderer.flipX == true)
+        {
+        SwordAttack.AttackLeft();
+        }else{
+        SwordAttack.AttackRight();
+        }
+    }
+
+    public void EndSwordAttack()
+    {
+        SwordAttack.StopAttack();
+    }
 }
