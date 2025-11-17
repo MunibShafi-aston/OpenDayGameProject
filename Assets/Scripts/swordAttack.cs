@@ -8,7 +8,7 @@ public class swordAttack : MonoBehaviour
     
 
     private void Start(){
-        rightAttackOffset = transform.position;
+        rightAttackOffset = transform.localPosition;
     }
 
 
@@ -33,7 +33,7 @@ public class swordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if(other.CompareTag ("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
 
