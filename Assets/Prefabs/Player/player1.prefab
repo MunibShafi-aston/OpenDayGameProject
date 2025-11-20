@@ -1,5 +1,97 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1681278752197995501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3932658546982256896}
+  - component: {fileID: 3340820532507772843}
+  - component: {fileID: 3416376639969619992}
+  m_Layer: 1
+  m_Name: playerHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3932658546982256896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681278752197995501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3256606568986376424}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3340820532507772843
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681278752197995501}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.043327987, y: -0.0145056695}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.6013614, y: 0.97098863}
+  m_EdgeRadius: 0
+--- !u!114 &3416376639969619992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681278752197995501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc97d8ae49fd9dc4c8a200fdaafb1280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerHealth: {fileID: 0}
 --- !u!1 &2215088138318193915
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +107,7 @@ GameObject:
   - component: {fileID: 9215244209039749537}
   - component: {fileID: 1126093370899505163}
   - component: {fileID: 4396490829514953266}
+  - component: {fileID: 3300643675539833826}
   m_Layer: 1
   m_Name: player1
   m_TagString: Player
@@ -36,6 +129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7965881908467096606}
+  - {fileID: 3932658546982256896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7492356189143520954
@@ -208,6 +302,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: dbfd2154-cbd9-4d2b-b0e8-20af32c6d7e7
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a43dd004-a29d-44df-9591-f4c9f82245de
+    m_ActionName: 'Player/takedamagetest[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 182b517a-cd17-4350-9f9d-e02392a6addc
+    m_ActionName: 'Player/healdamagetest[/Keyboard/h]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 336c0e50-18f0-4d9a-bef5-05ff6ee023ed
+    m_ActionName: New action map/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -310,6 +416,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.42653495, y: 0.10190117}
   m_EdgeRadius: 0
+--- !u!114 &3300643675539833826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215088138318193915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ae70e4c48deb44e9d561a5434700c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  pHealth: 0
+  pMaxHealth: 10
+  HealthBar: {fileID: 0}
 --- !u!1 &5919568450703065951
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,4 +522,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f46ba74ea779a249a20c3e0e12be269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  swordCollider: {fileID: 4463120068213261807}
   damage: 3
