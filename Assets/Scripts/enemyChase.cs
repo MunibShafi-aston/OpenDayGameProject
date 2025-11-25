@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class enemyChase : MonoBehaviour
 {
+    public bool isDefeated = false;
 
     public float moveSpeed = 2f;
     
@@ -20,7 +21,12 @@ public class enemyChase : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (player == null) return;
+        if (player == null|| isDefeated)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+
+        }
         
         Vector2 direction = (player.position -transform.position).normalized;
 
@@ -30,5 +36,11 @@ public class enemyChase : MonoBehaviour
             spriteRenderer.flipX = true;
         else if (direction.x > 0)
             spriteRenderer.flipX = false;        
+    }
+
+    public void StopMovement()
+    {
+        isDefeated = true;
+        rb.linearVelocity = Vector2.zero;
     }
 }

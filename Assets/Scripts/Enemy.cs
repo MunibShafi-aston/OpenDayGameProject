@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private enemyChase chase;
     Animator animator;
     public float health = 10;
 
@@ -28,10 +29,16 @@ public class Enemy : MonoBehaviour
     public void Start()
     {
         animator = GetComponent<Animator>();
+        chase = GetComponent<enemyChase>();
     }
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
+        
+        if (chase != null)
+        {
+            chase.StopMovement();
+        }
     }
     public void RemoveEnemy()
     {
