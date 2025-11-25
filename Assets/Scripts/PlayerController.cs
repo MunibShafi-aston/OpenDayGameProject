@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 1f;
     public ContactFilter2D movementFilter;
     public swordAttack SwordAttack;
-    Vector2 movementInput;
+    public Vector2 movementInput { get; private set; }
+
+
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -24,8 +26,12 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    public bool canMove = true;
     
     private void FixedUpdate(){
+        if (!canMove) return;
+        
         if(movementInput != Vector2.zero){
            bool success = TryMove(movementInput);
 
