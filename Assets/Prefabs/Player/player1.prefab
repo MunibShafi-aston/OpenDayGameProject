@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 1126093370899505163}
   - component: {fileID: 4396490829514953266}
   - component: {fileID: 3300643675539833826}
+  - component: {fileID: 2844408306257046879}
   m_Layer: 1
   m_Name: player1
   m_TagString: Player
@@ -370,6 +371,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   SwordAttack: {fileID: 6757343689363418837}
+  canMove: 1
 --- !u!61 &4396490829514953266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,6 +433,19 @@ MonoBehaviour:
   pHealth: 0
   pMaxHealth: 10
   HealthBar: {fileID: 0}
+--- !u!114 &2844408306257046879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215088138318193915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c080f968db0a23a4e93c16daf18ce47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Ability: {fileID: 11400000, guid: a11098d431d4e784a8235a13b8a062bb, type: 2}
 --- !u!1 &5919568450703065951
 GameObject:
   m_ObjectHideFlags: 0
