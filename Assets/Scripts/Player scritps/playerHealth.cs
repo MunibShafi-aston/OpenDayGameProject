@@ -37,13 +37,13 @@ public class playerHealth : MonoBehaviour
     TakeDamage(damage);
 }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         pHealth -=damage;
         HealthBar.SetHealth(pHealth);
     }
 
-       void HealDamage(int heal)
+      public void HealDamage(int heal)
     {
         pHealth +=heal;
         HealthBar.SetHealth(pHealth);

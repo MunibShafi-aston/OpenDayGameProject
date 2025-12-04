@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30d601fa1b93654f8f6d1964868f98d, type: 3}
+  m_Name: AOEAttack
+  m_EditorClassIdentifier: Assembly-CSharp::AOEability
+  name: AOEAttack
+  cooldownTime: 0
+  activeTime: 1
+  aoePrefab: {fileID: 1184306961736730610, guid: 656d3405a5528374bb21c482d0ba9d8c, type: 3}
+  radius: 1.5
+  damage: 4
+  duration: 0.3

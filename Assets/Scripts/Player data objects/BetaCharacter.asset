@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ad4e50b5a5137479c6e1f28d65bc77, type: 3}
+  m_Name: BetaCharacter
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: BetaCharacter
+  maxHealth: 10
+  damage: 3
+  summonDamage: 3
+  moveSpeed: 4
+  attackSpeed: 1
+  defense: 0
+  cooldownReduction: 0
+  critChance: 0.01
+  characterSprite: {fileID: 21300000, guid: 1b4fb1a1fd22b774e93c475a306679cc, type: 3}
+  Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
+  Ability2: {fileID: 11400000, guid: 7bf0777033d6cfc4e80fe0efccfa0723, type: 2}
+  Ability3: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
