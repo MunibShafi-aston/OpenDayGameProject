@@ -5107,6 +5107,10 @@ PrefabInstance:
       propertyPath: swordCollider
       value: 
       objectReference: {fileID: 906906354}
+    - target: {fileID: 7492356189143520954, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5777832972768458338, guid: 3e198dd18e050a144982004c4e5186c1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
