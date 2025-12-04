@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class abilityHolder : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    public ability AbilityDash; //set to dash to Shify
-    public ability Ability1; //set to slash to E
-    public ability Ability2; //NA
-    public ability Ability3; //NA
+    public ability AbilityDash; //set to dash to Shift
+    public ability Ability1; //set to E
+    public ability Ability2; //set to Q
+    public ability Ability3; //set to R
 
     float[] cooldownTimes = new float[4];
     float[] activeTimes = new float[4];

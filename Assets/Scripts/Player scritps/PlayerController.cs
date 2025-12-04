@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 movementInput { get; private set; }
 
 
+    PlayerStats stats;
+
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        stats = GetComponent<PlayerStats>();
+        moveSpeed = stats.moveSpeed;
     }
 
     public bool canMove = true;
