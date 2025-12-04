@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public bool isDead = false;
+
+
     public CharacterData characterData; 
     [Header("Runtime Stats")]
     public float maxHealth;
@@ -18,12 +23,19 @@ public class PlayerStats : MonoBehaviour
     public ability Ability2;
     public ability Ability3;
 
+    playerHealth hpUI;
+
+
     void Awake()
     {
+        hpUI = GetComponent<playerHealth>();
+        
+
         if (characterData != null)
         {
             maxHealth = characterData.maxHealth;
             currentHealth = maxHealth;
+
             damage = characterData.damage;
             moveSpeed = characterData.moveSpeed;
             attackSpeed = characterData.attackSpeed;
@@ -31,9 +43,21 @@ public class PlayerStats : MonoBehaviour
             cooldownReduction = characterData.cooldownReduction;
             critChance = characterData.critChance;
 
+            hpUI.HealthBar.setMaxHealth((int)maxHealth);
+            
             Ability1 = characterData.Ability1;
             Ability2 = characterData.Ability2;
             Ability3 = characterData.Ability3;
+
+
+
+        if (hpUI != null)
+        {
+            hpUI.HealthBar.setMaxHealth((int)maxHealth);  
+            hpUI.HealthBar.SetHealth((int)currentHealth);  
+        }
+    
+
 
             abilityHolder abilityHolder = GetComponent<abilityHolder>();
             if (abilityHolder != null && characterData != null)
@@ -52,22 +76,45 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+     public void TakeDamage(float amount)
     {
+        if (isDead) return;
+
         float finalDamage = Mathf.Max(amount - defense, 1f);
         currentHealth -= finalDamage;
-        GetComponent<playerHealth>()?.TakeDamageExternal((int)finalDamage);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        playerHealth hp = GetComponent<playerHealth>();
+        if (hp != null)
+            hp.UpdateUI((int)currentHealth); 
+
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+            PlayerController pc = GetComponent<PlayerController>();
+            if (pc != null)
+                pc.Die();
+                print("Player has died.");
+        }
     }
+
+
+
 
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        GetComponent<playerHealth>()?.HealDamage((int)amount);
+
+        playerHealth hp = GetComponent<playerHealth>();
+        if (hp != null)
+            hp.HealDamage((int)amount);
     }
+
 
     public float DealDamage()
     {
         bool isCrit = Random.value < critChance;
         return damage * (isCrit ? 2f : 1f); 
     }
+
 }

@@ -61,6 +61,9 @@ public class abilityHolder : MonoBehaviour
     
     public void TryUseAbility(int index, ability ability)
     {
+        PlayerStats stats = GetComponent<PlayerStats>();
+        if (stats != null && stats.isDead) return;
+
         if (ability == null) return;
 
         if (states[index] == AbilityState.ready)

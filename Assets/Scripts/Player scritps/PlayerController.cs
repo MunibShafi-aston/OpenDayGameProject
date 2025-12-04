@@ -87,18 +87,37 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-      public void OnAttack()
+
+
+    public void Die()
     {
-       //print("attacking");
+        
+        canMove = false;
+        //animator.SetTrigger("isDead");
+        
+        abilityHolder ah = GetComponent<abilityHolder>();
+        if (ah != null)
+            ah.enabled = false;
+            print ("PlayerController: Player has died, disabling abilities.");
+    
+    }
+
+
+    public void OnAttack()
+    {
+        if (!canMove) return;
         animator.SetTrigger("isAttk");
     } 
+
     public void swordAttack()
     {
+        if (!canMove) return;
+        
         if(spriteRenderer.flipX == true)
         {
-        SwordAttack.AttackLeft();
+            SwordAttack.AttackLeft();
         }else{
-        SwordAttack.AttackRight();
+            SwordAttack.AttackRight();
         }
     }
 

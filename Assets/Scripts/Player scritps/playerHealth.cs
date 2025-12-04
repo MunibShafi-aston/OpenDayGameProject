@@ -3,52 +3,50 @@ using UnityEngine.InputSystem;
 
 public class playerHealth : MonoBehaviour
 {
-    public int pHealth;
-    public int pMaxHealth = 10;
-
     public healthBar HealthBar;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public void InitUI(int maxHealth)
     {
-        pHealth = pMaxHealth;
-        HealthBar.setMaxHealth(pMaxHealth);       
+        HealthBar.setMaxHealth(maxHealth);
+        HealthBar.SetHealth(maxHealth);
     }
 
-    // Update is called once per frame
+    public void UpdateUI(int currentHealth)
+    {
+        HealthBar.SetHealth(currentHealth);
+    }
+
     public void OnTakedamagetest(InputValue value)
     {
         if (value.isPressed)
         {
-            print("Damage pressed");
-            TakeDamage(1);
+            PlayerStats stats = GetComponent<PlayerStats>();
+            stats.TakeDamage(1);
+            UpdateUI((int)stats.currentHealth); 
         }
     }
+
     public void OnHealdamagetest(InputValue value)
     {
         if (value.isPressed)
         {
-            print("Heal pressed");
-            HealDamage(1);
+            PlayerStats stats = GetComponent<PlayerStats>();
+            stats.Heal(1);
+            UpdateUI((int)stats.currentHealth); 
         }
     }
 
     public void TakeDamageExternal(int damage)
-{
-    TakeDamage(damage);
-}
-
-    public void TakeDamage(int damage)
     {
-        pHealth -=damage;
-        HealthBar.SetHealth(pHealth);
+        PlayerStats stats = GetComponent<PlayerStats>();
+        stats.TakeDamage(damage);
+        UpdateUI((int)stats.currentHealth); 
     }
 
-      public void HealDamage(int heal)
+    public void HealDamage(int heal)
     {
-        pHealth +=heal;
-        HealthBar.SetHealth(pHealth);
+        PlayerStats stats = GetComponent<PlayerStats>();
+        stats.Heal(heal);
+        UpdateUI((int)stats.currentHealth);    
     }
 }
-
-
-
