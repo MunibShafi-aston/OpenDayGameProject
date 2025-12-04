@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class swordAttack : MonoBehaviour
 {
+
+    PlayerStats stats;
+
     public Collider2D swordCollider;
-    public float damage = 3;
     Vector2 rightAttackOffset;
     
 
     private void Start(){
+
         rightAttackOffset = transform.localPosition;
+        stats = GetComponentInParent<PlayerStats>();
     }
 
 
@@ -39,7 +43,8 @@ public class swordAttack : MonoBehaviour
 
             if(enemy != null)
             {
-                enemy.Health -= damage;
+                float finalDamage = stats.DealDamage(); 
+                enemy.Health -= finalDamage;
             }
         }
     }

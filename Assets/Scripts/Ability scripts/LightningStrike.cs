@@ -1,13 +1,17 @@
 using UnityEngine;
 
 public class LightningStrike : MonoBehaviour
+
 {
+
+    PlayerStats stats;
     float damage;
     float lifetime = 0.25f;
 
-    public void Setup(float dmg)
+    public void Setup(GameObject parent, float dmg)
     {
         damage = dmg;
+        stats = Object.FindAnyObjectByType<PlayerStats>();
         Destroy(gameObject, lifetime);
     }
 
@@ -17,8 +21,11 @@ public class LightningStrike : MonoBehaviour
 
      Enemy enemy = other.GetComponent<Enemy>();
       if (enemy != null)
-          {
-         enemy.Health -= damage;
+        {
+            float finalDamage = stats.DealDamage(); 
+            finalDamage += damage;
+            enemy.Health -= finalDamage;
+             Debug.Log($"Lightning dealt {finalDamage} damage to {enemy.name}");
         }
     }
 }

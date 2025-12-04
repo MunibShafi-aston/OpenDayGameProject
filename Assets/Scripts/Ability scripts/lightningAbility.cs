@@ -20,7 +20,7 @@ public class lightningAbility : ability
         GameObject strike = Instantiate(lightningPrefab, hitPos, Quaternion.identity);
 
         LightningStrike ls = strike.GetComponent<LightningStrike>();
-        ls.Setup(damage);
+        ls.Setup(parent, damage);
     }
 
     Enemy FindClosestEnemy(Vector3 playerPos)

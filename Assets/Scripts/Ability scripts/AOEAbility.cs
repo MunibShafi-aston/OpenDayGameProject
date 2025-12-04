@@ -5,7 +5,7 @@ public class AOEability : ability
 {
     public GameObject aoePrefab;
     public float radius = 1.5f;
-    public float damage = 4f;
+    public float damage = 0f;
     public float duration = 0.3f;
 
     public override void Activate(GameObject parent)

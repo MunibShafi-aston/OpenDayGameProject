@@ -5,14 +5,18 @@ public class rangedSlashProjectile : MonoBehaviour
   Vector2 moveDirection;
     float moveSpeed;
     float life;
+    float damage;
 
-    public float damage = 3f;
-
-    public void Setup(Vector2 dir, float speed, float lifetime, bool flipX)
+    PlayerStats stats;
+    public void Setup(Vector2 dir, float speed, float dmg, float lifetime, bool flipX)
     {
         moveDirection = dir.normalized;
         moveSpeed = speed;
         life = lifetime;
+        damage = dmg;
+
+        stats = Object.FindAnyObjectByType<PlayerStats>();
+
 
         Vector3 scale = transform.localScale;
         scale.x = flipX? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
@@ -28,14 +32,18 @@ public class rangedSlashProjectile : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+   private void OnTriggerEnter2D(Collider2D other)
     {
      if (!other.CompareTag("Enemy")) return;
 
      Enemy enemy = other.GetComponent<Enemy>();
       if (enemy != null)
-          {
-         enemy.Health -= damage;
+        {
+            float finalDamage = stats.DealDamage(); 
+            finalDamage += damage;
+            enemy.Health -= finalDamage;
+             Debug.Log($"Slash dealt {finalDamage} damage to {enemy.name}");
         }
     }
 }
+

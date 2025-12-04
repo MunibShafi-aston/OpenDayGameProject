@@ -5,12 +5,16 @@ public class AOEAttack : MonoBehaviour
     float radius;
     float damage;
     float lifetime;
+    
+    PlayerStats stats;
+
 
     public void Setup(float r, float dmg, float life)
     {
         radius = r;
-        damage = dmg;
         lifetime = life;
+        damage = dmg;
+        stats = Object.FindAnyObjectByType<PlayerStats>();
 
         transform.localScale = Vector3.one * radius;
 
@@ -21,14 +25,17 @@ public class AOEAttack : MonoBehaviour
         Destroy(gameObject,lifetime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+   private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
+     if (!other.CompareTag("Enemy")) return;
 
-        Enemy enemy = other.GetComponent<Enemy>();
-        if(enemy != null)
+     Enemy enemy = other.GetComponent<Enemy>();
+      if (enemy != null)
         {
-            enemy.Health -= damage;
+            float finalDamage = stats.DealDamage(); 
+            finalDamage += damage;
+            enemy.Health -= finalDamage;
+             Debug.Log($"AOE dealt {finalDamage} damage to {enemy.name}");
         }
     }
 }

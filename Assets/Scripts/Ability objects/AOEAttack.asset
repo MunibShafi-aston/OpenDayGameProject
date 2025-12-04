@@ -16,6 +16,6 @@ MonoBehaviour:
   cooldownTime: 0
   activeTime: 1
   aoePrefab: {fileID: 1184306961736730610, guid: 656d3405a5528374bb21c482d0ba9d8c, type: 3}
-  radius: 1.5
+  radius: 1
   damage: 4
   duration: 0.3
