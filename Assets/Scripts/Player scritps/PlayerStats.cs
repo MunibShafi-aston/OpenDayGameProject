@@ -154,6 +154,10 @@ void LevelUp()
     LevelUI levelUI = FindFirstObjectByType<LevelUI>();
     if (levelUI != null)
         levelUI.UpdateLevelUI();
+
+    LevelUpManager levelUpManager = FindFirstObjectByType<LevelUpManager>();
+    if (levelUpManager != null)
+        levelUpManager.OpenLevelUpUI();
 }
 
 public void InitXP()
