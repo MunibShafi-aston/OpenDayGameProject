@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerStats : MonoBehaviour
 {
 
+    public xpbar xpBar;
     public bool isDead = false;
 
 
@@ -23,12 +24,21 @@ public class PlayerStats : MonoBehaviour
     public ability Ability2;
     public ability Ability3;
 
+    [Header("Leveling")]
+    public int level = 1;
+    public float currentXP = 0;
+    public float xpToNextLevel = 10f;
+    public float xpGrowthRate = 1.25f;
+
+
     playerHealth hpUI;
 
 
     void Awake()
     {
+        InitXP();
         hpUI = GetComponent<playerHealth>();
+        
         
 
         if (characterData != null)
@@ -116,5 +126,40 @@ public class PlayerStats : MonoBehaviour
         bool isCrit = Random.value < critChance;
         return damage * (isCrit ? 2f : 1f); 
     }
+
+public void addXP(float amount)
+{
+    currentXP += amount;
+
+    while (currentXP >= xpToNextLevel)
+    {
+        currentXP -= xpToNextLevel;
+        level++;
+        xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * xpGrowthRate);
+        LevelUp();
+    }
+
+    if (xpBar != null)
+        xpBar.UpdateXP(currentXP, xpToNextLevel);
+}
+
+void LevelUp()
+{
+    Debug.Log("LEVEL UP! Now Level " + level);
+
+
+    if (xpBar != null)
+        xpBar.SetMaxXP(xpToNextLevel);
+
+    LevelUI levelUI = FindFirstObjectByType<LevelUI>();
+    if (levelUI != null)
+        levelUI.UpdateLevelUI();
+}
+
+public void InitXP()
+{
+    if (xpBar != null)
+        xpBar.SetMaxXP(xpToNextLevel);
+}
 
 }

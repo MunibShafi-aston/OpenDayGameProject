@@ -23,4 +23,5 @@ public class CharacterData : ScriptableObject
     public ability Ability1;
     public ability Ability2;
     public ability Ability3;
+    
 }

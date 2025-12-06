@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Xp
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Projectiles
     uniqueID: 3182940595
+    locked: 0
+  - name: XP
+    uniqueID: 856201455
     locked: 0
   m_RenderingLayers:
   - Default
