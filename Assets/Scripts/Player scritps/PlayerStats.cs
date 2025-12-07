@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour
 {
 
     public xpbar xpBar;
     public bool isDead = false;
-
+    public abilityHolder abilityHolder;
+    public List<ability> unlockedAbilities = new List<ability>();
 
     public CharacterData characterData; 
     [Header("Runtime Stats")]
@@ -30,7 +32,6 @@ public class PlayerStats : MonoBehaviour
     public float xpToNextLevel = 10f;
     public float xpGrowthRate = 1.25f;
 
-
     playerHealth hpUI;
 
 
@@ -38,7 +39,8 @@ public class PlayerStats : MonoBehaviour
     {
         InitXP();
         hpUI = GetComponent<playerHealth>();
-        
+        abilityHolder = GetComponent<abilityHolder>();
+   
         
 
         if (characterData != null)

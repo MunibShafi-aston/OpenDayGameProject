@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(menuName = "Abilities/Lignthing")]
+[CreateAssetMenu(menuName = "Abilities/Unique/Lignthing")]
 public class lightningAbility : ability
 {
     public GameObject lightningPrefab;

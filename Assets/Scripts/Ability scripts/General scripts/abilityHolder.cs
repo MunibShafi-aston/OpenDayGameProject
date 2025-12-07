@@ -1,12 +1,16 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class abilityHolder : MonoBehaviour
 {
-    
+    [Header("Assigned abilities")]
     public ability AbilityDash; //set to dash to Shift
     public ability Ability1; //set to E
     public ability Ability2; //set to Q
     public ability Ability3; //set to R
+
+    [Header("Unlocked auto abilities")]   
+    public List<ability> unlockedAbilities = new List<ability>();
 
     float[] cooldownTimes = new float[4];
     float[] activeTimes = new float[4];
@@ -72,4 +76,18 @@ public class abilityHolder : MonoBehaviour
             activeTimes[index] = ability.activeTime;
         }
     }
+    public void AddUnlockedAbility(ability newAbility)
+    {
+        if (newAbility == null) return;
+
+        if (unlockedAbilities.Contains(newAbility))
+        {
+            Debug.Log($"{newAbility.name} is already unlocked.");
+            return;
+        }
+
+        unlockedAbilities.Add(newAbility);
+        Debug.Log($"Unlocked AUTO ability: {newAbility.name}");
+    }
+
 }

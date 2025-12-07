@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
+  m_Name: FireballUnlockable
+  m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
+  upgradeName: Fireball
+  description: deal 5 fire damage to enemies
+  icon: {fileID: 0}
+  category: 4
+  requiredUpgrades: []
+  abilityToUnlock: {fileID: 11400000, guid: 4916caa5557ab08428e12e804f1984a2, type: 2}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Abilities/AOEAttack")]
+[CreateAssetMenu(menuName = "Abilities/Unique/AOEAttack")]
 public class AOEability : ability
 {
     public GameObject aoePrefab;

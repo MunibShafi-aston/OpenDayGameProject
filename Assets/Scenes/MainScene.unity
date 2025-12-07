@@ -4425,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.233
+      value: -4.86
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5377,11 +5377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.997
+      value: -7.34
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.30387
+      value: 1.098
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5576,7 +5576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.324
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5777,7 +5777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.30387
+      value: -2.76
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6661,7 +6661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.30387
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6779,6 +6779,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1335254609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2215088138318193915, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+  m_PrefabInstance: {fileID: 7189452499303715897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357937586
 GameObject:
   m_ObjectHideFlags: 0
@@ -7368,7 +7373,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3300643675539833826, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
   m_PrefabInstance: {fileID: 7189452499303715897}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1335254609}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ae70e4c48deb44e9d561a5434700c4, type: 3}
@@ -7379,12 +7384,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
   m_PrefabInstance: {fileID: 7189452499303715897}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1335254609}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0145adb581b2d774faaea4245a99fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1807332937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335254609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fa53116eefb8445a697b25c35cfb17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::abilityManager
 --- !u!1 &1836635370
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,11 +7573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.233
+      value: -6.34
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.003
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 8618509977306211884, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7777,6 +7794,14 @@ PrefabInstance:
       propertyPath: AbilityDash
       value: 
       objectReference: {fileID: 11400000, guid: a11098d431d4e784a8235a13b8a062bb, type: 2}
+    - target: {fileID: 2844408306257046879, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: unlockedAbilities.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844408306257046879, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: 'unlockedAbilities.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3256606568986376424, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7849,10 +7874,17 @@ PrefabInstance:
       propertyPath: xpBar
       value: 
       objectReference: {fileID: 1205803530}
+    - target: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: abilityHolder
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2215088138318193915, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1807332937}
   m_SourcePrefab: {fileID: 100100000, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

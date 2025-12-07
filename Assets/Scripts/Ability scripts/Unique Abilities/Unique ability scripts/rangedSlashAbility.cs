@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Abilities/RangedSlash")]
+[CreateAssetMenu(menuName = "Abilities/Unique/RangedSlash")]
 public class rangedSlashAbility : ability
 {
     public GameObject rangedSlashProjectile;
