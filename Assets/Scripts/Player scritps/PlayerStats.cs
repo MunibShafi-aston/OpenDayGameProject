@@ -159,7 +159,7 @@ void LevelUp()
 
     LevelUpManager levelUpManager = FindFirstObjectByType<LevelUpManager>();
     if (levelUpManager != null)
-        levelUpManager.OpenLevelUpUI();
+        levelUpManager.OpenLevelUpPanel();
 }
 
 public void InitXP()
