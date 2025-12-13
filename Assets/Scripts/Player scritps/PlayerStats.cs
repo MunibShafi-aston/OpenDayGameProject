@@ -32,6 +32,10 @@ public class PlayerStats : MonoBehaviour
     public float xpToNextLevel = 10f;
     public float xpGrowthRate = 1.25f;
 
+    [Header("Evolution")]
+    public PlayerEvolution evolutionData;
+    public bool hasEvolved = false;
+
     playerHealth hpUI;
 
 
@@ -148,8 +152,12 @@ public void addXP(float amount)
 void LevelUp()
 {
     Debug.Log("LEVEL UP! Now Level " + level);
-
-
+    
+    if (!hasEvolved && evolutionData != null && level >= evolutionData.requiredLevel)
+        {
+        Evolve();
+        return;
+        }
     if (xpBar != null)
         xpBar.SetMaxXP(xpToNextLevel);
 
@@ -167,5 +175,52 @@ public void InitXP()
     if (xpBar != null)
         xpBar.SetMaxXP(xpToNextLevel);
 }
+
+void Evolve()
+{
+    hasEvolved = true;
+    Debug.Log("EVOLVED into " + evolutionData.evolutionName);
+
+    maxHealth += evolutionData.bonusMaxHealth;
+    damage += evolutionData.bonusDamage;
+    moveSpeed += evolutionData.bonusMoveSpeed;
+    attackSpeed += evolutionData.bonusAttackSpeed;
+    defense += evolutionData.bonusDefense;
+    critChance += evolutionData.bonusCritChance;
+
+    currentHealth = maxHealth;
+
+    playerHealth hp = GetComponent<playerHealth>();
+    if (hp != null)
+        hp.HealthBar.setMaxHealth((int)maxHealth);
+
+    Animator anim = GetComponent<Animator>();
+    if (anim != null)
+        anim.enabled = false;
+
+    SpriteRenderer sr = GetComponent<SpriteRenderer>();
+    Debug.Log("SpriteRenderer found: " + (sr != null));
+    Debug.Log("Evolved sprite assigned: " + (evolutionData.evolvedSprite != null));
+
+    if (sr != null && evolutionData.evolvedSprite != null)
+    {
+        sr.sprite = evolutionData.evolvedSprite;
+        Debug.Log("Sprite changed successfully");
+    }
+    abilityHolder holder = GetComponent<abilityHolder>();
+    if (holder != null)
+    {
+        foreach (var ab in evolutionData.newAbilities)
+            holder.AddUnlockedAbility(ab);
+    }
+
+    foreach (var ab in evolutionData.evolvedAbilities)
+    {
+        Debug.Log("Evolved ability: " + ab.name);
+    }
+
+
+}
+
 
 }
