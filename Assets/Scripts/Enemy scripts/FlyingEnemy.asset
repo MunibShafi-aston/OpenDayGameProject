@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
+  m_Name: FlyingEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  enemyName: Flying Enemy
+  enemyType: 2
+  maxHealth: 10
+  moveSpeed: 2
+  contactDamage: 1
+  sprite: {fileID: -1506415916195447246, guid: 194b332ed8669f249aa41ac66bec2f20, type: 3}
+  animatorController: {fileID: 9100000, guid: 8f62747178d784e44aaddc43c907fbc8, type: 2}
+  xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
+  xpAmount: 5
