@@ -28,7 +28,10 @@ public class Enemy : MonoBehaviour
             else
             {
                 print("hit");
-                animator.SetTrigger("hit");
+                if (HasAnimatorTrigger("Defeated"))
+                {
+                    animator.SetTrigger("hit");
+                }
             }
         }
 
@@ -50,9 +53,9 @@ public class Enemy : MonoBehaviour
         xpOrbPrefab = enemyData.xpOrbPrefab;
 
         if (chase != null)
-            chase.SetMoveSpeed(enemyData.moveSpeed);
-            chase.SetFlying(enemyData.enemyType == EnemyType.Flying);
-
+        {
+            chase.Init(enemyData);
+        }
 
         if (enemyData.sprite != null)
             GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
@@ -69,14 +72,38 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-            Debug.Log($"{gameObject.name} is dead. Triggering death animation.");
-
-
-        animator.SetTrigger("Defeated");
-        
         if (chase != null)
-            chase.StopMovement();
+        chase.StopMovement();
+
+
+        Debug.Log($"{gameObject.name} is dead. Triggering death animation.");
+        if (HasAnimatorTrigger("Defeated"))
+        {
+          animator.SetTrigger("Defeated");
+        }
+        else
+        {
+            RemoveEnemy();
+        }
     }
+
+bool HasAnimatorTrigger(string triggerName)
+{
+    if (animator == null || animator.runtimeAnimatorController == null)
+        return false;
+
+    foreach (var param in animator.parameters)
+    {
+        if (param.type == AnimatorControllerParameterType.Trigger &&
+            param.name == triggerName)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 public void RemoveEnemy()
 {

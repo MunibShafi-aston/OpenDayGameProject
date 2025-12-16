@@ -21,6 +21,12 @@ public class EnemyData : ScriptableObject
     public float moveSpeed = 2f;
     public float contactDamage = 1f;
 
+    [Header("Ranged")]
+    public float attackRange = 5f;
+    public float attackCooldown = 1.5f;
+    public GameObject enemyProjectilePrefab;
+    public float projectileSpeed = 5f;
+
     [Header("Visuals")]
     public Sprite sprite;
     public RuntimeAnimatorController animatorController;

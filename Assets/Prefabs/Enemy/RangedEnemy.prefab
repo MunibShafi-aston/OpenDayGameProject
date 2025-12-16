@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3081973693477938547}
   - component: {fileID: 6585373041339920145}
   m_Layer: 0
-  m_Name: FlyingEnemy
+  m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ Animator:
   m_GameObject: {fileID: 2605059746378801021}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f62747178d784e44aaddc43c907fbc8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 11bc82898d6a1f746ad67e52e27c1318, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88a6efcb57046742be53d9166ea5bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  enemyData: {fileID: 11400000, guid: 6d76bd03f5a4a8642ad9b023e3d9dec0, type: 2}
+  enemyData: {fileID: 11400000, guid: 477d3ec0725eb2f44a082eb460e8f1f2, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
   xpAmount: 5
   health: 0

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
-  m_Name: FlyingEnemy
+  m_Name: RangerEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Flying Enemy
-  enemyType: 2
+  enemyName: Ranger
+  enemyType: 1
   maxHealth: 10
   moveSpeed: 2
   contactDamage: 1
-  attackRange: 0
-  attackCooldown: 0
-  enemyProjectilePrefab: {fileID: 0}
-  projectileSpeed: 0
-  sprite: {fileID: -1506415916195447246, guid: 194b332ed8669f249aa41ac66bec2f20, type: 3}
-  animatorController: {fileID: 9100000, guid: 8f62747178d784e44aaddc43c907fbc8, type: 2}
+  attackRange: 3
+  attackCooldown: 2
+  enemyProjectilePrefab: {fileID: 4119266623410990841, guid: ab5fe72ca37cabf43aaee09c89989a79, type: 3}
+  projectileSpeed: 5
+  sprite: {fileID: 558111164812707886, guid: e7469b6dec743a649805b7e4538aa551, type: 3}
+  animatorController: {fileID: 0}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 5
+  xpAmount: 10
