@@ -11,7 +11,7 @@ public class LevelUpManager : MonoBehaviour
 
     public PlayerStats playerStats;
     
-    public int availableStatPoints = 1;
+    public int availableStatPoints = 0;
 
     public Button damageButton;
     public Button moveSpeedButton;
@@ -33,7 +33,7 @@ public class LevelUpManager : MonoBehaviour
         LevelUpPanel.SetActive(true);
         Time.timeScale = 0f;
 
-        availableStatPoints = 1; 
+        availableStatPoints += 1; 
         UpdateStatButtons();
 
         if (upgradeManager != null)

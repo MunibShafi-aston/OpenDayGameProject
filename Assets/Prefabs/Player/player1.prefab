@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97d8ae49fd9dc4c8a200fdaafb1280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerHealth: {fileID: 0}
 --- !u!1 &2215088138318193915
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +109,7 @@ GameObject:
   - component: {fileID: 3300643675539833826}
   - component: {fileID: 2844408306257046879}
   - component: {fileID: 7591797136772517795}
+  - component: {fileID: 6702600362595045209}
   m_Layer: 1
   m_Name: player1
   m_TagString: Player
@@ -447,8 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae70e4c48deb44e9d561a5434700c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pHealth: 0
-  pMaxHealth: 10
   HealthBar: {fileID: 0}
 --- !u!114 &2844408306257046879
 MonoBehaviour:
@@ -466,6 +464,7 @@ MonoBehaviour:
   Ability1: {fileID: 0}
   Ability2: {fileID: 0}
   Ability3: {fileID: 0}
+  unlockedAbilities: []
 --- !u!114 &7591797136772517795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0145adb581b2d774faaea4245a99fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  xpBar: {fileID: 0}
+  isDead: 0
+  abilityHolder: {fileID: 0}
+  unlockedAbilities: []
   characterData: {fileID: 11400000, guid: 68fb087a606e5a943b676edaa2eb79a8, type: 2}
   maxHealth: 0
   currentHealth: 0
@@ -490,6 +493,24 @@ MonoBehaviour:
   Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
   Ability2: {fileID: 11400000, guid: 7bf0777033d6cfc4e80fe0efccfa0723, type: 2}
   Ability3: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
+  level: 1
+  currentXP: 0
+  xpToNextLevel: 10
+  xpGrowthRate: 1.25
+  evolutionData: {fileID: 0}
+  hasEvolved: 0
+--- !u!114 &6702600362595045209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215088138318193915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fa53116eefb8445a697b25c35cfb17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::abilityManager
 --- !u!1 &5919568450703065951
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,4 +603,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   swordCollider: {fileID: 4463120068213261807}
-  damage: 3

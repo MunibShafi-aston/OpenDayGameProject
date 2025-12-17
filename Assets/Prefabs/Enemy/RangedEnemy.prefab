@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5737298375767825934}
   - component: {fileID: 3081973693477938547}
   - component: {fileID: 6585373041339920145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,12 +154,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.7}
+  m_Offset: {x: 0.02004838, y: 0.015593171}
+  m_Size: {x: 0.6400968, y: 0.789104}
   m_Direction: 0
 --- !u!95 &8928751164510209210
 Animator:
@@ -224,6 +224,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f985f6130996b94ba13561b89bbde01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  collisionOffset: 0.05
   isDefeated: 0
   repelRadius: 0.6
   repelStrength: 1.5
@@ -240,9 +255,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4408080745461238189}
   - component: {fileID: 3698383088879637170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitbox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -19,7 +19,7 @@ public class LightningStrike : MonoBehaviour
     {
      if (!other.CompareTag("Enemy")) return;
 
-     Enemy enemy = other.GetComponent<Enemy>();
+     Enemy enemy = other.GetComponentInParent<Enemy>();
       if (enemy != null)
         {
             float finalDamage = stats.DealDamage(); 

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
-  m_Name: RangerEnemy
+  m_Name: TankEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Ranger
-  enemyType: 1
+  enemyName: Tank
+  enemyType: 3
   maxHealth: 10
-  moveSpeed: 2
-  contactDamage: 1
-  attackRange: 3
-  attackCooldown: 2
-  enemyProjectilePrefab: {fileID: 4119266623410990841, guid: ab5fe72ca37cabf43aaee09c89989a79, type: 3}
-  projectileSpeed: 5
-  sprite: {fileID: 558111164812707886, guid: e7469b6dec743a649805b7e4538aa551, type: 3}
-  animatorController: {fileID: 9100000, guid: 11bc82898d6a1f746ad67e52e27c1318, type: 2}
+  moveSpeed: 0.5
+  contactDamage: 3
+  attackRange: 0
+  attackCooldown: 0
+  enemyProjectilePrefab: {fileID: 0}
+  projectileSpeed: 0
+  sprite: {fileID: -4808164070042335456, guid: dce7cb20748e7ac49b2ce3d1c87bc2d1, type: 3}
+  animatorController: {fileID: 9100000, guid: 8f8c296d4e7f9cb4bbec890d99e7caef, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 10
+  xpAmount: 5

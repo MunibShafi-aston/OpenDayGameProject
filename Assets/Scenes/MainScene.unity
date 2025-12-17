@@ -6646,11 +6646,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1335254609 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2215088138318193915, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
-  m_PrefabInstance: {fileID: 7189452499303715897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357937586
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,6 +6768,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 2605059746378801021, guid: abb3f5926a55a1042b126c12962a1ab0, type: 3}
   - {fileID: 2605059746378801021, guid: c10206c0c5a7ff54292a571a0c17549b, type: 3}
+  - {fileID: 3725479264430058751, guid: fe9edb85c7b75be469eba416304ecb2b, type: 3}
+  - {fileID: 2020729008229051315, guid: f068784ab2a4a304bad22abba1182964, type: 3}
+  - {fileID: 7175968368154757714, guid: c19ac19015ba12341af02cd1cf3dc0ad, type: 3}
   spawnInterval: 2
   maxEnemies: 30
   spawnRadius: 8
@@ -7597,7 +7595,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3300643675539833826, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
   m_PrefabInstance: {fileID: 7189452499303715897}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335254609}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ae70e4c48deb44e9d561a5434700c4, type: 3}
@@ -7608,24 +7606,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
   m_PrefabInstance: {fileID: 7189452499303715897}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335254609}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0145adb581b2d774faaea4245a99fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &1807332937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335254609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fa53116eefb8445a697b25c35cfb17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::abilityManager
 --- !u!1 &1836635370
 GameObject:
   m_ObjectHideFlags: 0
@@ -8137,10 +8123,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2215088138318193915, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1807332937}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

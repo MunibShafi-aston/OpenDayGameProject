@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3405164641473427902}
   - component: {fileID: 2348523253685010478}
   - component: {fileID: 7626857250260319566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AOEAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

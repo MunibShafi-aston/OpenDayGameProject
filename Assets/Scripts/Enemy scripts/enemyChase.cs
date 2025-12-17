@@ -1,7 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class enemyChase : MonoBehaviour
 {
+
+    public ContactFilter2D movementFilter;
+    public float collisionOffset = 0.05f;
+
     public bool isDefeated = false;
 
     float moveSpeed;
@@ -22,6 +27,9 @@ public class enemyChase : MonoBehaviour
     Transform player;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
 
     void Start()
     {
@@ -59,56 +67,92 @@ public class enemyChase : MonoBehaviour
 
 
 
-     void FixedUpdate()
+ void FixedUpdate()
+{
+    if (player == null || isDefeated)
     {
-        if (player == null || isDefeated)
-        {
-            rb.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        Vector2 toPlayer = player.position - transform.position;
-        float distance = toPlayer.magnitude;
-        Vector2 direction = toPlayer.normalized;
-
-        Vector2 velocity = Vector2.zero;
-
-        if (!isRanged || distance > stopDistance)
-        {
-            velocity = direction * moveSpeed;
-        }
-
-        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
-
-        foreach (var col in nearbyEnemies)
-        {
-            if (col.gameObject == gameObject) continue;
-
-            Vector2 away = (Vector2)(transform.position - col.transform.position);
-            float dist = away.magnitude;
-
-            if (dist > 0)
-                velocity += away.normalized * (repelStrength / dist);
-        }
-
-        rb.linearVelocity = velocity;
-
-        if (isRanged && distance <= stopDistance)
-        {
-            shootTimer -= Time.fixedDeltaTime;
-
-            if (shootTimer <= 0f)
-            {
-                Shoot(direction);
-                shootTimer = shootCooldown;
-            }
-        }
-
-        if (rb.linearVelocity.x < 0)
-            spriteRenderer.flipX = true;
-        else if (rb.linearVelocity.x > 0)
-            spriteRenderer.flipX = false;
+        rb.linearVelocity = Vector2.zero;
+        return;
     }
+
+    Vector2 toPlayer = player.position - transform.position;
+    float distance = toPlayer.magnitude;
+    Vector2 direction = toPlayer.normalized;
+
+    Vector2 moveDir = Vector2.zero;
+
+    if (!isRanged || distance > stopDistance)
+    {
+        moveDir = direction;
+    }
+
+    Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
+
+    foreach (var col in nearbyEnemies)
+    {
+        if (col.gameObject == gameObject) continue;
+
+        Vector2 away = (Vector2)(transform.position - col.transform.position);
+        float dist = away.magnitude;
+
+        if (dist > 0)
+            moveDir += away.normalized * (repelStrength / dist);
+    }
+
+    moveDir = moveDir.normalized;
+
+    bool moved = TryMove(moveDir, moveSpeed);
+
+    if (!moved)
+    {
+        moved = TryMove(new Vector2(moveDir.x, 0), moveSpeed);
+
+        if (!moved)
+        {
+            TryMove(new Vector2(0, moveDir.y), moveSpeed);
+        }
+    }
+
+    if (isRanged && distance <= stopDistance)
+    {
+        shootTimer -= Time.fixedDeltaTime;
+
+        if (shootTimer <= 0f)
+        {
+            Shoot(direction);
+            shootTimer = shootCooldown;
+        }
+    }
+
+    if (moveDir.x < 0)
+        spriteRenderer.flipX = true;
+    else if (moveDir.x > 0)
+        spriteRenderer.flipX = false;
+}
+
+    bool TryMove(Vector2 direction, float speed)
+    {
+        if (direction == Vector2.zero)
+            return false;
+
+        int count = rb.Cast(
+            direction,
+            movementFilter,
+            castCollisions,
+            speed * Time.fixedDeltaTime + collisionOffset
+        );
+
+        if (count == 0)
+        {
+            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+            return true;
+        }
+
+        return false;
+    }
+
+
+
 
     void Shoot(Vector2 direction)
     {
