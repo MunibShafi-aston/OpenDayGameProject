@@ -16,11 +16,14 @@ MonoBehaviour:
   enemyType: 4
   maxHealth: 3
   moveSpeed: 3
-  contactDamage: 1
+  contactDamage: 0
   attackRange: 0
   attackCooldown: 0
   enemyProjectilePrefab: {fileID: 0}
   projectileSpeed: 0
+  damageReduction: 0
+  explosionRadius: 2
+  explosionDamage: 2
   sprite: {fileID: -4220445757758336107, guid: 7165e20472f990f40af3c447452a13ed, type: 3}
   animatorController: {fileID: 9100000, guid: 3fa7710d4c40c9544be626647609f83a, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}

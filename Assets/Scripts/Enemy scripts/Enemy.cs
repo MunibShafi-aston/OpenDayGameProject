@@ -67,6 +67,22 @@ public class Enemy : MonoBehaviour
         if (damageDealer != null)
             damageDealer.damage = enemyData.contactDamage;  
     }
+    
+    public float TankDamage(float amount)
+    {
+        if (isDead) return 0f;
+
+        float finalDamage = amount;
+
+        if (enemyData.enemyType == EnemyType.Tank)
+        {
+            finalDamage *= (1f - enemyData.damageReduction);
+        }
+
+        Health -= finalDamage;
+        return finalDamage;
+    }
+
     public void Defeated()
     {
         if (isDead) return;
@@ -74,6 +90,11 @@ public class Enemy : MonoBehaviour
 
         if (chase != null)
         chase.StopMovement();
+
+        if(enemyData.enemyType == EnemyType.Bomber){
+            Explode();
+            return;
+        }
 
 
         Debug.Log($"{gameObject.name} is dead. Triggering death animation.");
@@ -87,47 +108,63 @@ public class Enemy : MonoBehaviour
         }
     }
 
-bool HasAnimatorTrigger(string triggerName)
-{
-    if (animator == null || animator.runtimeAnimatorController == null)
-        return false;
-
-    foreach (var param in animator.parameters)
+    bool HasAnimatorTrigger(string triggerName)
     {
-        if (param.type == AnimatorControllerParameterType.Trigger &&
-            param.name == triggerName)
+        if (animator == null || animator.runtimeAnimatorController == null)
+            return false;
+
+        foreach (var param in animator.parameters)
         {
-            return true;
+            if (param.type == AnimatorControllerParameterType.Trigger &&
+                param.name == triggerName)
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
-    return false;
-}
-
-
-public void RemoveEnemy()
-{
-    if (enemyData.xpOrbPrefab != null)
+    void Explode()
     {
-        GameObject xpOrb = Instantiate(enemyData.xpOrbPrefab, transform.position, Quaternion.identity);
- 
-        XPOrb xp = xpOrb.GetComponent<XPOrb>();
-        if (xp != null)
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position,enemyData.explosionRadius);
+
+        foreach (var hit in hits)
         {
-            xp.xpAmount = enemyData.xpAmount;
-            Debug.Log($"Spawned XP orb with {xpAmount} XP.");
+            PlayerDamageReceiver player = hit.GetComponent<PlayerDamageReceiver>();
+            if (player != null)
+            {
+                player.TakeDamage(enemyData.explosionDamage);
+            }
+        }
+
+        RemoveEnemy();
+    }
+
+
+    public void RemoveEnemy()
+    {
+        if (enemyData.xpOrbPrefab != null)
+        {
+            GameObject xpOrb = Instantiate(enemyData.xpOrbPrefab, transform.position, Quaternion.identity);
+    
+            XPOrb xp = xpOrb.GetComponent<XPOrb>();
+            if (xp != null)
+            {
+                xp.xpAmount = enemyData.xpAmount;
+                Debug.Log($"Spawned XP orb with {xpAmount} XP.");
+            }
+            else
+            {
+                Debug.LogWarning("XPOrb component missing on prefab!");
+            }
         }
         else
         {
-            Debug.LogWarning("XPOrb component missing on prefab!");
+            Debug.LogWarning("xpOrbPrefab is not assigned!");
         }
-    }
-    else
-    {
-        Debug.LogWarning("xpOrbPrefab is not assigned!");
-    }
 
-        Destroy(gameObject);
-    }
+            Destroy(gameObject);
+        }
 }
 

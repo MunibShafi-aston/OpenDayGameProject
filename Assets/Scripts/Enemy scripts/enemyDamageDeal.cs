@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class enemyDamageDeal : MonoBehaviour
 {
-public float damage = 1f;
+public float damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

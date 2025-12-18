@@ -7,7 +7,7 @@ public class swordAttack : MonoBehaviour
 
     public Collider2D swordCollider;
     Vector2 rightAttackOffset;
-    
+    float dmg;
 
     private void Start(){
 
@@ -43,8 +43,11 @@ public class swordAttack : MonoBehaviour
 
             if(enemy != null)
             {
-                float finalDamage = stats.DealDamage(); 
-                enemy.Health -= finalDamage;
+            float baseDamage = stats.DealDamage(); 
+            float appliedDamage = enemy.TankDamage(baseDamage);
+
+            
+            Debug.Log($"Attack dealt {appliedDamage:F1} damage to {enemy.name} (base: {baseDamage:F1})");
             }
         }
     }

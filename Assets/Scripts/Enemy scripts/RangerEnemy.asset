@@ -21,6 +21,9 @@ MonoBehaviour:
   attackCooldown: 2
   enemyProjectilePrefab: {fileID: 4119266623410990841, guid: ab5fe72ca37cabf43aaee09c89989a79, type: 3}
   projectileSpeed: 5
+  damageReduction: 0
+  explosionRadius: 0
+  explosionDamage: 0
   sprite: {fileID: 558111164812707886, guid: e7469b6dec743a649805b7e4538aa551, type: 3}
   animatorController: {fileID: 9100000, guid: 11bc82898d6a1f746ad67e52e27c1318, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}

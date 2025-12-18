@@ -20,12 +20,13 @@ public class LightningStrike : MonoBehaviour
      if (!other.CompareTag("Enemy")) return;
 
      Enemy enemy = other.GetComponentInParent<Enemy>();
-      if (enemy != null)
-        {
-            float finalDamage = stats.DealDamage(); 
-            finalDamage += damage;
-            enemy.Health -= finalDamage;
-             Debug.Log($"Lightning dealt {finalDamage} damage to {enemy.name}");
-        }
+    if (enemy != null)
+      {
+          float baseDamage = stats.DealDamage() + damage; 
+          float appliedDamage = enemy.TankDamage(baseDamage);
+
+        
+          Debug.Log($"Lightning dealt {appliedDamage:F1} damage to {enemy.name} (base: {baseDamage:F1})");
+      }
     }
 }

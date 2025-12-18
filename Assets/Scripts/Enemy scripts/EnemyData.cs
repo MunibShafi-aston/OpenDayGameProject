@@ -27,6 +27,13 @@ public class EnemyData : ScriptableObject
     public GameObject enemyProjectilePrefab;
     public float projectileSpeed = 5f;
 
+    [Header("Tank")]
+    public float damageReduction = 0.3f;
+    
+    [Header("Bomber")]
+    public float explosionRadius = 2f;
+    public float explosionDamage = 10f;
+    
     [Header("Visuals")]
     public Sprite sprite;
     public RuntimeAnimatorController animatorController;
