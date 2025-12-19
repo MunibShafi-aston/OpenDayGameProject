@@ -8045,6 +8045,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1681278752197995501, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1720693077922253308, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: m_NotificationBehavior
       value: 0

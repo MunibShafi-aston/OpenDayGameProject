@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6294792519433703632}
   - component: {fileID: 4883399232595079284}
   - component: {fileID: 8625202679600327360}
-  - component: {fileID: 1362696112151712189}
   - component: {fileID: 7156197516092759007}
   m_Layer: 7
   m_Name: BomberEnemy
@@ -199,19 +198,6 @@ MonoBehaviour:
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
   xpAmount: 7
   health: 0
---- !u!114 &1362696112151712189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020729008229051315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 101a1de334f536a4c9f4240ec2b93190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  damage: 1
 --- !u!114 &7156197516092759007
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -141,6 +141,19 @@ public class Enemy : MonoBehaviour
         RemoveEnemy();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"trigger with {other.name}");
+
+        if (isDead) return;
+        if (enemyData.enemyType != EnemyType.Bomber) return;
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Bomber triggered Player — exploding");
+            Defeated();
+        }
+    }
 
     public void RemoveEnemy()
     {
