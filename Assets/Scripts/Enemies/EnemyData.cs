@@ -42,4 +42,7 @@ public class EnemyData : ScriptableObject
     public GameObject xpOrbPrefab;
     public int xpAmount = 5;    
 
+    [Header("Prefab")]
+    public GameObject gameObjectPrefab;
+
 }

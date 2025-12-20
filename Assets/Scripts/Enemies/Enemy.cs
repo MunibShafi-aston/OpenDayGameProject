@@ -148,7 +148,7 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
         if (enemyData.enemyType != EnemyType.Bomber) return;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("pHitbox"))
         {
             Debug.Log("Bomber triggered Player — exploding");
             Defeated();

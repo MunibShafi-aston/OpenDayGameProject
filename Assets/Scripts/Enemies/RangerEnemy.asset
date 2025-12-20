@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
-  m_Name: MeleeEnemy
+  m_Name: RangerEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Melee
-  enemyType: 0
-  maxHealth: 5
-  moveSpeed: 3
+  enemyName: Ranger
+  enemyType: 1
+  maxHealth: 10
+  moveSpeed: 2
   contactDamage: 1
-  attackRange: 0
-  attackCooldown: 0
-  enemyProjectilePrefab: {fileID: 0}
-  projectileSpeed: 0
+  attackRange: 3
+  attackCooldown: 2
+  enemyProjectilePrefab: {fileID: 4119266623410990841, guid: ab5fe72ca37cabf43aaee09c89989a79, type: 3}
+  projectileSpeed: 5
   damageReduction: 0
   explosionRadius: 0
   explosionDamage: 0
-  sprite: {fileID: 4583994919419862699, guid: fceb38faf98769740a77328b0f3e8768, type: 3}
-  animatorController: {fileID: 9100000, guid: 2a5173ccc9c3cba43b4e4b580e4af453, type: 2}
+  sprite: {fileID: 558111164812707886, guid: e7469b6dec743a649805b7e4538aa551, type: 3}
+  animatorController: {fileID: 9100000, guid: 11bc82898d6a1f746ad67e52e27c1318, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 3
+  xpAmount: 10
+  gameObjectPrefab: {fileID: 2605059746378801021, guid: c10206c0c5a7ff54292a571a0c17549b, type: 3}

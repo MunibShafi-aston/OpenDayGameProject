@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Xp
+  - pHitbox
   layers:
   - Default
   - TransparentFX

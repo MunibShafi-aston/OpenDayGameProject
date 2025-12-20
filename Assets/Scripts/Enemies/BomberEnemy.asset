@@ -28,3 +28,4 @@ MonoBehaviour:
   animatorController: {fileID: 9100000, guid: 3fa7710d4c40c9544be626647609f83a, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
   xpAmount: 5
+  gameObjectPrefab: {fileID: 2020729008229051315, guid: f068784ab2a4a304bad22abba1182964, type: 3}

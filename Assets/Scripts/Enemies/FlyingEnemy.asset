@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
-  m_Name: TankEnemy
+  m_Name: FlyingEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Tank
-  enemyType: 3
+  enemyName: Flying Enemy
+  enemyType: 2
   maxHealth: 10
-  moveSpeed: 0.5
-  contactDamage: 3
+  moveSpeed: 2
+  contactDamage: 1
   attackRange: 0
   attackCooldown: 0
   enemyProjectilePrefab: {fileID: 0}
   projectileSpeed: 0
-  damageReduction: 0.5
+  damageReduction: 0
   explosionRadius: 0
   explosionDamage: 0
-  sprite: {fileID: -4808164070042335456, guid: dce7cb20748e7ac49b2ce3d1c87bc2d1, type: 3}
-  animatorController: {fileID: 9100000, guid: 8f8c296d4e7f9cb4bbec890d99e7caef, type: 2}
+  sprite: {fileID: -1506415916195447246, guid: 194b332ed8669f249aa41ac66bec2f20, type: 3}
+  animatorController: {fileID: 9100000, guid: 8f62747178d784e44aaddc43c907fbc8, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
   xpAmount: 5
+  gameObjectPrefab: {fileID: 2605059746378801021, guid: abb3f5926a55a1042b126c12962a1ab0, type: 3}
