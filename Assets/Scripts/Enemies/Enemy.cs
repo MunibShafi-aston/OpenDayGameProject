@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     private Animator animator;
 
     public float health;
-    private bool isDead = false;
+    public bool isDead = false;
+    
 
     public float Health{
         get {return health;}
@@ -143,7 +144,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"trigger with {other.name}");
 
         if (isDead) return;
         if (enemyData.enemyType != EnemyType.Bomber) return;

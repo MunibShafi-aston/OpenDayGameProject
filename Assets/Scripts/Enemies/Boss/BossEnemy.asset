@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
+  m_Name: BossEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  isBoss: 1
+  phase2Threshold: 0.66
+  phase3Threshold: 0.33
+  phase2Sprite: {fileID: 0}
+  phase3Sprite: {fileID: 0}
+  enemyName: Boss
+  enemyType: 0
+  maxHealth: 100
+  moveSpeed: 1
+  contactDamage: 0
+  attackRange: 0
+  attackCooldown: 0
+  enemyProjectilePrefab: {fileID: 0}
+  projectileSpeed: 0
+  damageReduction: 0.3
+  explosionRadius: 0
+  explosionDamage: 0
+  sprite: {fileID: 5293266808972169152, guid: 32e9d62aec5344546958743e5a80eb22, type: 3}
+  animatorController: {fileID: 0}
+  xpOrbPrefab: {fileID: 0}
+  xpAmount: 5
+  gameObjectPrefab: {fileID: 0}

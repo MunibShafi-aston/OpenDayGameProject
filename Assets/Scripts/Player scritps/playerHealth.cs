@@ -36,8 +36,9 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamageExternal(int damage)
+    public void TakeDamageExternal(int damage, string source = "Unkown")
     {
+        Debug.Log($"Player took {damage} damage from: {source}");
         PlayerStats stats = GetComponent<PlayerStats>();
         stats.TakeDamage(damage);
         UpdateUI((int)stats.currentHealth); 

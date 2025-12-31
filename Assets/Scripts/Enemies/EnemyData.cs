@@ -12,6 +12,13 @@ public enum EnemyType
 [CreateAssetMenu(menuName = "Enemies/Enemy Data")]
 public class EnemyData : ScriptableObject
 {
+    [Header("Boss")]
+    public bool isBoss;
+    public float phase2Threshold = 0.66f;
+    public float phase3Threshold = 0.33f;
+    public Sprite phase2Sprite;
+    public Sprite phase3Sprite;
+
     [Header("Basic Info")]
     public string enemyName;
     public EnemyType enemyType;
