@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
+  m_Name: SummonWolf
+  m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
+  upgradeName: Wolf call
+  description: Summon a wolf to help you fend off enemies
+  icon: {fileID: 7444046612802208997, guid: a4c689cc7ff4c204e9d54f1399c8bb67, type: 3}
+  category: 1
+  requiredUpgrades: []
+  abilityToUnlock: {fileID: 11400000, guid: 9ae158fbcb7442a428069d6cc6e0f0b0, type: 2}

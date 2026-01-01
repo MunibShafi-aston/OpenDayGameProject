@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Upgrades/Ability Unlock")]
+[CreateAssetMenu(menuName = "Upgrades/Unlocks/Ability Unlock")]
 public class abilityUnlockUpgrade : upgradeBase
 {
     public ability abilityToUnlock;

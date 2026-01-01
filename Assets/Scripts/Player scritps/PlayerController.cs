@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour
     public swordAttack SwordAttack;
     public Vector2 movementInput { get; private set; }
 
+    public GameObject bulletPrefab;
+    public Transform firePoint; 
+    public float bulletDamage = 5f;
 
+    
     PlayerStats stats;
 
     Rigidbody2D rb;
@@ -108,26 +112,32 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnAttack()
-    {
-        if (!canMove) return;
-        animator.SetTrigger("isAttk");
-    } 
+public void OnAttack()
+{
+    if (!canMove) return;
+    Shoot();
+}
 
-    public void swordAttack()
+private void Shoot()
+{
+    if (bulletPrefab == null || firePoint == null) return;
+
+    // Get mouse position in world space
+    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    mousePos.z = 0f;
+
+    // Direction from firePoint to mouse
+    Vector3 dir = mousePos - firePoint.position;
+
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+    bullet bulletComp = bullet.GetComponent<bullet>();
+    if (bulletComp != null)
     {
-        if (!canMove) return;
-        
-        if(spriteRenderer.flipX == true)
-        {
-            SwordAttack.AttackLeft();
-        }else{
-            SwordAttack.AttackRight();
-        }
+        bulletComp.Setup(dir, bulletDamage);
     }
 
-    public void EndSwordAttack()
-    {
-        SwordAttack.StopAttack();
-    }
+    // Optional: rotate bullet to face cursor
+    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+}
 }

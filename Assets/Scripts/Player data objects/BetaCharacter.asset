@@ -21,7 +21,7 @@ MonoBehaviour:
   defense: 0
   cooldownReduction: 0
   critChance: 0.01
-  characterSprite: {fileID: 21300000, guid: 1b4fb1a1fd22b774e93c475a306679cc, type: 3}
+  characterSprite: {fileID: 6864778800241408347, guid: c940aba3dcd573c4398c29cb8a26816a, type: 3}
   Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
   Ability2: {fileID: 11400000, guid: 7bf0777033d6cfc4e80fe0efccfa0723, type: 2}
   Ability3: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
