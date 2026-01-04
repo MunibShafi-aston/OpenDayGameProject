@@ -21,11 +21,26 @@ public class PlayerStats : MonoBehaviour
     public float cooldownReduction;
     public float critChance;
 
+    //public bool witherUnlocked = false;
+    //public bool lifeSteal = false;
+
+    [Header("Burn")]
+    [Range(0f, 1f)] public float burnChance = 0f;
+    public int burnMaxStacks = 0;
+    public float burnDamagePerSecond = 0f;
+    public float burnDuration = 0f;
+
+    [Header("Freeze")]
+    [Range(0f,1f)] public float freezeChance = 0f;
+    public float freezeDuration = 0f;
+
+    
     [Header("Abilities")]
     public ability Ability1;
     public ability Ability2;
     public ability Ability3;
 
+    
     [Header("Leveling")]
     public int level = 1;
     public float currentXP = 0;

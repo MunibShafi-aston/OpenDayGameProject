@@ -3194,7 +3194,7 @@ MonoBehaviour:
   spawnInterval: 1.5
   maxEnemies: 30
   spawnRadius: 8
-  gameTimer: 0
+  gameTimer: 200
   spawnTimeline:
   - {fileID: 11400000, guid: 08b626e1d26f1b047b4602033d48037c, type: 2}
   - {fileID: 11400000, guid: 06322fbe32e4cd846a5d0a7ab6094f14, type: 2}
@@ -4057,6 +4057,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f37d1fe73be9a4e4283c7dde7b99c479, type: 2}
   - {fileID: 11400000, guid: cbf21e33d726afb48b2865c94330eb9f, type: 2}
   - {fileID: 11400000, guid: 0a2ccf8cbd3e4da4bb7b82b9f69234e0, type: 2}
+  - {fileID: 11400000, guid: 474cde12e749aef499a82f7f75f6baa6, type: 2}
+  - {fileID: 11400000, guid: 220a1e2eda91ae14faccf5bf28c8934e, type: 2}
+  - {fileID: 11400000, guid: bbbcfb78d7f455342b9edc4c7e6c7ab8, type: 2}
 --- !u!4 &1789154414
 Transform:
   m_ObjectHideFlags: 0
@@ -4731,12 +4734,16 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a11098d431d4e784a8235a13b8a062bb, type: 2}
     - target: {fileID: 2844408306257046879, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: unlockedAbilities.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2844408306257046879, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: 'unlockedAbilities.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 0e0eb27f70a2f08458eb2304ef2530b8, type: 2}
+      objectReference: {fileID: 11400000, guid: 4916caa5557ab08428e12e804f1984a2, type: 2}
+    - target: {fileID: 2844408306257046879, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: 'unlockedAbilities.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: cdcb3b8d6a32faa48ab94430633acf60, type: 2}
     - target: {fileID: 3256606568986376424, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4797,6 +4804,10 @@ PrefabInstance:
       propertyPath: movementFilter.layerMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4396490829514953266, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.96875
+      objectReference: {fileID: 0}
     - target: {fileID: 4463120068213261807, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: m_Size.x
       value: 0.098704934
@@ -4838,6 +4849,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: burnDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: abilityHolder
       value: 
       objectReference: {fileID: 0}
@@ -4845,6 +4860,10 @@ PrefabInstance:
       propertyPath: evolutionData
       value: 
       objectReference: {fileID: 11400000, guid: 2fc4e0b4d387abb4899c87af6a97d9db, type: 2}
+    - target: {fileID: 7591797136772517795, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
+      propertyPath: burnDamagePerSecond
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9215244209039749537, guid: d3e4732b8f691dd40858773abbf37209, type: 3}
       propertyPath: m_Enabled
       value: 0

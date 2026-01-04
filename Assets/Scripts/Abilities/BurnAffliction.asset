@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
+  m_Name: BurnAffliction
+  m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
+  upgradeName: Bullet burn
+  description: 10% chance to burn any enemy hit with main attack
+  icon: {fileID: -9167098407794639708, guid: a3ba2ab908e9b1241897beef632ae022, type: 3}
+  category: 3
+  requiredUpgrades: []
+  abilityToUnlock: {fileID: 11400000, guid: b7ada230b3358bd4496b08b96b7821ea, type: 2}

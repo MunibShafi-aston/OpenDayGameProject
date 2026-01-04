@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class enemyChase : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class enemyChase : MonoBehaviour
     public float collisionOffset = 0.05f;
 
     public bool isDefeated = false;
+    public bool isFrozen = false;
 
-    float moveSpeed;
+    public float moveSpeed;
     bool isFlying;
     bool isRanged;
 
@@ -67,68 +69,68 @@ public class enemyChase : MonoBehaviour
 
 
 
- void FixedUpdate()
-{
-    if (player == null || isDefeated)
+    void FixedUpdate()
     {
-        rb.linearVelocity = Vector2.zero;
-        return;
-    }
+        if (player == null || isDefeated)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
-    Vector2 toPlayer = player.position - transform.position;
-    float distance = toPlayer.magnitude;
-    Vector2 direction = toPlayer.normalized;
+        Vector2 toPlayer = player.position - transform.position;
+        float distance = toPlayer.magnitude;
+        Vector2 direction = toPlayer.normalized;
 
-    Vector2 moveDir = Vector2.zero;
+        Vector2 moveDir = Vector2.zero;
 
-    if (!isRanged || distance > stopDistance)
-    {
-        moveDir = direction;
-    }
+        if (!isRanged || distance > stopDistance)
+        {
+            moveDir = direction;
+        }
 
-    Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
+        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
 
-    foreach (var col in nearbyEnemies)
-    {
-        if (col.gameObject == gameObject) continue;
+        foreach (var col in nearbyEnemies)
+        {
+            if (col.gameObject == gameObject) continue;
 
-        Vector2 away = (Vector2)(transform.position - col.transform.position);
-        float dist = away.magnitude;
+            Vector2 away = (Vector2)(transform.position - col.transform.position);
+            float dist = away.magnitude;
 
-        if (dist > 0)
-            moveDir += away.normalized * (repelStrength / dist);
-    }
+            if (dist > 0)
+                moveDir += away.normalized * (repelStrength / dist);
+        }
 
-    moveDir = moveDir.normalized;
+        moveDir = moveDir.normalized;
 
-    bool moved = TryMove(moveDir, moveSpeed);
-
-    if (!moved)
-    {
-        moved = TryMove(new Vector2(moveDir.x, 0), moveSpeed);
+        bool moved = TryMove(moveDir, moveSpeed);
 
         if (!moved)
         {
-            TryMove(new Vector2(0, moveDir.y), moveSpeed);
+            moved = TryMove(new Vector2(moveDir.x, 0), moveSpeed);
+
+            if (!moved)
+            {
+                TryMove(new Vector2(0, moveDir.y), moveSpeed);
+            }
         }
-    }
 
-    if (isRanged && distance <= stopDistance)
-    {
-        shootTimer -= Time.fixedDeltaTime;
-
-        if (shootTimer <= 0f)
+        if (isRanged && distance <= stopDistance)
         {
-            Shoot(direction);
-            shootTimer = shootCooldown;
-        }
-    }
+            shootTimer -= Time.fixedDeltaTime;
 
-    if (moveDir.x < 0)
-        spriteRenderer.flipX = true;
-    else if (moveDir.x > 0)
-        spriteRenderer.flipX = false;
-}
+            if (shootTimer <= 0f)
+            {
+                Shoot(direction);
+                shootTimer = shootCooldown;
+            }
+        }
+
+        if (moveDir.x < 0)
+            spriteRenderer.flipX = true;
+        else if (moveDir.x > 0)
+            spriteRenderer.flipX = false;
+    }
 
     bool TryMove(Vector2 direction, float speed)
     {
@@ -152,6 +154,21 @@ public class enemyChase : MonoBehaviour
     }
 
 
+    public void Freeze(float duration)
+    {
+        if (!isFrozen)
+            StartCoroutine(FreezeCoroutine(duration));
+    }
+
+    private IEnumerator FreezeCoroutine(float duration)
+    {
+        isFrozen = true;
+        float originalSpeed = moveSpeed;
+        moveSpeed = 0f;
+        yield return new WaitForSeconds(duration);
+        moveSpeed = originalSpeed;
+        isFrozen = false;
+    }
 
 
     void Shoot(Vector2 direction)

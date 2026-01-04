@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
   m_Name: MeleeEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  isBoss: 0
+  phase2Threshold: 0.66
+  phase3Threshold: 0.33
+  phase2Sprite: {fileID: 0}
+  phase3Sprite: {fileID: 0}
   enemyName: Melee
   enemyType: 0
-  maxHealth: 5
+  maxHealth: 20
   moveSpeed: 3
   contactDamage: 1
   attackRange: 0

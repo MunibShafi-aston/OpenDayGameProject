@@ -8,7 +8,7 @@ public class summonController : MonoBehaviour
     public float followDistance = 1.5f;
     public float moveSpeed = 3f;
     public float attackRange = 1f; 
-    public float attackCooldown = 0.5f;
+    public float attackCooldown = 3f;
 
     private float attackTimer = 0f;
     private PlayerStats stats;

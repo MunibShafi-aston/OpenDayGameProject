@@ -28,6 +28,12 @@ public class abilityHolder : MonoBehaviour
         UpdateAbility(1, Ability1);
         UpdateAbility(2, Ability2);
         UpdateAbility(3, Ability3);
+        
+        foreach (ability abil in unlockedAbilities)
+        {
+            if(abil!=null)
+                abil.Tick(Time.deltaTime, gameObject);
+        }
     }
 
     void UpdateAbility(int index, ability ability)
@@ -87,7 +93,9 @@ public class abilityHolder : MonoBehaviour
         }
 
         unlockedAbilities.Add(newAbility);
-        Debug.Log($"Unlocked AUTO ability: {newAbility.name}");
+
+        newAbility.Activate(gameObject);
+        Debug.Log($"Unlocked ability: {newAbility.name}");
     }
 
 }

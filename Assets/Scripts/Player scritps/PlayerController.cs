@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint; 
     public float bulletDamage = 5f;
+    public float fireRate = 1f;
+    public float fireTimer = 0f;
 
     
     PlayerStats stats;
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
         moveSpeed = stats.moveSpeed;
     }
 
+    void Update()
+    {
+        fireTimer -= Time.deltaTime;
+    }
+    
     public bool canMove = true;
     
     private void FixedUpdate(){
@@ -115,28 +122,29 @@ public class PlayerController : MonoBehaviour
 public void OnAttack()
 {
     if (!canMove) return;
+    if(fireTimer > 0f) return;
+
     Shoot();
+
+    fireTimer = fireRate/Mathf.Max(0.01f, stats.attackSpeed);
 }
 
 private void Shoot()
 {
     if (bulletPrefab == null || firePoint == null) return;
 
-    // Get mouse position in world space
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     mousePos.z = 0f;
 
-    // Direction from firePoint to mouse
     Vector3 dir = mousePos - firePoint.position;
 
     GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
     bullet bulletComp = bullet.GetComponent<bullet>();
     if (bulletComp != null)
     {
-        bulletComp.Setup(dir, bulletDamage);
+        bulletComp.Setup(dir, bulletDamage, GetComponent<PlayerStats>());
     }
 
-    // Optional: rotate bullet to face cursor
     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
     bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
 }

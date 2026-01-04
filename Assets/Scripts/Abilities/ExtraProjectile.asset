@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
-  m_Name: New Ability Unlock Upgrade
+  m_Name: ExtraProjectile
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
-  upgradeName: Fire affliction
-  description: Deal burn damage after main attack
+  upgradeName: +1 Projectile
+  description: Gain 1 more bullet when main attack is used
   icon: {fileID: 0}
-  category: 3
+  category: 0
   requiredUpgrades: []
   abilityToUnlock: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
+  m_Name: FreezeAffliction
+  m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
+  upgradeName: Bullet Freeze
+  description: Have a chance to freeze an enemy in its place
+  icon: {fileID: 3161842345059722650, guid: 49a3600229c3ce24daa9b8cb05041869, type: 3}
+  category: 3
+  requiredUpgrades: []
+  abilityToUnlock: {fileID: 11400000, guid: c25805bb5f45c8a40a830b917b0deab0, type: 2}

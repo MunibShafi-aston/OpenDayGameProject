@@ -20,7 +20,7 @@ public abstract class upgradeBase : ScriptableObject
     public upgradeCategory category;
 
     [Header("Requirements (Optional)")]
-    public upgradeBase[] requiredUpgrades;
+    public ability[] requiredUpgrades;
 
     public abstract void Apply(PlayerStats stats);
 }
