@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30d601fa1b93654f8f6d1964868f98d, type: 3}
   m_Name: AOEAttack
   m_EditorClassIdentifier: Assembly-CSharp::AOEability
-  name: AOEAttack
+  name: Grenade toss
   cooldownTime: 0
   activeTime: 1
+  description: An explosion created in front of the player causing AOE damage
+  icon: {fileID: -6007857137893288414, guid: b5cf3348b92880245994e895951766f7, type: 3}
   aoePrefab: {fileID: 1184306961736730610, guid: 656d3405a5528374bb21c482d0ba9d8c, type: 3}
   radius: 1
   damage: 4

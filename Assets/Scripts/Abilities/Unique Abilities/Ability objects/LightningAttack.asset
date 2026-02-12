@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea305fd48a0ff34f999da38f413b22a, type: 3}
   m_Name: LightningAttack
   m_EditorClassIdentifier: Assembly-CSharp::lightningAbility
-  name: LightningStrike
+  name: Lightning Strike
   cooldownTime: 0
   activeTime: 1
+  description: The player summons lightning from the sky auto targetting and dealing
+    damage to the nearest enemy
+  icon: {fileID: -2983090718515566234, guid: e3f86dab553ebed4490c9d9cccd2e056, type: 3}
   lightningPrefab: {fileID: 4806726459376530346, guid: 70d7fb0a699dd5542b18a19c1ccd6de4, type: 3}
   damage: 5

@@ -18,10 +18,18 @@ public class CharacterData : ScriptableObject
     [Header("Visuals")]
     public Sprite characterSprite;
 
+    [Header("Description")]
+    [TextArea (3,6)]
+    public string characterDescription;
     
     [Header("Abilities")]
     public ability Ability1;
     public ability Ability2;
     public ability Ability3;
-    
+
+    public string GetStatsString()
+    {
+        return 
+        $"HP: {maxHealth}\nDMG: {damage}\nSPD: {moveSpeed}\nATK SPD: {attackSpeed}\nDEF: {defense}\nCDR: {cooldownReduction * 100}%\nCRIT: {critChance * 100}%";
+    }    
 }
