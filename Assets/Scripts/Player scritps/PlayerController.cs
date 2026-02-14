@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         fireTimer -= Time.deltaTime;
+        moveSpeed = stats.moveSpeed;
     }
     
     public bool canMove = true;

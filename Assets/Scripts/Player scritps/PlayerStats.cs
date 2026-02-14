@@ -53,57 +53,62 @@ public class PlayerStats : MonoBehaviour
 
     playerHealth hpUI;
 
+    void Start()
+    {
+     CharacterData data = CharacterSelection.Instance.GetSelectedCharacter();
+
+        if (data != null)
+        {
+            ApplyCharacterData(data);
+        }
+        else
+        {
+            Debug.LogError("No character data found! Please select a character in the character selection screen.");
+        }
+    }
 
     void Awake()
     {
-        InitXP();
         hpUI = GetComponent<playerHealth>();
         abilityHolder = GetComponent<abilityHolder>();
-   
-        
 
-        if (characterData != null)
+        InitXP();
+    }
+    void ApplyCharacterData(CharacterData data)
+    {
+        characterData = data;
+
+        maxHealth = data.maxHealth;
+        currentHealth = maxHealth;
+
+        damage = data.damage;
+        moveSpeed = data.moveSpeed;
+        attackSpeed = data.attackSpeed;
+        defense = data.defense;
+        cooldownReduction = data.cooldownReduction;
+        critChance = data.critChance;
+
+        Ability1 = data.Ability1;
+        Ability2 = data.Ability2;
+        Ability3 = data.Ability3;
+
+        evolutionData = data.evolvedForm;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null && data.characterSprite != null)
+            sr.sprite = data.characterSprite;
+
+         if (hpUI != null && hpUI.HealthBar != null)
+    {
+        hpUI.HealthBar.setMaxHealth((int)maxHealth);
+        hpUI.HealthBar.SetHealth((int)currentHealth);
+    }
+
+        if (abilityHolder != null)
         {
-            maxHealth = characterData.maxHealth;
-            currentHealth = maxHealth;
-
-            damage = characterData.damage;
-            moveSpeed = characterData.moveSpeed;
-            attackSpeed = characterData.attackSpeed;
-            defense = characterData.defense;
-            cooldownReduction = characterData.cooldownReduction;
-            critChance = characterData.critChance;
-
-            hpUI.HealthBar.setMaxHealth((int)maxHealth);
-            
-            Ability1 = characterData.Ability1;
-            Ability2 = characterData.Ability2;
-            Ability3 = characterData.Ability3;
-
-
-
-        if (hpUI != null)
-        {
-            hpUI.HealthBar.setMaxHealth((int)maxHealth);  
-            hpUI.HealthBar.SetHealth((int)currentHealth);  
-        }
-    
-
-
-            abilityHolder abilityHolder = GetComponent<abilityHolder>();
-            if (abilityHolder != null && characterData != null)
-            {
-                abilityHolder.Ability1 = characterData.Ability1;
-                abilityHolder.Ability2 = characterData.Ability2;
-                abilityHolder.Ability3 = characterData.Ability3;
-            }
-
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            if (sr != null && characterData.characterSprite != null)
-            {
-                sr.sprite = characterData.characterSprite;
-            }
-            
+            abilityHolder.Ability1 = data.Ability1;
+            abilityHolder.Ability2 = data.Ability2;
+            abilityHolder.Ability3 = data.Ability3;
         }
     }
 

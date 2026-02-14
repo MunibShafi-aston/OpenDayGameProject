@@ -27,6 +27,8 @@ public class CharacterData : ScriptableObject
     public ability Ability2;
     public ability Ability3;
 
+    [Header("Evolution")]
+    public PlayerEvolution evolvedForm;    
     public string GetStatsString()
     {
         return 

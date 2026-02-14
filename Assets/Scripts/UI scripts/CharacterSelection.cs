@@ -3,7 +3,6 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     public static CharacterSelection Instance;
-
     private CharacterData selectedCharacter;
 
     private void Awake()
@@ -33,4 +32,10 @@ public class CharacterSelection : MonoBehaviour
     {
         return selectedCharacter != null;
     }
+
+    public void OnSelectPressed()
+    {
+        CharacterSelection.Instance.SelectCharacter(selectedCharacter);
+    }
+    
 }
