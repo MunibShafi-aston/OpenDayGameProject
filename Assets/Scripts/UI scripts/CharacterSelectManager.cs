@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class CharacterSelectManager : MonoBehaviour
 {
     public static CharacterSelectManager Instance;
@@ -39,5 +40,15 @@ public class CharacterSelectManager : MonoBehaviour
     {
         detailsUI.UpdateDetails(data);
         CharacterSelection.Instance.SelectCharacter(data);
+    }
+
+    public void PlayGame()
+    {
+        if (!CharacterSelection.Instance.HasSelectedCharacter())
+        {
+            Debug.LogWarning("No character selected!");
+            return;
+        }
+        SceneManager.LoadScene("GameScene");
     }
 }

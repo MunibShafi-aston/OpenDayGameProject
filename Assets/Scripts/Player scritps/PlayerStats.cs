@@ -109,7 +109,10 @@ public class PlayerStats : MonoBehaviour
             abilityHolder.Ability1 = data.Ability1;
             abilityHolder.Ability2 = data.Ability2;
             abilityHolder.Ability3 = data.Ability3;
+
+            abilityHolder.OnAbilitiesChanged?.Invoke();
         }
+
     }
 
      public void TakeDamage(float amount)

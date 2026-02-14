@@ -15,5 +15,7 @@ MonoBehaviour:
   name: Dash
   cooldownTime: 2
   activeTime: 0.5
+  description: 
+  icon: {fileID: 4606908045521496030, guid: 45bcdc09eb625f144bebbe639fb62f81, type: 3}
   dashDistance: 3
   dashDuration: 0.1

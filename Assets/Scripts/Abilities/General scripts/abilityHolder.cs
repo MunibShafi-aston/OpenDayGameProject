@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
 public class abilityHolder : MonoBehaviour
 {
     [Header("Assigned abilities")]
@@ -20,6 +21,7 @@ public class abilityHolder : MonoBehaviour
     AbilityState[] states = new AbilityState[4] { AbilityState.ready, AbilityState.ready, AbilityState.ready, AbilityState.ready };
 
 
+    public System.Action OnAbilitiesChanged;
 
 
     void Update()
@@ -97,5 +99,28 @@ public class abilityHolder : MonoBehaviour
         newAbility.Activate(gameObject);
         Debug.Log($"Unlocked ability: {newAbility.name}");
     }
+    
+    public float GetCooldownRemaining(int index)
+    {
+        return cooldownTimes[index];
+    }
+
+    public float GetTotalCooldown(int index)
+    {
+        ability abil = GetAbilityByIndex(index);
+        return abil != null ? abil.cooldownTime : 0f;
+    }
+
+    public ability GetAbilityByIndex(int index)
+{
+    switch (index)
+    {
+        case 0: return AbilityDash;
+        case 1: return Ability1;
+        case 2: return Ability2;
+        case 3: return Ability3;
+    }
+    return null;
+}
 
 }
