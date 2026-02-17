@@ -26,6 +26,9 @@ public class abilityHolder : MonoBehaviour
 
     void Update()
      {
+        if (pauseManager.Instance != null && pauseManager.Instance.IsPaused)
+        return;
+
         UpdateAbility(0, AbilityDash);
         UpdateAbility(1, Ability1);
         UpdateAbility(2, Ability2);

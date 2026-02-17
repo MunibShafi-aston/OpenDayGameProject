@@ -21,14 +21,16 @@ void Awake()
 
     void OnEnable()
     {
+        if (playerInput == null) return;
         playerInput.actions["Dash"].performed += OnDash;
         playerInput.actions["Ability1"].performed += OnAbility1;
         playerInput.actions["Ability2"].performed += OnAbility2;
         playerInput.actions["Ability3"].performed += OnAbility3;
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
+        if (playerInput == null) return;
         playerInput.actions["Dash"].performed -= OnDash;
         playerInput.actions["Ability1"].performed -= OnAbility1;
         playerInput.actions["Ability2"].performed -= OnAbility2;

@@ -24,6 +24,9 @@ public class EnemySpawnner : MonoBehaviour
     
     void Update()
     {
+        if (pauseManager.Instance != null && pauseManager.Instance.IsPaused)
+        return;
+        
         if(player == null) return;
 
         gameTimer += Time.deltaTime;

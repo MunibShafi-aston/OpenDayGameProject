@@ -24,6 +24,8 @@ public class BossSpawner : MonoBehaviour
 
     void Update()
     {
+        if (pauseManager.Instance != null && pauseManager.Instance.IsPaused)
+        return;
         if(bossSpawned)return;
 
         if (spawn)

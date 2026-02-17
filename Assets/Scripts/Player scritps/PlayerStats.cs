@@ -133,7 +133,9 @@ public class PlayerStats : MonoBehaviour
             PlayerController pc = GetComponent<PlayerController>();
             if (pc != null)
                 pc.Die();
-                print("Player has died.");
+
+            GameOverUI.Instance.TriggerGameOver();
+
         }
     }
 

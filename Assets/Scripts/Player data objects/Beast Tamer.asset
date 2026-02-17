@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ad4e50b5a5137479c6e1f28d65bc77, type: 3}
   m_Name: Beast Tamer
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: 
+  characterName: Beast Tamer
   maxHealth: 7
   damage: 3
   summonDamage: 5
@@ -22,7 +22,10 @@ MonoBehaviour:
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: 4606908045521496030, guid: 45bcdc09eb625f144bebbe639fb62f81, type: 3}
-  description: 
+  characterDescription: 'A warrior well versed in the tounge of animal
+
+'
   Ability1: {fileID: 0}
   Ability2: {fileID: 0}
   Ability3: {fileID: 0}
+  evolvedForm: {fileID: 0}

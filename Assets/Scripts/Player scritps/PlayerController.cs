@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (pauseManager.Instance != null && pauseManager.Instance.IsPaused)
+        return;
+
         fireTimer -= Time.deltaTime;
         moveSpeed = stats.moveSpeed;
     }
