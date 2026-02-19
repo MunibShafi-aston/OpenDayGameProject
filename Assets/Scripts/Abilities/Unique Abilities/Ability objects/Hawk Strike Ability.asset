@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3fe4f20c0a52d44b8065870853dfae, type: 3}
+  m_Name: Hawk Strike Ability
+  m_EditorClassIdentifier: Assembly-CSharp::HawkStrikeAbility
+  name: Hawk Strike
+  cooldownTime: 10
+  activeTime: 3
+  description: 'Summon a hawk to mark and strike down an enemy '
+  icon: {fileID: 4653407260003293900, guid: 742e70e34b076bf43bd363db101d8cfd, type: 3}
+  hawkPrefab: {fileID: 4526385580405664548, guid: 2993562914d90c440a1f90d8a0bca689, type: 3}
+  markPrefab: {fileID: 7540287877436572950, guid: 577b71d92aeb04a4b8e44a4e2b3b47d3, type: 3}
+  delay: 1
+  radius: 2
+  bonusDamage: 5

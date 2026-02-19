@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ad4e50b5a5137479c6e1f28d65bc77, type: 3}
-  m_Name: Beast Tamer
+  m_Name: WizardGuy
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Beast Tamer
-  maxHealth: 7
-  damage: 3
-  summonDamage: 5
+  characterName: Wizard Fella
+  maxHealth: 6
+  damage: 2
+  summonDamage: 3
   moveSpeed: 4
   attackSpeed: 1
-  defense: 1
+  defense: 0
   cooldownReduction: 0
   critChance: 0.01
-  characterSprite: {fileID: 4606908045521496030, guid: 45bcdc09eb625f144bebbe639fb62f81, type: 3}
-  characterDescription: 'A warrior well versed in the tounge of animal
-
-'
+  characterSprite: {fileID: 8080189319961439577, guid: c1eaa5b64d686bd4a8b9788a56125003, type: 3}
+  characterDescription: I like your moves magic man
   Ability1: {fileID: 0}
   Ability2: {fileID: 0}
   Ability3: {fileID: 0}

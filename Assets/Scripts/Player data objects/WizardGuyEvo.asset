@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349a904546a60534f8dcfaac6acde76d, type: 3}
+  m_Name: WizardGuyEvo
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerEvolution
+  evolutionName: WizardGuy Evo
+  requiredLevel: 10
+  bonusMaxHealth: 2
+  bonusDamage: 1
+  bonusMoveSpeed: 2
+  bonusAttackSpeed: 1
+  bonusDefense: 0
+  bonusCritChance: 0.05
+  evolvedSprite: {fileID: -7721266407851096846, guid: ec98f636498751b4db111493e69b6520, type: 3}
+  newAbilities: []
+  evolvedAbilities: []

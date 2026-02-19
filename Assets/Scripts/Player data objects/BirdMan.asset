@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ad4e50b5a5137479c6e1f28d65bc77, type: 3}
+  m_Name: BirdMan
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: BirdMan
+  maxHealth: 7
+  damage: 3
+  summonDamage: 5
+  moveSpeed: 4
+  attackSpeed: 1
+  defense: 1
+  cooldownReduction: 0
+  critChance: 0.01
+  characterSprite: {fileID: -4379801795658354850, guid: 00fab7a8f7ee13a47b1c9a087db3f8d9, type: 3}
+  characterDescription: 'A crow that has had its DNA heavily modified in a military
+    experiment to enhance its strength
+
+'
+  Ability1: {fileID: 11400000, guid: 712ab8d7e0f7d834fb8991856179c290, type: 2}
+  Ability2: {fileID: 11400000, guid: de0e869bdbc94834f8df7504dd8cb54a, type: 2}
+  Ability3: {fileID: 11400000, guid: eedc651a796bd014ab1206088838ecbf, type: 2}
+  evolvedForm: {fileID: 11400000, guid: c9dfc673a176a5641bd51758ae879e5b, type: 2}
