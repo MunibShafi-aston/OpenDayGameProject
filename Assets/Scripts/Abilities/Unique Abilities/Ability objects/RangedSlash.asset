@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b617625995095c94286942477d3379a0, type: 3}
   m_Name: RangedSlash
   m_EditorClassIdentifier: Assembly-CSharp::rangedSlashAbility
-  name: Wind Blade
+  name: Pistol Wind
   cooldownTime: 1
   activeTime: 3
-  description: The player utilises magic to cause a gust of wind to travel and pierce
-    through enemies
+  description: 'The player whips his pistol with enough force to generate a wind
+    blade that goes where the cursor is located '
   icon: {fileID: -737702053294269187, guid: ccc49658790b21a49a02250a7fb4cfa6, type: 3}
   rangedSlashProjectile: {fileID: 5836186156881830424, guid: 41eb72abf8b2306449b9cd97e9b6a68e, type: 3}
   speed: 10

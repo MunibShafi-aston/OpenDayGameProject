@@ -47,10 +47,20 @@ public class BirdShieldOrbit : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotAngle);
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyProjectile"))
         {
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy"))
+            {
+                Enemy enemy = other.GetComponentInParent<Enemy>();
+                if (enemy != null && !enemy.isDead)
+                {
+                    enemy.TankDamage(1f); 
+                }
+            }
+
+            if (other.CompareTag("EnemyProjectile"))
+            {
+                Destroy(other.gameObject); 
+            }
         }
     }
-}
+

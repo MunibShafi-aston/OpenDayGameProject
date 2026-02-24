@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6450675e33b94a8448241da69c6ae, type: 3}
+  m_Name: New Lance Shot
+  m_EditorClassIdentifier: Assembly-CSharp::LanceShot
+  name: Lance Shot
+  cooldownTime: 10
+  activeTime: 3
+  description: Shoots a lance from the gun
+  icon: {fileID: 4919789693700331398, guid: 26ee17c184e53ae498b74d02109b45d3, type: 3}
+  lancePrefab: {fileID: 8618514477911408311, guid: 3541648af01400648a0c003e551cc2cc, type: 3}
+  speed: 10
+  bonusDamage: 0
+  duration: 3
+  tickRate: 0.5

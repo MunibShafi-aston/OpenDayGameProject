@@ -8,6 +8,7 @@ TagManager:
   - Xp
   - pHitbox
   - Warning
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

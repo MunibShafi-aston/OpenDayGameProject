@@ -23,7 +23,7 @@ MonoBehaviour:
   critChance: 0.01
   characterSprite: {fileID: 8080189319961439577, guid: c1eaa5b64d686bd4a8b9788a56125003, type: 3}
   characterDescription: I like your moves magic man
-  Ability1: {fileID: 0}
-  Ability2: {fileID: 0}
-  Ability3: {fileID: 0}
+  Ability1: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
+  Ability2: {fileID: 11400000, guid: 8fdcce3a81a65a4459ac111cd0f849ca, type: 2}
+  Ability3: {fileID: 11400000, guid: ea30101e773719c41828889edb845da0, type: 2}
   evolvedForm: {fileID: 0}
