@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b9da3561db3df42bb81bc8e368af1a, type: 3}
   m_Name: SummonWingedImp
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
-  upgradeName: 
-  description: 
-  icon: {fileID: 0}
+  upgradeName: Summon Blood Imp
+  description: Summons 2 blood imps to fight for you
+  icon: {fileID: 577515058735743043, guid: 9a366b35e860f1d4c882c7497d22772a, type: 3}
   category: 1
   requiredUpgrades: []
-  abilityToUnlock: {fileID: 0}
+  abilityToUnlock: {fileID: 11400000, guid: cdcf0ed605785df4e9449d91e92d1671, type: 2}

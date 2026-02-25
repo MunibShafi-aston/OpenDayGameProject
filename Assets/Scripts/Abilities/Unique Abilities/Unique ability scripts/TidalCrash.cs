@@ -45,10 +45,12 @@ public class TidalCrash : MonoBehaviour
 
         enemy.TankDamage(totalDamage);
 
-        Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        enemyChase chase = enemy.GetComponent<enemyChase>();
+
+        if (chase != null)
         {
-            rb.AddForce(direction * pushForce, ForceMode2D.Impulse);
+            Vector2 pushDir = direction.normalized;
+            chase.ApplyKnockback(pushDir * pushForce, 0.25f);
         }
     }
 }

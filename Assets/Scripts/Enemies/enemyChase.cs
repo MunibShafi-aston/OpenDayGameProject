@@ -26,6 +26,10 @@ public class enemyChase : MonoBehaviour
     public float repelStrength = 1.5f;
     public LayerMask enemyLayer;
 
+    Vector2 knockbackVelocity;
+    float knockbackTimer;
+
+
     Transform player;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
@@ -76,6 +80,15 @@ public class enemyChase : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             return;
         }
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+
+            rb.MovePosition(rb.position + knockbackVelocity * Time.fixedDeltaTime);
+
+            return;
+        }
+
 
         Vector2 toPlayer = player.position - transform.position;
         float distance = toPlayer.magnitude;
@@ -184,6 +197,12 @@ public class enemyChase : MonoBehaviour
         }
     }
 
+    public void ApplyKnockback(Vector2 force, float duration)
+    {
+        knockbackVelocity = force;
+        knockbackTimer = duration;
+    }
+
     public void StopMovement()
     {
         isDefeated = true;
@@ -195,4 +214,5 @@ public class enemyChase : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, repelRadius);
     }
+
 }
