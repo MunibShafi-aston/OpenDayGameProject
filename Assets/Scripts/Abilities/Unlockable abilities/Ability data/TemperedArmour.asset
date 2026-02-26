@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0fadf43803325409dc285efe4d07cc, type: 3}
   m_Name: TemperedArmour
   m_EditorClassIdentifier: Assembly-CSharp::DefenceBuff
-  name: 
+  name: Tempered Armour
   cooldownTime: 0
   activeTime: 0
-  description: 
-  icon: {fileID: 0}
+  description: 'Increase Defence by 2
+
+'
+  icon: {fileID: 615361555311009396, guid: 073a5c6765def5142b9cfb9dd04734f7, type: 3}
   defenseIncrease: 2

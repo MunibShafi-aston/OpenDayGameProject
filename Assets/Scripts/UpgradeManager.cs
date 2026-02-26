@@ -3,46 +3,84 @@ using System.Collections.Generic;
 
 public class UpgradeManager : MonoBehaviour
 {
-    public GameObject UpgradeCardPrefab; 
-    public Transform CardsContainer; 
+    public GameObject UpgradeCardPrefab;
+    public Transform CardsContainer;
     public List<upgradeBase> allUpgrades = new List<upgradeBase>();
 
     private LevelUpManager levelUpManager;
+    private abilityHolder playerAbilityHolder;
 
     public void Initialize(LevelUpManager manager)
     {
         levelUpManager = manager;
+
+        playerAbilityHolder = FindFirstObjectByType<abilityHolder>();
     }
 
- public void ShowUpgradeChoices(int numberOfChoices = 3)
-{
-    ClearCards();
-
-    if (allUpgrades.Count == 0)
+    public void ShowUpgradeChoices(int numberOfChoices = 3)
     {
-        Debug.LogWarning("No upgrades in allUpgrades list!");
-        return;
-    }
+        ClearCards();
 
-    List<upgradeBase> availableUpgrades = new List<upgradeBase>(allUpgrades);
+        abilityHolder holder = FindFirstObjectByType<abilityHolder>();
 
-    numberOfChoices = Mathf.Min(numberOfChoices, availableUpgrades.Count);
+        if (holder == null)
+        {
+            Debug.LogError("No abilityHolder found in scene!");
+            return;
+        }
 
-    for (int i = 0; i < numberOfChoices; i++)
+        List<upgradeBase> availableUpgrades = new List<upgradeBase>();
+
+    foreach (upgradeBase upgrade in allUpgrades)
     {
-        int randomIndex = Random.Range(0, availableUpgrades.Count);
-        upgradeBase chosenUpgrade = availableUpgrades[randomIndex];
+        bool requirementsMet = true;
 
-        availableUpgrades.RemoveAt(randomIndex);
+        if (upgrade.requiredUpgrades != null && upgrade.requiredUpgrades.Length > 0)
+        {
+            foreach (ability requiredAbility in upgrade.requiredUpgrades)
+            {
+                if (!holder.IsAbilityUnlocked(requiredAbility))
+                {
+                    requirementsMet = false;
+                    break;
+                }
+            }
+        }
 
-        GameObject cardGO = Instantiate(UpgradeCardPrefab, CardsContainer);
-        UpgradeCardUI cardUI = cardGO.GetComponent<UpgradeCardUI>();
-        if (cardUI != null)
-            cardUI.Setup(chosenUpgrade, levelUpManager);
+        if (!requirementsMet)
+            continue;
 
-        Debug.Log("Showing upgrade card: " + chosenUpgrade.upgradeName);
+        abilityUnlockUpgrade abilityUpgrade = upgrade as abilityUnlockUpgrade;
+
+        if (abilityUpgrade != null)
+        {
+            if (holder.IsAbilityUnlocked(abilityUpgrade.abilityToUnlock))
+                continue;
+        }
+
+        availableUpgrades.Add(upgrade);
     }
-}
+
+        numberOfChoices = Mathf.Min(numberOfChoices, availableUpgrades.Count);
+
+        for (int i = 0; i < numberOfChoices; i++)
+        {
+            int randomIndex = Random.Range(0, availableUpgrades.Count);
+            upgradeBase chosenUpgrade = availableUpgrades[randomIndex];
+
+            availableUpgrades.RemoveAt(randomIndex);
+
+            GameObject cardGO = Instantiate(UpgradeCardPrefab, CardsContainer);
+            UpgradeCardUI cardUI = cardGO.GetComponent<UpgradeCardUI>();
+
+            if (cardUI != null)
+                cardUI.Setup(chosenUpgrade, levelUpManager);
+
+            Debug.Log("Showing upgrade card: " + chosenUpgrade.upgradeName);
+        }
+    }
+
+
 
     public void ClearCards()
     {

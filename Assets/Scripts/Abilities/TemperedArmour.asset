@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TemperedArmour
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Tempered armour
-  description: Increase defence by %
-  icon: {fileID: 0}
+  description: Increase defence by 2
+  icon: {fileID: 615361555311009396, guid: 073a5c6765def5142b9cfb9dd04734f7, type: 3}
   category: 2
   requiredUpgrades: []
-  abilityToUnlock: {fileID: 0}
+  abilityToUnlock: {fileID: 11400000, guid: 1e74af97ebdd1a941b2f366ef11f4a68, type: 2}

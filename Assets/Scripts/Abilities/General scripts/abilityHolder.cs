@@ -126,4 +126,22 @@ public class abilityHolder : MonoBehaviour
     return null;
 }
 
+    public bool IsAbilityUnlocked(ability checkAbility)
+    {
+        if (checkAbility == null) return false;
+
+        if (AbilityDash == checkAbility) return true;
+        if (Ability1 == checkAbility) return true;
+        if (Ability2 == checkAbility) return true;
+        if (Ability3 == checkAbility) return true;
+
+        return unlockedAbilities.Contains(checkAbility);
+    }
+
+
+        void OnDestroy()
+    {
+        if (this != null)
+            enabled = false;
+    }
 }

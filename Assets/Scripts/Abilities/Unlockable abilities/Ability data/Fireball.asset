@@ -15,9 +15,11 @@ MonoBehaviour:
   name: fireball
   cooldownTime: 1
   activeTime: 0
+  description: 
+  icon: {fileID: 0}
   fireballPrefab: {fileID: 1074138310609509920, guid: a5b4ce1c245cec34ba1426ae45550225, type: 3}
   damage: 5
   interval: 4
   range: 10
   spawnOffset: 0.08
-  projectileCount: 2
+  projectileCount: 1
