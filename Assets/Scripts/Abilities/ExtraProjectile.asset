@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: +1 Projectile
   description: Gain 1 more bullet when main attack is used
-  icon: {fileID: 0}
+  icon: {fileID: 6843227966026880394, guid: cfcb4eadba0e73745aeb21a1d3670fa5, type: 3}
   category: 0
   requiredUpgrades: []
-  abilityToUnlock: {fileID: 0}
+  abilityToUnlock: {fileID: 11400000, guid: cd27f1900b2add345855121687d1745b, type: 2}

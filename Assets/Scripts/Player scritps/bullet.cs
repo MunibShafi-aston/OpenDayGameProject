@@ -13,6 +13,11 @@ public class bullet : MonoBehaviour
         direction = dir.normalized;
         damage = dmg;
         stats = playerStats;
+
+        if (stats != null)
+        {
+            transform.localScale *= stats.projectileSizeMultiplier;
+        }
         Destroy(gameObject, lifetime);
     }
 

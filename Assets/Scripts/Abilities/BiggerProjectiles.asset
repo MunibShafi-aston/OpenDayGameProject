@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BiggerProjectiles
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Bigger projectiles
-  description: gain a % size increase to your main projectile
-  icon: {fileID: 0}
+  description: gain a 25% size increase to your main projectile
+  icon: {fileID: 2890398341575493308, guid: c963224422697984c91be8eca8ca7019, type: 3}
   category: 0
   requiredUpgrades: []
-  abilityToUnlock: {fileID: 0}
+  abilityToUnlock: {fileID: 11400000, guid: b56c505d2c79f5845b03bc76035ef233, type: 2}

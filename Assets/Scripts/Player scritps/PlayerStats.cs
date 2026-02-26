@@ -20,6 +20,9 @@ public class PlayerStats : MonoBehaviour
     public float defense;
     public float cooldownReduction;
     public float critChance;
+    public float projectileSizeMultiplier = 1f;
+    public int extraMainProjectiles = 0;
+
 
     //public bool witherUnlocked = false;
     //public bool lifeSteal = false;
@@ -246,6 +249,17 @@ void Evolve()
 
 
 }
+    public void IncreaseProjectileSize(float amount)
+    {
+        projectileSizeMultiplier += amount;
+    }
+
+
+    public void AddMainProjectile()
+    {
+        extraMainProjectiles += 1;
+    }
+
 
 
 }

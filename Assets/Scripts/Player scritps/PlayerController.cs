@@ -142,14 +142,24 @@ private void Shoot()
 
     Vector3 dir = mousePos - firePoint.position;
 
-    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-    bullet bulletComp = bullet.GetComponent<bullet>();
-    if (bulletComp != null)
-    {
-        bulletComp.Setup(dir, bulletDamage, GetComponent<PlayerStats>());
-    }
+    PlayerStats stats = GetComponent<PlayerStats>(); 
+    int totalProjectiles = 1 + (stats != null ? stats.extraMainProjectiles : 0); 
+    float spread = 10f; 
 
-    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-    bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
-}
+        for (int i = 0; i < totalProjectiles; i++) 
+        {
+            float offset = (i - (totalProjectiles - 1) / 2f) * spread; 
+            Vector3 finalDir = Quaternion.Euler(0, 0, offset) * dir; 
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        bullet bulletComp = bullet.GetComponent<bullet>();
+        if (bulletComp != null)
+        {
+            bulletComp.Setup(finalDir, bulletDamage, stats);
+        }
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
 }

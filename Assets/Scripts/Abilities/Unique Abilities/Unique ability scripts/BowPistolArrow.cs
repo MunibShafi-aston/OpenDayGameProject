@@ -10,9 +10,15 @@ public class BowPistolArrow : MonoBehaviour
     {
         direction = dir.normalized;
         damage = dmg;
+        PlayerStats stats = FindFirstObjectByType<PlayerStats>();
+
+        if (stats != null)
+        {
+            transform.localScale *= stats.projectileSizeMultiplier;
+        }
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
+        
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         Destroy(gameObject, 5f);
