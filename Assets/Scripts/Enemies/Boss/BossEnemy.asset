@@ -19,7 +19,7 @@ MonoBehaviour:
   phase3Sprite: {fileID: 0}
   enemyName: Boss
   enemyType: 0
-  maxHealth: 100
+  maxHealth: 500
   moveSpeed: 1
   contactDamage: 0
   attackRange: 0

@@ -15,7 +15,9 @@ MonoBehaviour:
   name: Scythe Spin
   cooldownTime: 0
   activeTime: 1
+  description: 
+  icon: {fileID: 0}
   scythePrefab: {fileID: 3087944469981465114, guid: d72aea0bd8195984798a36148bc458c9, type: 3}
   radius: 1.5
   rotationSpeed: 90
-  damage: 2
+  damage: 20

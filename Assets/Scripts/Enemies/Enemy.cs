@@ -79,7 +79,6 @@ public class Enemy : MonoBehaviour
         {
             finalDamage *= (1f - enemyData.damageReduction);
         }
-
         Health -= finalDamage;
         return finalDamage;
     }

@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Firewall
   m_EditorClassIdentifier: Assembly-CSharp::FirewallAbility
   name: Firewall
-  cooldownTime: 0
-  activeTime: 0
-  description: 'Cast a protection spell that creates a fire wall that burns any enemy
-    passing through '
+  cooldownTime: 5
+  activeTime: 4
+  description: 'Cast a protection spell that creates a fire wall (in the direction
+    of the cursor) that burns any enemy passing through '
   icon: {fileID: 7145198348311737387, guid: a2743066a0db7934daf4c2f7c5007199, type: 3}
   fireSegmentPrefab: {fileID: 3518955517864195939, guid: c1b8067a7cf458a43ba6f4463d097807, type: 3}
   segmentCount: 6
   segmentSpacing: 0.5
   segmentDuration: 4
-  damage: 2
+  damage: 10
   tickRate: 0.5
   spawnDistance: 2

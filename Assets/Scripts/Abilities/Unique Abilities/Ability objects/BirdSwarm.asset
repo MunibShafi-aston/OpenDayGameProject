@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: BirdSwarm
   m_EditorClassIdentifier: Assembly-CSharp::BirdSwarmAbility
   name: Bird Swarm
-  cooldownTime: 15
-  activeTime: 1
+  cooldownTime: 10
+  activeTime: 5
   description: Birdman commands birds to hunt their own individual targets
   icon: {fileID: -2683241834665522883, guid: 9e91a5f66328ace4db5b40d24e358c49, type: 3}
   birdPrefab: {fileID: 1559968411075879303, guid: c8fadc4c8f58ae646b665aace404c01d, type: 3}
   birdCount: 2
   duration: 5
-  bonusDamage: 0
+  bonusDamage: 15
+  spawnRadius: 1
+  enemySearchRadius: 8

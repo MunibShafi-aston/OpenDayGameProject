@@ -15,5 +15,7 @@ MonoBehaviour:
   name: Freeze
   cooldownTime: 0
   activeTime: 0
-  freezeChance: 1
+  description: 
+  icon: {fileID: 0}
+  freezeChance: 0.05
   freezeDuration: 2

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: TidalCrash
   m_EditorClassIdentifier: Assembly-CSharp::TidalCrashAbility
   name: Tidal Crash
-  cooldownTime: 10
+  cooldownTime: 8
   activeTime: 2
   description: Summons a tidal wave that repels enemies and deals damage to them
   icon: {fileID: -3662470936723195247, guid: 80bd25846f88b9c4d92fc3911e387502, type: 3}
   wavePrefab: {fileID: 7299317021864761955, guid: 52e01d0674361114bb12af989aaee1ab, type: 3}
   speed: 6
   lifetime: 2
-  damage: 3
-  pushForce: 4
+  damage: 15
+  pushForce: 6

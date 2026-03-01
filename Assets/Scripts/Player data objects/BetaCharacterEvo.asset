@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEvolution
   evolutionName: Evolution
   requiredLevel: 10
-  bonusMaxHealth: 1
-  bonusDamage: 3
-  bonusMoveSpeed: 0.5
-  bonusAttackSpeed: 0.2
-  bonusDefense: 3
+  bonusMaxHealth: 5
+  bonusDamage: 10
+  bonusMoveSpeed: 1
+  bonusAttackSpeed: 0.5
+  bonusDefense: 5
   bonusCritChance: 0.1
   evolvedSprite: {fileID: 815424164945274260, guid: 63370880a63343a4eb6318722ee7ea5d, type: 3}
   newAbilities: []

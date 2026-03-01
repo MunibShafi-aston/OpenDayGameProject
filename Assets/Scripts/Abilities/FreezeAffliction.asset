@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FreezeAffliction
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Bullet Freeze
-  description: Have a chance to freeze an enemy in its place
+  description: Have a 5% chance to freeze an enemy in its place
   icon: {fileID: 3161842345059722650, guid: 49a3600229c3ce24daa9b8cb05041869, type: 3}
   category: 3
   requiredUpgrades: []

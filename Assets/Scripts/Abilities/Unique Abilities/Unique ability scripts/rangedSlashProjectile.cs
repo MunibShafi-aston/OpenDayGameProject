@@ -41,7 +41,7 @@ public class rangedSlashProjectile : MonoBehaviour
 
         if (enemy != null)
         {
-            float baseDamage = stats.DealDamage() + damage;
+            float baseDamage =  + damage + stats.DealDamage()* 0.5f;
             float appliedDamage = enemy.TankDamage(baseDamage);
 
             Debug.Log($"Slash dealt {appliedDamage:F1} damage to {enemy.name}");

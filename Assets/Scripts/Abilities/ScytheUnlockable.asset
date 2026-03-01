@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScytheUnlockable
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Scythe Spin
-  description: 2 Scythes which rotate around the player
+  description: 2 Scythes which rotate around the player dealing 20 damage on contact
   icon: {fileID: 3700810548614518524, guid: 3f8f8d33afda1424d9076ce01c432544, type: 3}
   category: 4
   requiredUpgrades: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SummonWolf
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Wolf call
-  description: Summon a wolf to help you fend off enemies
+  description: Summon a wolf to help you fend off enemies dealing 10 damage per hit
   icon: {fileID: 7444046612802208997, guid: a4c689cc7ff4c204e9d54f1399c8bb67, type: 3}
   category: 1
   requiredUpgrades: []

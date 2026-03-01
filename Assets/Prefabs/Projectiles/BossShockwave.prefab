@@ -142,4 +142,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossShockwave
   expandSpeed: 2
   maxRadius: 5
-  damage: 1
+  damage: 3

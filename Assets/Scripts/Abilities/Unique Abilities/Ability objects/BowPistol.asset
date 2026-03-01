@@ -19,5 +19,8 @@ MonoBehaviour:
   icon: {fileID: -415446080585258355, guid: b10f515a219f3744397176bc34d8e687, type: 3}
   bowPistolPrefab: {fileID: 7708915633274412179, guid: 99572c7914d644e4497bbdb6b45fb0aa, type: 3}
   radius: 1
-  shots: 3
-  shotDelay: 0.4
+  arrowsPerBurst: 3
+  arrowDelay: 0.25
+  burstInterval: 3
+  lifetime: 20
+  baseDamage: 30

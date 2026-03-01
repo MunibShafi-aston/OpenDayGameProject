@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Tempered Armour
   cooldownTime: 0
   activeTime: 0
-  description: 'Increase Defence by 2
+  description: 'Increase Defence by 3
 
 '
   icon: {fileID: 615361555311009396, guid: 073a5c6765def5142b9cfb9dd04734f7, type: 3}
-  defenseIncrease: 2
+  defenseIncrease: 3

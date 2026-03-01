@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireballUnlockable
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Fireball
-  description: deal 5 fire damage to enemies
+  description: deal 15 fire damage to enemies
   icon: {fileID: 5353841184698615464, guid: 79ea1fb1721d3744e8d0b5b754c1339d, type: 3}
   category: 4
   requiredUpgrades: []

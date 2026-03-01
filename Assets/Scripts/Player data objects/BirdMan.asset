@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: BirdMan
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: BirdMan
-  maxHealth: 7
-  damage: 3
-  summonDamage: 5
+  maxHealth: 9
+  damage: 15
+  summonDamage: 25
   moveSpeed: 4
   attackSpeed: 1
-  defense: 1
+  defense: 8
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: -4379801795658354850, guid: 00fab7a8f7ee13a47b1c9a087db3f8d9, type: 3}

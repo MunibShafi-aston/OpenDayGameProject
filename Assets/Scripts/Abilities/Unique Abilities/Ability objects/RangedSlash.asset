@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RangedSlash
   m_EditorClassIdentifier: Assembly-CSharp::rangedSlashAbility
   name: Pistol Wind
-  cooldownTime: 1
-  activeTime: 3
+  cooldownTime: 4
+  activeTime: 1
   description: 'The player whips his pistol with enough force to generate a wind
     blade that goes where the cursor is located '
   icon: {fileID: -737702053294269187, guid: ccc49658790b21a49a02250a7fb4cfa6, type: 3}
   rangedSlashProjectile: {fileID: 5836186156881830424, guid: 41eb72abf8b2306449b9cd97e9b6a68e, type: 3}
   speed: 10
   lifetime: 0.6
-  damage: 3
+  damage: 20

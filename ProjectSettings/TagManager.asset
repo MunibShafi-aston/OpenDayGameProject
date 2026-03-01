@@ -9,6 +9,7 @@ TagManager:
   - pHitbox
   - Warning
   - EnemyProjectile
+  - Damage
   layers:
   - Default
   - TransparentFX

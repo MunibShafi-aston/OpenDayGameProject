@@ -19,7 +19,7 @@ MonoBehaviour:
   phase3Sprite: {fileID: 0}
   enemyName: Melee
   enemyType: 0
-  maxHealth: 20
+  maxHealth: 100
   moveSpeed: 3
   contactDamage: 1
   attackRange: 0

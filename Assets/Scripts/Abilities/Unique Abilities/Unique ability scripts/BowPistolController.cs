@@ -140,10 +140,6 @@ public class BowPistolController : MonoBehaviour
 
         Vector3 dir = (mouseWorld - transform.position).normalized;
 
-        float playerDamage = stats != null ? stats.DealDamage() : 0f;
-
-        float finalDamage = baseDamage + playerDamage;
-
         GameObject arrow = Instantiate(
             arrowPrefab,
             transform.position,
@@ -151,6 +147,14 @@ public class BowPistolController : MonoBehaviour
         );
 
         BowPistolArrow proj = arrow.GetComponent<BowPistolArrow>();
+
+        float finalDamage = baseDamage;
+
+        if (stats != null)
+        {
+            finalDamage += stats.DealDamage() * 0.5f; 
+        }
+
         proj.Setup(dir, finalDamage);
     }
 }

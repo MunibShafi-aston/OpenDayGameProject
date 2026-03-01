@@ -15,7 +15,9 @@ MonoBehaviour:
   name: Wolf Summon
   cooldownTime: 0
   activeTime: 0
+  description: 
+  icon: {fileID: 0}
   wolfPrefab: {fileID: 5904973156848304252, guid: 6d3393cac5fb59543b1c4bab8a7f5c10, type: 3}
   summonCount: 1
   followDistance: 3
-  damage: 2
+  damage: 10

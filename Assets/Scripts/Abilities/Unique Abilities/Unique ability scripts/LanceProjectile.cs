@@ -56,7 +56,7 @@ public class LanceProjectile : MonoBehaviour
 
         if (tickTimer <= 0)
         {
-            float baseDamage = stats.DealDamage() + damage;
+            float baseDamage = damage + stats.DealDamage()*0.5f;
             enemy.TankDamage(baseDamage);
 
             tickTimer = tickRate;

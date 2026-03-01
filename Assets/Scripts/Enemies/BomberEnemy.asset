@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d1c9e4b359fb14c888a39698ebdf98, type: 3}
   m_Name: BomberEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  isBoss: 0
+  phase2Threshold: 0.66
+  phase3Threshold: 0.33
+  phase2Sprite: {fileID: 0}
+  phase3Sprite: {fileID: 0}
   enemyName: Bomber
   enemyType: 4
-  maxHealth: 3
+  maxHealth: 50
   moveSpeed: 3
   contactDamage: 0
   attackRange: 0
@@ -23,9 +28,9 @@ MonoBehaviour:
   projectileSpeed: 0
   damageReduction: 0
   explosionRadius: 2
-  explosionDamage: 2
+  explosionDamage: 5
   sprite: {fileID: -4220445757758336107, guid: 7165e20472f990f40af3c447452a13ed, type: 3}
   animatorController: {fileID: 9100000, guid: 3fa7710d4c40c9544be626647609f83a, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 5
+  xpAmount: 20
   gameObjectPrefab: {fileID: 2020729008229051315, guid: f068784ab2a4a304bad22abba1182964, type: 3}

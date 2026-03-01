@@ -169,5 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossMeteor
   fallSpeed: 12
-  damage: 1
+  damage: 2
   lifeTime: 5

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BirdProjectile : MonoBehaviour
 {
@@ -14,12 +15,18 @@ public class BirdProjectile : MonoBehaviour
 
     private float attackTimer;
 
-    public void Setup(Transform p, PlayerStats s, float duration, float bonus)
+    private static List<Enemy> birdTargets = new List<Enemy>();
+
+    public void Setup(Transform p, Enemy t, PlayerStats s, float duration, float bonus)
     {
         player = p;
         stats = s;
+        target = t;
         lifetime = duration;
         bonusDamage = bonus;
+
+        if(target != null)
+            birdTargets.Add(target);
 
         Destroy(gameObject, lifetime);
     }
@@ -28,7 +35,13 @@ public class BirdProjectile : MonoBehaviour
     {
         if (target == null || target.isDead)
         {
+            if(target != null)
+                birdTargets.Remove(target);
+
             target = FindClosestEnemy();
+
+            if(target != null)
+                birdTargets.Add(target);
         }
 
         if (target == null) return;
@@ -55,6 +68,8 @@ public class BirdProjectile : MonoBehaviour
         {
             if (e.isDead) continue;
 
+            if (birdTargets.Contains(e)) continue;
+
             float dist = Vector3.Distance(transform.position, e.transform.position);
             if (dist < minDist)
             {
@@ -78,5 +93,11 @@ public class BirdProjectile : MonoBehaviour
 
             attackTimer = attackCooldown;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if(target != null)
+            birdTargets.Remove(target);
     }
 }

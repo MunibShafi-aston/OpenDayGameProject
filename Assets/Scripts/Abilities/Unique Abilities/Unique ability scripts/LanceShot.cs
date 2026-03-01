@@ -6,7 +6,7 @@ public class LanceShot : ability
 {
     public GameObject lancePrefab;
     public float speed = 10f;
-    public float bonusDamage = 0f;
+    public float abilDamage = 0f;
     public float duration = 3f;
     public float tickRate = 0.5f;
 
@@ -27,6 +27,6 @@ public class LanceShot : ability
         );
 
         LanceProjectile proj = lance.GetComponent<LanceProjectile>();
-        proj.Setup(direction, speed, bonusDamage, duration, tickRate);
+        proj.Setup(direction, speed, abilDamage, duration, tickRate);
     }
 }
