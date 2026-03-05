@@ -47,7 +47,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Leveling")]
     public int level = 1;
     public float currentXP = 0;
-    public float xpToNextLevel = 10f;
+    public float xpToNextLevel = 20f;
     public float xpGrowthRate = 1.25f;
 
     [Header("Evolution")]
