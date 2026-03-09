@@ -54,6 +54,8 @@ public class PlayerStats : MonoBehaviour
     public PlayerEvolution evolutionData;
     public bool hasEvolved = false;
 
+    public static PlayerStats Instance;
+
     playerHealth hpUI;
 
     void Start()
@@ -72,8 +74,16 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
-        hpUI = GetComponent<playerHealth>();
-        abilityHolder = GetComponent<abilityHolder>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); 
+            return;
+        }
+
+        Instance = this;
+
+        hpUI = GetComponent<playerHealth>(); 
+        abilityHolder = GetComponent<abilityHolder>(); 
 
         InitXP();
     }

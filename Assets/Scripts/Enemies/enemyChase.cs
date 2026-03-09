@@ -22,9 +22,11 @@ public class enemyChase : MonoBehaviour
     GameObject enemyProjectilePrefab;
     float projectileSpeed;
 
-    public float repelRadius = 0.5f;
-    public float repelStrength = 1.5f;
+    public float repelRadius = 0.7f;
+    public float repelStrength = 3f;
     public LayerMask enemyLayer;
+
+    public float disableRepelNearPlayer = 1.2f;
 
     Vector2 knockbackVelocity;
     float knockbackTimer;
@@ -99,9 +101,24 @@ public class enemyChase : MonoBehaviour
         if (!isRanged || distance > stopDistance)
         {
             moveDir = direction;
+
+            if (distance < 2.5f)
+            {
+                Vector2 tangent = new Vector2(-direction.y, direction.x);
+
+                float side = Mathf.Sign(Mathf.Sin(GetInstanceID()));
+
+                moveDir += tangent * side * 0.6f;
+            }
         }
 
+        
+
+
         Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
+
+        Vector2 separation = Vector2.zero;
+        int neighbourCount = 0;
 
         foreach (var col in nearbyEnemies)
         {
@@ -110,11 +127,22 @@ public class enemyChase : MonoBehaviour
             Vector2 away = (Vector2)(transform.position - col.transform.position);
             float dist = away.magnitude;
 
-            if (dist > 0)
-                moveDir += away.normalized * (repelStrength / dist);
+            if (dist > 0 && dist < repelRadius) 
+            {
+                float strength = (repelRadius - dist) / repelRadius; 
+                separation += away.normalized * strength; 
+                neighbourCount++;
+            }
         }
 
-        moveDir = moveDir.normalized;
+        if (neighbourCount > 0)
+        {
+            separation /= neighbourCount;
+            moveDir +=  Vector2.ClampMagnitude(separation * repelStrength, 0.6f); 
+        }
+
+
+        moveDir = Vector2.ClampMagnitude(moveDir, 1f);
 
         bool moved = TryMove(moveDir, moveSpeed);
 
@@ -145,28 +173,37 @@ public class enemyChase : MonoBehaviour
             spriteRenderer.flipX = false;
     }
 
-    bool TryMove(Vector2 direction, float speed)
-    {
-        if (direction == Vector2.zero)
-            return false;
-
-        int count = rb.Cast(
-            direction,
-            movementFilter,
-            castCollisions,
-            speed * Time.fixedDeltaTime + collisionOffset
-        );
-
-        if (count == 0)
-        {
-            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-            return true;
-        }
-
+   bool TryMove(Vector2 direction, float speed)
+{
+    if (direction == Vector2.zero)
         return false;
+
+    int count = rb.Cast(
+        direction,
+        movementFilter,
+        castCollisions,
+        speed * Time.fixedDeltaTime + collisionOffset
+    );
+
+    if (count == 0)
+    {
+        rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+        return true;
+    }
+    else
+    {
+        RaycastHit2D hit = castCollisions[0];
+
+        Vector2 slideDir = Vector2.Perpendicular(hit.normal);
+
+        if (Vector2.Dot(slideDir, direction) < 0)
+            slideDir = -slideDir;
+
+        rb.MovePosition(rb.position + slideDir * speed * Time.fixedDeltaTime * 0.7f);
     }
 
-
+    return false;
+}
     public void Freeze(float duration)
     {
         if (!isFrozen)

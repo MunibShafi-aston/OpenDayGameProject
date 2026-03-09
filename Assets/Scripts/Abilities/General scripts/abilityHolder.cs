@@ -16,12 +16,24 @@ public class abilityHolder : MonoBehaviour
     float[] cooldownTimes = new float[4];
     float[] activeTimes = new float[4];
 
+    public static abilityHolder Instance;
+
     enum AbilityState { ready,active,cooldown}
 
     AbilityState[] states = new AbilityState[4] { AbilityState.ready, AbilityState.ready, AbilityState.ready, AbilityState.ready };
 
 
     public System.Action OnAbilitiesChanged;
+    
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
 
     void Update()
