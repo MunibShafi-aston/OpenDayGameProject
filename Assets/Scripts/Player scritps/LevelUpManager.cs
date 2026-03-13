@@ -20,6 +20,10 @@ public class LevelUpManager : MonoBehaviour
     public Button critChanceButton;
     public Button healthButton;
 
+
+    public bool IsLevelUpActive => LevelUpPanel.activeSelf;
+    private UpgradeCardUI selectedCard;
+
     private void Start()
     {
         if (playerStats == null)
@@ -28,10 +32,11 @@ public class LevelUpManager : MonoBehaviour
         LevelUpPanel.SetActive(false);
     }
 
-      public void OpenLevelUpPanel()
+    public void OpenLevelUpPanel()
     {
         LevelUpPanel.SetActive(true);
         Time.timeScale = 0f;
+
 
         availableStatPoints += 1; 
         UpdateStatButtons();
@@ -40,6 +45,13 @@ public class LevelUpManager : MonoBehaviour
         {
             upgradeManager.Initialize(this);
             upgradeManager.ShowUpgradeChoices(3);
+         
+            if (CardsContainer.transform.childCount == 0)
+            {
+            Debug.Log("No upgrades available.");
+
+            CloseLevelUpPanel();
+            }
         }
     }
 
@@ -118,5 +130,27 @@ public class LevelUpManager : MonoBehaviour
         defenseButton.interactable = hasPoints;
         critChanceButton.interactable = hasPoints;
         healthButton.interactable = hasPoints;
+    }
+
+    public void SelectUpgrade(UpgradeCardUI card)
+    {
+        if (selectedCard != null)
+            selectedCard.SetSelected(false);
+
+        selectedCard = card;
+        selectedCard.SetSelected(true);
+        
+    }
+
+    public void ConfirmSelection()
+    {
+
+        if (selectedCard != null)
+        {
+            selectedCard.ApplyUpgrade();
+        }
+
+        CloseLevelUpPanel();
+        selectedCard = null;
     }
 }

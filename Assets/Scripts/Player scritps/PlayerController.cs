@@ -155,7 +155,8 @@ private void Shoot()
         bullet bulletComp = bullet.GetComponent<bullet>();
         if (bulletComp != null)
         {
-            bulletComp.Setup(finalDir, bulletDamage, stats);
+            float damage = stats != null ? stats.DealDamage() : bulletDamage;
+            bulletComp.Setup(finalDir, damage, stats);
         }
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

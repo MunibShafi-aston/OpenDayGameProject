@@ -12,6 +12,8 @@ public class bullet : MonoBehaviour
     {
         direction = dir.normalized;
         damage = dmg;
+        Debug.Log("Bullet damage set to: " + damage);
+
         stats = playerStats;
 
         if (stats != null)

@@ -15,8 +15,8 @@ MonoBehaviour:
   evolutionName: BirdMan Evo
   requiredLevel: 10
   bonusMaxHealth: 3
-  bonusDamage: 10
-  bonusMoveSpeed: 1
+  bonusDamage: 5
+  bonusMoveSpeed: 0.2
   bonusAttackSpeed: 0.5
   bonusDefense: 2
   bonusCritChance: 0.1

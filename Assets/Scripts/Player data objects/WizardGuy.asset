@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: Wizard Fella
   maxHealth: 7
-  damage: 20
-  summonDamage: 20
+  damage: 9
+  summonDamage: 7
   moveSpeed: 4
   attackSpeed: 1
-  defense: 5
+  defense: 2
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: 8080189319961439577, guid: c1eaa5b64d686bd4a8b9788a56125003, type: 3}

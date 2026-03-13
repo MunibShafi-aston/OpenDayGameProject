@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: BetaCharacter
   maxHealth: 10
-  damage: 20
-  summonDamage: 15
+  damage: 10
+  summonDamage: 5
   moveSpeed: 4
   attackSpeed: 1
-  defense: 10
+  defense: 5
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: 6864778800241408347, guid: c940aba3dcd573c4398c29cb8a26816a, type: 3}

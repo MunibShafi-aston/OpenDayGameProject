@@ -80,6 +80,15 @@ public class Enemy : MonoBehaviour
             finalDamage *= (1f - enemyData.damageReduction);
         }
         Health -= finalDamage;
+
+        Vector3 offset = new Vector3(Random.Range(-0.3f,0.3f), Random.Range(0.3f,0.7f),0);
+
+        int popupDamage = Mathf.RoundToInt(finalDamage);
+
+        if (popupDamage > 0)
+        {
+            DamagePopupSpawner.Instance.SpawnPopup(transform.position, popupDamage);
+        }
         return finalDamage;
     }
 

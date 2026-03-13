@@ -16,7 +16,7 @@ MonoBehaviour:
   requiredLevel: 10
   bonusMaxHealth: 5
   bonusDamage: 10
-  bonusMoveSpeed: 1
+  bonusMoveSpeed: 0.2
   bonusAttackSpeed: 0.5
   bonusDefense: 5
   bonusCritChance: 0.1

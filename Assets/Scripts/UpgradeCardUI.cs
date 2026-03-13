@@ -9,6 +9,8 @@ public class UpgradeCardUI : MonoBehaviour
     public TMP_Text descriptionText;
     public Button selectButton;
 
+    public GameObject selectionHighlight;
+
     private upgradeBase upgradeData;
     private LevelUpManager levelUpManager;
 
@@ -27,9 +29,20 @@ public class UpgradeCardUI : MonoBehaviour
 
     void OnSelected()
     {
+
+
+        levelUpManager.SelectUpgrade(this);
+    }
+
+    public void ApplyUpgrade()
+    {
         PlayerStats player = levelUpManager.playerStats;
         upgradeData.Apply(player);
+    }
 
-        levelUpManager.CloseLevelUpPanel();
+    public void SetSelected(bool selected)
+    {
+        if (selectionHighlight != null)
+            selectionHighlight.SetActive(selected);
     }
 }

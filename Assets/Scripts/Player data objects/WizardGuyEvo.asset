@@ -15,9 +15,9 @@ MonoBehaviour:
   evolutionName: WizardGuy Evo
   requiredLevel: 10
   bonusMaxHealth: 3
-  bonusDamage: 10
-  bonusMoveSpeed: 1
-  bonusAttackSpeed: 1
+  bonusDamage: 5
+  bonusMoveSpeed: 0.5
+  bonusAttackSpeed: 0.5
   bonusDefense: 2
   bonusCritChance: 0.15
   evolvedSprite: {fileID: -7721266407851096846, guid: ec98f636498751b4db111493e69b6520, type: 3}

@@ -193,8 +193,7 @@ void LevelUp()
     
     if (!hasEvolved && evolutionData != null && level >= evolutionData.requiredLevel)
         {
-        Evolve();
-        return;
+            Evolve();
         }
     if (xpBar != null)
         xpBar.SetMaxXP(xpToNextLevel);

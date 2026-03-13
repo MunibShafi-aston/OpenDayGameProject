@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class pauseManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject PauseMenu;
     public PausePlayerStatsUI statsUI;
 
@@ -35,8 +34,17 @@ public class pauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        LevelUpManager levelUp = FindFirstObjectByType<LevelUpManager>();
+
         PauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        if (levelUp != null && levelUp.IsLevelUpActive)
+        {
+            Time.timeScale = 0f; 
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
         IsPaused = false;
     }
 
