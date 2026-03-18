@@ -133,7 +133,7 @@ public void OnAttack()
     fireTimer = fireRate/Mathf.Max(0.01f, stats.attackSpeed);
 }
 
-private void Shoot()
+public void Shoot()
 {
     if (bulletPrefab == null || firePoint == null) return;
 

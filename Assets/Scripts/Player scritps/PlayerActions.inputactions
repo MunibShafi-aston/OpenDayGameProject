@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "autofire",
+                    "type": "Button",
+                    "id": "e12c6276-0345-4f10-a639-60fb07cb2a6f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -193,7 +202,7 @@
                 {
                     "name": "",
                     "id": "4af265d8-0953-4b16-84cb-6410c39b532c",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/minus",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -253,6 +262,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ability3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e923c0e-ee27-4e2a-8d13-3f34736f5e7c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "autofire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

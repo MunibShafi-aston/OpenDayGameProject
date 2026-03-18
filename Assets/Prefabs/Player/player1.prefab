@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 2844408306257046879}
   - component: {fileID: 7591797136772517795}
   - component: {fileID: 6702600362595045209}
+  - component: {fileID: 8278942406979046707}
   m_Layer: 1
   m_Name: player1
   m_TagString: Player
@@ -136,6 +137,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7492356189143520954
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,6 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: -972320329
   m_SortingLayer: 3
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 1b4fb1a1fd22b774e93c475a306679cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190,7 +193,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2546968452371804011
 Rigidbody2D:
@@ -332,6 +334,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2fa08121-0fd3-42ed-88be-986edca4cb56
     m_ActionName: 'Player/ability3[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e12c6276-0345-4f10-a639-60fb07cb2a6f
+    m_ActionName: 'Player/autofire[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -434,6 +440,11 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   SwordAttack: {fileID: 6757343689363418837}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletDamage: 5
+  fireRate: 1
+  fireTimer: 0
   canMove: 1
 --- !u!114 &3300643675539833826
 MonoBehaviour:
@@ -490,6 +501,14 @@ MonoBehaviour:
   defense: 0
   cooldownReduction: 0
   critChance: 0
+  projectileSizeMultiplier: 1
+  extraMainProjectiles: 0
+  burnChance: 0
+  burnMaxStacks: 0
+  burnDamagePerSecond: 0
+  burnDuration: 0
+  freezeChance: 0
+  freezeDuration: 0
   Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
   Ability2: {fileID: 11400000, guid: 7bf0777033d6cfc4e80fe0efccfa0723, type: 2}
   Ability3: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
@@ -511,6 +530,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa53116eefb8445a697b25c35cfb17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::abilityManager
+--- !u!114 &8278942406979046707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215088138318193915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded98849810843a41b80d18a1ed0cfcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::autoFire
+  fireRate: 1
 --- !u!1 &5919568450703065951
 GameObject:
   m_ObjectHideFlags: 0
