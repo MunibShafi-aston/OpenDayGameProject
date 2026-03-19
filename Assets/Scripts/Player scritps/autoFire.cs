@@ -1,18 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class autoFire : MonoBehaviour
 {
     private bool autoFireEnabled = false;
 
-    public float fireRate = 1f;
     private float fireTimer;
 
+    [SerializeField] private TMP_Text autoFireText;
+
     private PlayerController attackScript;
+    private PlayerStats playerStats;
 
     void Awake()
     {
         attackScript = GetComponent<PlayerController>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -28,7 +32,7 @@ public class autoFire : MonoBehaviour
         if (fireTimer <= 0f)
         {
             attackScript.Shoot();
-            fireTimer = fireRate;
+            fireTimer = playerStats.attackSpeed;
         }
     }
 
@@ -36,5 +40,14 @@ public class autoFire : MonoBehaviour
     {
             autoFireEnabled = !autoFireEnabled;
             Debug.Log("Auto Fire: " + (autoFireEnabled ? "ON" : "OFF"));
+            UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        if(autoFireText != null)
+        {
+            autoFireText.text = "Auto fire:" + (autoFireEnabled ? "ON":"OFF");
+        }
     }
 }

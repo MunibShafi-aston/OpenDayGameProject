@@ -9,6 +9,7 @@ public class CharacterSelectManager : MonoBehaviour
     [SerializeField] private Transform cardParent;
     [SerializeField] private CharacterCardUI cardPrefab;
     [SerializeField] private CharacterDetailsUI detailsUI;
+    [SerializeField] private CharacterSelect characterSelectUI;
 
     [Header("Character Data")]
     [SerializeField] private List<CharacterData> characters;
@@ -40,6 +41,7 @@ public class CharacterSelectManager : MonoBehaviour
     {
         detailsUI.UpdateDetails(data);
         CharacterSelection.Instance.SelectCharacter(data);
+        characterSelectUI.EnablePlayButton();
     }
 
     public void PlayGame()
