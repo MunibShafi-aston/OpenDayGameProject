@@ -9,6 +9,9 @@ public class BirdShieldOrbit : MonoBehaviour
     float angle;
     float lifetime;
 
+
+    public float knockbackForce = 5f;
+
     public void Setup(Transform p, float r, float s, float startAngle, float duration)
     {
         player = p;
@@ -54,8 +57,15 @@ public class BirdShieldOrbit : MonoBehaviour
                 if (enemy != null && !enemy.isDead)
                 {
                     enemy.TankDamage(1f); 
+                    enemyChase chase = enemy.GetComponent<enemyChase>();
+                   
+                    if (chase != null && player != null)
+                {
+                    Vector2 pushDir = (enemy.transform.position - player.position).normalized;
+                    chase.ApplyKnockback(pushDir * knockbackForce, 0.25f);
                 }
             }
+        }
 
             if (other.CompareTag("EnemyProjectile"))
             {
