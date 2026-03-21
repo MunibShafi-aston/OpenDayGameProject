@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffset = 1f;
     public ContactFilter2D movementFilter;
-    public swordAttack SwordAttack;
     public Vector2 movementInput { get; private set; }
 
     public GameObject bulletPrefab;
@@ -20,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     
     PlayerStats stats;
+    autoFire autoFire;
 
     Rigidbody2D rb;
     Animator animator;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         
         stats = GetComponent<PlayerStats>();
+        autoFire = GetComponent<autoFire>(); 
         moveSpeed = stats.moveSpeed;
     }
 
@@ -126,6 +127,9 @@ public class PlayerController : MonoBehaviour
 public void OnAttack()
 {
     if (!canMove) return;
+
+    if (autoFire != null && autoFire.IsAutoFireEnabled)
+    return;
     if(fireTimer > 0f) return;
 
     Shoot();

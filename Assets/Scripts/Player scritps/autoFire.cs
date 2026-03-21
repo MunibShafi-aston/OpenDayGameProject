@@ -13,6 +13,9 @@ public class autoFire : MonoBehaviour
     private PlayerController attackScript;
     private PlayerStats playerStats;
 
+    public bool IsAutoFireEnabled => autoFireEnabled;
+
+
     void Awake()
     {
         attackScript = GetComponent<PlayerController>();
