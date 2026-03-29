@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 75cb4176b9356e5489ef8b14ed13c2a2
+guid: 86d2b508afa7ca94d83042ae365aaf8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3247567222712725233
-    second: tempwalkanim2_0
+      213: -273922649300473009
+    second: playerbetagunwalk.-sheet_0
   - first:
-      213: 8767353865991548206
-    second: tempwalkanim2_1
+      213: 3702946742134329377
+    second: playerbetagunwalk.-sheet_1
   - first:
-      213: -3573746612654138090
-    second: tempwalkanim2_2
+      213: 302090594548147597
+    second: playerbetagunwalk.-sheet_2
   - first:
-      213: -3000801559819603295
-    second: tempwalkanim2_3
+      213: 3152458509368615447
+    second: playerbetagunwalk.-sheet_3
   - first:
-      213: -780315980397780917
-    second: tempwalkanim2_4
+      213: -2835452737799035252
+    second: playerbetagunwalk.-sheet_4
   - first:
-      213: -5553202829335981280
-    second: tempwalkanim2_5
+      213: 6192340749734176355
+    second: playerbetagunwalk.-sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,12 +115,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tempwalkanim2_0
+      name: playerbetagunwalk.-sheet_0
       rect:
         serializedVersion: 2
         x: 1
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fe6ef5ce2da11d20800000000000000
-      internalID: 3247567222712725233
+      spriteID: f4be2804dc4d23cf0800000000000000
+      internalID: -273922649300473009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempwalkanim2_1
+      name: playerbetagunwalk.-sheet_1
       rect:
         serializedVersion: 2
         x: 33
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2de292c3e5eba970800000000000000
-      internalID: 8767353865991548206
+      spriteID: 1205b136172836330800000000000000
+      internalID: 3702946742134329377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempwalkanim2_2
+      name: playerbetagunwalk.-sheet_2
       rect:
         serializedVersion: 2
         x: 65
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,19 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61d9e7be360876ec0800000000000000
-      internalID: -3573746612654138090
+      spriteID: d8567029bcd313400800000000000000
+      internalID: 302090594548147597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempwalkanim2_3
+      name: playerbetagunwalk.-sheet_3
       rect:
         serializedVersion: 2
         x: 97
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -196,19 +196,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a2b38951e20b56d0800000000000000
-      internalID: -3000801559819603295
+      spriteID: 712e214df48cfbb20800000000000000
+      internalID: 3152458509368615447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempwalkanim2_4
+      name: playerbetagunwalk.-sheet_4
       rect:
         serializedVersion: 2
         x: 129
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -218,19 +218,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4064d700c2cb25f0800000000000000
-      internalID: -780315980397780917
+      spriteID: c86641202c276a8d0800000000000000
+      internalID: -2835452737799035252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempwalkanim2_5
+      name: playerbetagunwalk.-sheet_5
       rect:
         serializedVersion: 2
         x: 161
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0231cb7e27f0fe2b0800000000000000
-      internalID: -5553202829335981280
+      spriteID: 366e41c7a1d9fe550800000000000000
+      internalID: 6192340749734176355
       vertices: []
       indices: 
       edges: []
@@ -260,12 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tempwalkanim2_0: 3247567222712725233
-      tempwalkanim2_1: 8767353865991548206
-      tempwalkanim2_2: -3573746612654138090
-      tempwalkanim2_3: -3000801559819603295
-      tempwalkanim2_4: -780315980397780917
-      tempwalkanim2_5: -5553202829335981280
+      playerbetagunwalk.-sheet_0: -273922649300473009
+      playerbetagunwalk.-sheet_1: 3702946742134329377
+      playerbetagunwalk.-sheet_2: 302090594548147597
+      playerbetagunwalk.-sheet_3: 3152458509368615447
+      playerbetagunwalk.-sheet_4: -2835452737799035252
+      playerbetagunwalk.-sheet_5: 6192340749734176355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
