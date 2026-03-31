@@ -33,6 +33,14 @@ public class abilityHolder : MonoBehaviour
             return;
         }
         Instance = this;
+
+        unlockedAbilities.Clear();
+        for (int i = 0; i < states.Length; i++)
+        {
+            states[i] = AbilityState.ready;
+            cooldownTimes[i] = 0f;
+            activeTimes[i] = 0f;
+        }
     }
 
 
@@ -94,9 +102,12 @@ public class abilityHolder : MonoBehaviour
 
         if (states[index] == AbilityState.ready)
         {
+            if (ability != null) 
+            {
             ability.Activate(gameObject);
             states[index] = AbilityState.active;
             activeTimes[index] = ability.activeTime;
+            }
         }
     }
     public void AddUnlockedAbility(ability newAbility)
@@ -108,6 +119,9 @@ public class abilityHolder : MonoBehaviour
             Debug.Log($"{newAbility.name} is already unlocked.");
             return;
         }
+
+        if (newAbility != null)
+            newAbility.Activate(gameObject);
 
         unlockedAbilities.Add(newAbility);
 
@@ -153,7 +167,9 @@ public class abilityHolder : MonoBehaviour
 
         void OnDestroy()
     {
-        if (this != null)
-            enabled = false;
+        if (Instance==this)
+        {
+            Instance = null;
+        }
     }
 }

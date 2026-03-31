@@ -26,6 +26,9 @@ public class dashAbility : ability
  private IEnumerator Dash(Rigidbody2D rb, Vector2 direction, PlayerController movement)
     {
         movement.canMove = false; 
+    
+        movement.animator.SetBool("isDashing", true);
+
         float elapsed = 0f;
         Vector2 startPos = rb.position;
         Vector2 targetPos = startPos + direction * dashDistance;
@@ -38,6 +41,9 @@ public class dashAbility : ability
         }
 
         rb.MovePosition(targetPos);
+
+        movement.animator.SetBool("isDashing", false);
+
         movement.canMove = true;
     }
 }

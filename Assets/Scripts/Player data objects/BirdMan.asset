@@ -22,6 +22,7 @@ MonoBehaviour:
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: -4379801795658354850, guid: 00fab7a8f7ee13a47b1c9a087db3f8d9, type: 3}
+  animatorController: {fileID: 9100000, guid: e2a0bd0173a4189498e44a495d766fad, type: 2}
   characterDescription: 'A crow that has had its DNA heavily modified in a military
     experiment to enhance its strength
 

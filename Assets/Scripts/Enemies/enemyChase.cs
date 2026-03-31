@@ -77,7 +77,7 @@ public class enemyChase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null || isDefeated)
+        if (PlayerStats.Instance != null && PlayerStats.Instance.isDead)
         {
             rb.linearVelocity = Vector2.zero;
             return;

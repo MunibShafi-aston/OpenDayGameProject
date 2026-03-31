@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     autoFire autoFire;
 
     Rigidbody2D rb;
-    Animator animator;
+    public Animator animator;
     SpriteRenderer spriteRenderer;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -51,7 +51,11 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     
     private void FixedUpdate(){
-        if (!canMove) return;
+        if (!canMove)
+        {
+                animator.SetBool("IsMoving",false);
+                return;
+        }
         
         if(movementInput != Vector2.zero){
            bool success = TryMove(movementInput);
@@ -113,58 +117,70 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         
+        if(!canMove) return;
+
         canMove = false;
-        //animator.SetTrigger("isDead");
+        animator.SetBool("isDead",true);
         
         abilityHolder ah = GetComponent<abilityHolder>();
         if (ah != null)
             ah.enabled = false;
             print ("PlayerController: Player has died, disabling abilities.");
+
+        StartCoroutine(HandleDeath());
     
     }
 
-
-public void OnAttack()
-{
-    if (!canMove) return;
-
-    if (autoFire != null && autoFire.IsAutoFireEnabled)
-    return;
-    if(fireTimer > 0f) return;
-
-    Shoot();
-
-    fireTimer = fireRate/Mathf.Max(0.01f, stats.attackSpeed);
-}
-
-public void Shoot()
-{
-    if (bulletPrefab == null || firePoint == null) return;
-
-    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-    mousePos.z = 0f;
-
-    Vector3 dir = mousePos - firePoint.position;
-
-    PlayerStats stats = GetComponent<PlayerStats>(); 
-    int totalProjectiles = 1 + (stats != null ? stats.extraMainProjectiles : 0); 
-    float spread = 10f; 
-
-        for (int i = 0; i < totalProjectiles; i++) 
+    IEnumerator HandleDeath()
         {
-            float offset = (i - (totalProjectiles - 1) / 2f) * spread; 
-            Vector3 finalDir = Quaternion.Euler(0, 0, offset) * dir; 
-
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        bullet bulletComp = bullet.GetComponent<bullet>();
-        if (bulletComp != null)
-        {
-            float damage = stats != null ? stats.DealDamage() : bulletDamage;
-            bulletComp.Setup(finalDir, damage, stats);
+            yield return new WaitForSeconds(2f);
+            
+            if(GameOverUI.Instance != null)
+                GameOverUI.Instance.TriggerGameOver();
         }
+    public void OnAttack()
+    {
+        if (!canMove) return;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        if (autoFire != null && autoFire.IsAutoFireEnabled)
+        return;
+        if(fireTimer > 0f) return;
+
+        animator.SetTrigger("isAttk");
+
+        Shoot();
+
+        fireTimer = fireRate/Mathf.Max(0.01f, stats.attackSpeed);
     }
+
+    public void Shoot()
+    {
+        if (bulletPrefab == null || firePoint == null) return;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePos.z = 0f;
+
+        Vector3 dir = mousePos - firePoint.position;
+
+        PlayerStats stats = GetComponent<PlayerStats>(); 
+        int totalProjectiles = 1 + (stats != null ? stats.extraMainProjectiles : 0); 
+        float spread = 10f; 
+
+            for (int i = 0; i < totalProjectiles; i++) 
+            {
+                float offset = (i - (totalProjectiles - 1) / 2f) * spread; 
+                Vector3 finalDir = Quaternion.Euler(0, 0, offset) * dir; 
+
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            bullet bulletComp = bullet.GetComponent<bullet>();
+            if (bulletComp != null)
+            {
+                float damage = stats != null ? stats.DealDamage() : bulletDamage;
+                bulletComp.Setup(finalDir, damage, stats);
+            }
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+        }
 }

@@ -22,6 +22,7 @@ MonoBehaviour:
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: 6864778800241408347, guid: c940aba3dcd573c4398c29cb8a26816a, type: 3}
+  animatorController: {fileID: 9100000, guid: 3cc0d31e5c645b048822db2f1e1cf1db, type: 2}
   characterDescription: A wolf man knight
   Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
   Ability2: {fileID: 11400000, guid: b2f86fde115a0984e82043ef6d5fc366, type: 2}

@@ -17,6 +17,7 @@ public class CharacterData : ScriptableObject
    
     [Header("Visuals")]
     public Sprite characterSprite;
+    public RuntimeAnimatorController animatorController;
 
     [Header("Description")]
     [TextArea (3,6)]

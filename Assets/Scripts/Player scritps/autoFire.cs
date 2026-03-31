@@ -33,7 +33,8 @@ public class autoFire : MonoBehaviour
         fireTimer -= Time.deltaTime;
 
         if (fireTimer <= 0f)
-        {
+        {   
+            attackScript.animator.SetTrigger("isAttk"); 
             attackScript.Shoot();
             fireTimer = playerStats.attackSpeed;
         }

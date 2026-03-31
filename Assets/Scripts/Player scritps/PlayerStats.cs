@@ -82,6 +82,8 @@ public class PlayerStats : MonoBehaviour
 
         Instance = this;
 
+        ResetStatsForNewRun();
+
         hpUI = GetComponent<playerHealth>(); 
         abilityHolder = GetComponent<abilityHolder>(); 
 
@@ -110,6 +112,10 @@ public class PlayerStats : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null && data.characterSprite != null)
             sr.sprite = data.characterSprite;
+
+        Animator anim = GetComponent<Animator>();
+        if(anim != null && data.animatorController != null)
+            anim.runtimeAnimatorController = data.animatorController;
 
          if (hpUI != null && hpUI.HealthBar != null)
     {
@@ -143,12 +149,10 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead = true;
+
             PlayerController pc = GetComponent<PlayerController>();
             if (pc != null)
                 pc.Die();
-
-            GameOverUI.Instance.TriggerGameOver();
-
         }
     }
 
@@ -230,10 +234,16 @@ void Evolve()
     playerHealth hp = GetComponent<playerHealth>();
     if (hp != null)
         hp.HealthBar.setMaxHealth((int)maxHealth);
-
+        
     Animator anim = GetComponent<Animator>();
-    if (anim != null)
-        anim.enabled = false;
+
+    if (anim != null && evolutionData.animatorController != null)
+    {
+        anim.runtimeAnimatorController = evolutionData.animatorController;
+
+        anim.Rebind();
+        anim.Update(0f);
+    }
 
     SpriteRenderer sr = GetComponent<SpriteRenderer>();
     Debug.Log("SpriteRenderer found: " + (sr != null));
@@ -269,6 +279,36 @@ void Evolve()
         extraMainProjectiles += 1;
     }
 
+    void ResetStatsForNewRun()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
+        projectileSizeMultiplier = 1f;
+        extraMainProjectiles = 0;
+        currentXP = 0;
+        level = 1;
+        hasEvolved = false;
+
+        if (unlockedAbilities != null)
+            unlockedAbilities.Clear();
+
+        if (abilityHolder != null)
+        {
+            abilityHolder.Ability1 = characterData?.Ability1;
+            abilityHolder.Ability2 = characterData?.Ability2;
+            abilityHolder.Ability3 = characterData?.Ability3;
+            abilityHolder.unlockedAbilities.Clear();
+            abilityHolder.OnAbilitiesChanged?.Invoke();
+        }
+
+        if (xpBar != null)
+            xpBar.SetMaxXP(xpToNextLevel);
+    }
+    void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null; 
+    }
 
 
 }

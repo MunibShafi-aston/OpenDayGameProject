@@ -18,6 +18,7 @@ public class PlayerEvolution : ScriptableObject
 
     [Header("Visuals")]
     public Sprite evolvedSprite;
+    public RuntimeAnimatorController animatorController;
 
     [Header("Ability Changes")]
     public ability[] newAbilities;
