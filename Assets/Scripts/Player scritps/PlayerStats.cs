@@ -54,7 +54,6 @@ public class PlayerStats : MonoBehaviour
     public PlayerEvolution evolutionData;
     public bool hasEvolved = false;
 
-    public static PlayerStats Instance;
 
     playerHealth hpUI;
 
@@ -74,19 +73,13 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject); 
-            return;
-        }
 
-        Instance = this;
 
-        ResetStatsForNewRun();
 
         hpUI = GetComponent<playerHealth>(); 
         abilityHolder = GetComponent<abilityHolder>(); 
 
+        ResetStatsForNewRun();
         InitXP();
     }
     void ApplyCharacterData(CharacterData data)
@@ -279,7 +272,7 @@ void Evolve()
         extraMainProjectiles += 1;
     }
 
-    void ResetStatsForNewRun()
+    public void ResetStatsForNewRun()
     {
         isDead = false;
         currentHealth = maxHealth;
@@ -297,18 +290,12 @@ void Evolve()
             abilityHolder.Ability1 = characterData?.Ability1;
             abilityHolder.Ability2 = characterData?.Ability2;
             abilityHolder.Ability3 = characterData?.Ability3;
-            abilityHolder.unlockedAbilities.Clear();
+            abilityHolder.ResetAbilities();
             abilityHolder.OnAbilitiesChanged?.Invoke();
         }
 
         if (xpBar != null)
             xpBar.SetMaxXP(xpToNextLevel);
     }
-    void OnDestroy()
-    {
-        if (Instance == this)
-            Instance = null; 
-    }
-
 
 }

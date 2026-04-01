@@ -31,6 +31,8 @@ public class enemyChase : MonoBehaviour
     Vector2 knockbackVelocity;
     float knockbackTimer;
 
+    PlayerStats PlayerStats;
+
 
     Transform player;
     Rigidbody2D rb;
@@ -77,11 +79,19 @@ public class enemyChase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerStats.Instance != null && PlayerStats.Instance.isDead)
+        if (PlayerStats == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+                PlayerStats = p.GetComponent<PlayerStats>();
+        }
+
+        if (PlayerStats != null && PlayerStats.isDead)
         {
             rb.linearVelocity = Vector2.zero;
             return;
         }
+
         if (knockbackTimer > 0)
         {
             knockbackTimer -= Time.fixedDeltaTime;

@@ -4,18 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerAbilityController : MonoBehaviour
 {
     private PlayerInput playerInput;
-    private abilityHolder holder;
 
 void Awake()
 {
     playerInput = FindFirstObjectByType<PlayerInput>();
-    holder = FindFirstObjectByType<abilityHolder>();
 
     if (playerInput == null)
         Debug.LogError("No PlayerInput found in scene!");
 
-    if (holder == null)
-        Debug.LogError("No abilityHolder found in scene!");
 }
 
 
@@ -39,21 +35,45 @@ void Awake()
 
     void OnDash(InputAction.CallbackContext context)
     {
-        holder.OnDash();
+        if (!context.performed) return;
+
+        var holder = GetAbilityHolder();
+        if (holder != null && holder.isActiveAndEnabled)
+            holder.OnDash();
     }
 
     void OnAbility1(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
+        var holder = GetAbilityHolder();
+        if (holder != null && holder.isActiveAndEnabled)
         holder.OnAbility1();
     }
 
     void OnAbility2(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
+        var holder = GetAbilityHolder();
+        if (holder != null && holder.isActiveAndEnabled)
         holder.OnAbility2();
     }
 
     void OnAbility3(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
+        var holder = GetAbilityHolder();
+        if (holder != null && holder.isActiveAndEnabled)
         holder.OnAbility3();
     }
+
+    abilityHolder GetAbilityHolder()
+{
+    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    if (player == null) return null;
+
+    return player.GetComponent<abilityHolder>();
+}
 }

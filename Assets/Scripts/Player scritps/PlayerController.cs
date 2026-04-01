@@ -127,13 +127,35 @@ public class PlayerController : MonoBehaviour
             ah.enabled = false;
             print ("PlayerController: Player has died, disabling abilities.");
 
+        
+        PlayerInput input = GetComponent<PlayerInput>();
+        if (input != null)
+            input.enabled = false;
+
+
         StartCoroutine(HandleDeath());
     
+    }
+
+    public void HidePlayer()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
+
+        Animator anim = GetComponent<Animator>();
+        if (anim != null) anim.enabled = false;
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        gameObject.SetActive(false); 
     }
 
     IEnumerator HandleDeath()
         {
             yield return new WaitForSeconds(2f);
+
+            HidePlayer();
             
             if(GameOverUI.Instance != null)
                 GameOverUI.Instance.TriggerGameOver();
@@ -183,4 +205,27 @@ public class PlayerController : MonoBehaviour
             bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
             }
         }
+
+    public void ResetPlayer()
+    {
+        canMove = true;
+
+        GetComponent<Animator>().enabled = true;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<abilityHolder>().enabled = true;
+
+        PlayerInput input = GetComponent<PlayerInput>();
+        if (input != null)
+            input.enabled = true;
+
+        animator.SetBool("isDead", false);
+
+        PlayerStats stats = GetComponent<PlayerStats>();
+        if (stats != null)
+            stats.ResetStatsForNewRun();
+
+        transform.position = Vector3.zero;
+
+        gameObject.SetActive(true);
+    }
 }

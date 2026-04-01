@@ -16,7 +16,6 @@ public class abilityHolder : MonoBehaviour
     float[] cooldownTimes = new float[4];
     float[] activeTimes = new float[4];
 
-    public static abilityHolder Instance;
 
     enum AbilityState { ready,active,cooldown}
 
@@ -27,14 +26,8 @@ public class abilityHolder : MonoBehaviour
     
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-
         unlockedAbilities.Clear();
+
         for (int i = 0; i < states.Length; i++)
         {
             states[i] = AbilityState.ready;
@@ -125,7 +118,6 @@ public class abilityHolder : MonoBehaviour
 
         unlockedAbilities.Add(newAbility);
 
-        newAbility.Activate(gameObject);
         Debug.Log($"Unlocked ability: {newAbility.name}");
     }
     
@@ -164,12 +156,15 @@ public class abilityHolder : MonoBehaviour
         return unlockedAbilities.Contains(checkAbility);
     }
 
-
-        void OnDestroy()
+    public void ResetAbilities()
     {
-        if (Instance==this)
+        unlockedAbilities.Clear();
+
+        for (int i = 0; i < states.Length; i++)
         {
-            Instance = null;
+            states[i] = AbilityState.ready;
+            cooldownTimes[i] = 0f;
+            activeTimes[i] = 0f;
         }
     }
 }
