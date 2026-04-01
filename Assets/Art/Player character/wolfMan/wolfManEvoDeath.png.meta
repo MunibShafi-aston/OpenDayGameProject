@@ -1,40 +1,31 @@
 fileFormatVersion: 2
-guid: 52e9534c7a7a6654892e81dfca9d8169
+guid: 39de318e649097143b2c389c2381fedc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1402942116522200121
-    second: wolfManEvoIdle-sheet_0
+      213: 921667472153030300
+    second: wolfManEvoDeath_0
   - first:
-      213: -1482000378441997857
-    second: wolfManEvoIdle-sheet_1
+      213: -4746850744493138769
+    second: wolfManEvoDeath_1
   - first:
-      213: -6961152497785118776
-    second: wolfManEvoIdle-sheet_2
+      213: -817582001292772359
+    second: wolfManEvoDeath_2
   - first:
-      213: 3553422319624537307
-    second: wolfManEvoIdle-sheet_3
+      213: 8936084767031806371
+    second: wolfManEvoDeath_3
   - first:
-      213: 3505821120344213294
-    second: wolfManEvoIdle-sheet_4
+      213: 4307516494621342184
+    second: wolfManEvoDeath_4
   - first:
-      213: -8874932493610923965
-    second: wolfManEvoIdle-sheet_5
+      213: -397483329808343124
+    second: wolfManEvoDeath_5
   - first:
-      213: 7996797814573307757
-    second: wolfManEvoIdle-sheet_6
+      213: -4703009629024216201
+    second: wolfManEvoDeath_6
   - first:
-      213: -3796256743300058390
-    second: wolfManEvoIdle-sheet_7
-  - first:
-      213: 6694866340374979798
-    second: wolfManEvoIdle-sheet_8
-  - first:
-      213: -6460413863435272965
-    second: wolfManEvoIdle-sheet_9
-  - first:
-      213: 4483849088822386125
-    second: wolfManEvoIdle-sheet_10
+      213: 1771967560190605433
+    second: wolfManEvoDeath_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_0
+      name: wolfManEvoDeath_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c37240049fb78ce0800000000000000
-      internalID: -1402942116522200121
+      spriteID: c9ea6b6ceab6acc00800000000000000
+      internalID: 921667472153030300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_1
+      name: wolfManEvoDeath_1
       rect:
         serializedVersion: 2
         x: 32
@@ -167,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd168fdf180ee6be0800000000000000
-      internalID: -1482000378441997857
+      spriteID: fac10b4d56ccf1eb0800000000000000
+      internalID: -4746850744493138769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_2
+      name: wolfManEvoDeath_2
       rect:
         serializedVersion: 2
         x: 64
@@ -189,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8cfd13e5fa4056f90800000000000000
-      internalID: -6961152497785118776
+      spriteID: 9fbf036608d57a4f0800000000000000
+      internalID: -817582001292772359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_3
+      name: wolfManEvoDeath_3
       rect:
         serializedVersion: 2
         x: 96
@@ -211,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd44a2ad5ca405130800000000000000
-      internalID: 3553422319624537307
+      spriteID: 3a9c5bd00c9530c70800000000000000
+      internalID: 8936084767031806371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_4
+      name: wolfManEvoDeath_4
       rect:
         serializedVersion: 2
         x: 128
@@ -233,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e27cd2cfbbd27a030800000000000000
-      internalID: 3505821120344213294
+      spriteID: 8e97a0efd6f57cb30800000000000000
+      internalID: 4307516494621342184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_5
+      name: wolfManEvoDeath_5
       rect:
         serializedVersion: 2
         x: 160
@@ -255,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 348cfb02be7e5d480800000000000000
-      internalID: -8874932493610923965
+      spriteID: caf52aa740bdb7af0800000000000000
+      internalID: -397483329808343124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_6
+      name: wolfManEvoDeath_6
       rect:
         serializedVersion: 2
         x: 192
@@ -277,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6713465e355afe60800000000000000
-      internalID: 7996797814573307757
+      spriteID: 77b15c6f8ad8bbeb0800000000000000
+      internalID: -4703009629024216201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_7
+      name: wolfManEvoDeath_7
       rect:
         serializedVersion: 2
         x: 224
@@ -299,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae23b6bfa9cf05bc0800000000000000
-      internalID: -3796256743300058390
+      spriteID: 9783da29b1b479810800000000000000
+      internalID: 1771967560190605433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_8
+      name: wolfManEvoDeath_8
       rect:
         serializedVersion: 2
         x: 256
@@ -319,54 +310,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6d425c43771f8ec50800000000000000
-      internalID: 6694866340374979798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfc7ee7e1dff756a0800000000000000
-      internalID: -6460413863435272965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dcd97b56df4d93e30800000000000000
-      internalID: 4483849088822386125
+      spriteID: 209f8975a9977894d8db3fb849b92ccc
+      internalID: -575749699
       vertices: []
       indices: 
       edges: []
@@ -375,7 +322,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b740085824aed64794dc7e3866f61e5
+    spriteID: 1fb661c1d19712347bf844d225fa3d76
     internalID: 0
     vertices: []
     indices: 
@@ -387,17 +334,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      wolfManEvoIdle-sheet_0: -1402942116522200121
-      wolfManEvoIdle-sheet_1: -1482000378441997857
-      wolfManEvoIdle-sheet_10: 4483849088822386125
-      wolfManEvoIdle-sheet_2: -6961152497785118776
-      wolfManEvoIdle-sheet_3: 3553422319624537307
-      wolfManEvoIdle-sheet_4: 3505821120344213294
-      wolfManEvoIdle-sheet_5: -8874932493610923965
-      wolfManEvoIdle-sheet_6: 7996797814573307757
-      wolfManEvoIdle-sheet_7: -3796256743300058390
-      wolfManEvoIdle-sheet_8: 6694866340374979798
-      wolfManEvoIdle-sheet_9: -6460413863435272965
+      wolfManEvoDeath_0: 921667472153030300
+      wolfManEvoDeath_1: -4746850744493138769
+      wolfManEvoDeath_2: -817582001292772359
+      wolfManEvoDeath_3: 8936084767031806371
+      wolfManEvoDeath_4: 4307516494621342184
+      wolfManEvoDeath_5: -397483329808343124
+      wolfManEvoDeath_6: -4703009629024216201
+      wolfManEvoDeath_7: 1771967560190605433
+      wolfManEvoDeath_8: -575749699
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

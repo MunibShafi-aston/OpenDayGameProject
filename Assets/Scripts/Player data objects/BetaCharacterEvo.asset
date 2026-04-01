@@ -20,6 +20,7 @@ MonoBehaviour:
   bonusAttackSpeed: 0.5
   bonusDefense: 5
   bonusCritChance: 0.1
-  evolvedSprite: {fileID: 815424164945274260, guid: 63370880a63343a4eb6318722ee7ea5d, type: 3}
+  evolvedSprite: {fileID: -416589230859218251, guid: ff7e088b2d645984d8b7b4ef6c613b9d, type: 3}
+  animatorController: {fileID: 9100000, guid: 6de48691d168a314a9780d88b377eb40, type: 2}
   newAbilities: []
   evolvedAbilities: []

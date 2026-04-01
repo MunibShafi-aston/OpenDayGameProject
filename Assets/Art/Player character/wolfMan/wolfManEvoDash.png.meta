@@ -1,40 +1,25 @@
 fileFormatVersion: 2
-guid: 52e9534c7a7a6654892e81dfca9d8169
+guid: af7b4c20b7987d84cbead509c5b6a853
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1402942116522200121
-    second: wolfManEvoIdle-sheet_0
+      213: 7449577425002297874
+    second: wolfManEvoDash_0
   - first:
-      213: -1482000378441997857
-    second: wolfManEvoIdle-sheet_1
+      213: 4881777009515816761
+    second: wolfManEvoDash_1
   - first:
-      213: -6961152497785118776
-    second: wolfManEvoIdle-sheet_2
+      213: -3385265877484684891
+    second: wolfManEvoDash_2
   - first:
-      213: 3553422319624537307
-    second: wolfManEvoIdle-sheet_3
+      213: 204979227428250051
+    second: wolfManEvoDash_3
   - first:
-      213: 3505821120344213294
-    second: wolfManEvoIdle-sheet_4
+      213: 878467809233359426
+    second: wolfManEvoDash_4
   - first:
-      213: -8874932493610923965
-    second: wolfManEvoIdle-sheet_5
-  - first:
-      213: 7996797814573307757
-    second: wolfManEvoIdle-sheet_6
-  - first:
-      213: -3796256743300058390
-    second: wolfManEvoIdle-sheet_7
-  - first:
-      213: 6694866340374979798
-    second: wolfManEvoIdle-sheet_8
-  - first:
-      213: -6460413863435272965
-    second: wolfManEvoIdle-sheet_9
-  - first:
-      213: 4483849088822386125
-    second: wolfManEvoIdle-sheet_10
+      213: 4687231832561772993
+    second: wolfManEvoDash_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_0
+      name: wolfManEvoDash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c37240049fb78ce0800000000000000
-      internalID: -1402942116522200121
+      spriteID: 21af700d237326760800000000000000
+      internalID: 7449577425002297874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_1
+      name: wolfManEvoDash_1
       rect:
         serializedVersion: 2
         x: 32
@@ -167,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd168fdf180ee6be0800000000000000
-      internalID: -1482000378441997857
+      spriteID: 937ebdc435e8fb340800000000000000
+      internalID: 4881777009515816761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_2
+      name: wolfManEvoDash_2
       rect:
         serializedVersion: 2
         x: 64
@@ -189,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8cfd13e5fa4056f90800000000000000
-      internalID: -6961152497785118776
+      spriteID: 5a9364ece9e1501d0800000000000000
+      internalID: -3385265877484684891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_3
+      name: wolfManEvoDash_3
       rect:
         serializedVersion: 2
         x: 96
@@ -211,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd44a2ad5ca405130800000000000000
-      internalID: 3553422319624537307
+      spriteID: 3c1e135758b38d200800000000000000
+      internalID: 204979227428250051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_4
+      name: wolfManEvoDash_4
       rect:
         serializedVersion: 2
         x: 128
@@ -233,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e27cd2cfbbd27a030800000000000000
-      internalID: 3505821120344213294
+      spriteID: 24258f371d1f03c00800000000000000
+      internalID: 878467809233359426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_5
+      name: wolfManEvoDash_5
       rect:
         serializedVersion: 2
         x: 160
@@ -255,118 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 348cfb02be7e5d480800000000000000
-      internalID: -8874932493610923965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6713465e355afe60800000000000000
-      internalID: 7996797814573307757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae23b6bfa9cf05bc0800000000000000
-      internalID: -3796256743300058390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d425c43771f8ec50800000000000000
-      internalID: 6694866340374979798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfc7ee7e1dff756a0800000000000000
-      internalID: -6460413863435272965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wolfManEvoIdle-sheet_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dcd97b56df4d93e30800000000000000
-      internalID: 4483849088822386125
+      spriteID: 1c96fb784846c0140800000000000000
+      internalID: 4687231832561772993
       vertices: []
       indices: 
       edges: []
@@ -375,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b740085824aed64794dc7e3866f61e5
+    spriteID: 60baf2a7c356e654cb653cd515eefed3
     internalID: 0
     vertices: []
     indices: 
@@ -387,17 +262,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      wolfManEvoIdle-sheet_0: -1402942116522200121
-      wolfManEvoIdle-sheet_1: -1482000378441997857
-      wolfManEvoIdle-sheet_10: 4483849088822386125
-      wolfManEvoIdle-sheet_2: -6961152497785118776
-      wolfManEvoIdle-sheet_3: 3553422319624537307
-      wolfManEvoIdle-sheet_4: 3505821120344213294
-      wolfManEvoIdle-sheet_5: -8874932493610923965
-      wolfManEvoIdle-sheet_6: 7996797814573307757
-      wolfManEvoIdle-sheet_7: -3796256743300058390
-      wolfManEvoIdle-sheet_8: 6694866340374979798
-      wolfManEvoIdle-sheet_9: -6460413863435272965
+      wolfManEvoDash_0: 7449577425002297874
+      wolfManEvoDash_1: 4881777009515816761
+      wolfManEvoDash_2: -3385265877484684891
+      wolfManEvoDash_3: 204979227428250051
+      wolfManEvoDash_4: 878467809233359426
+      wolfManEvoDash_5: 4687231832561772993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

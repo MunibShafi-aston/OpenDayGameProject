@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BirdmanEvo
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEvolution
   evolutionName: BirdMan Evo
-  requiredLevel: 2
+  requiredLevel: 10
   bonusMaxHealth: 3
   bonusDamage: 5
   bonusMoveSpeed: 0.2

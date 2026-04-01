@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WizardGuy
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: Wizard Fella
-  maxHealth: 7
-  damage: 9
+  maxHealth: 10
+  damage: 20
   summonDamage: 7
   moveSpeed: 4
   attackSpeed: 1
@@ -22,6 +22,7 @@ MonoBehaviour:
   cooldownReduction: 0
   critChance: 0.01
   characterSprite: {fileID: 8080189319961439577, guid: c1eaa5b64d686bd4a8b9788a56125003, type: 3}
+  animatorController: {fileID: 9100000, guid: 893fb4f4351d4684b94ec170b22c290e, type: 2}
   characterDescription: I like your moves magic man
   Ability1: {fileID: 11400000, guid: ffd640f4a28f55c41924353c0c00761d, type: 2}
   Ability2: {fileID: 11400000, guid: 8fdcce3a81a65a4459ac111cd0f849ca, type: 2}
