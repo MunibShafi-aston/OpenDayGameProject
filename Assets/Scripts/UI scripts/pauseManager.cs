@@ -9,6 +9,8 @@ public class pauseManager : MonoBehaviour
     public static pauseManager Instance;
     public bool IsPaused { get; private set; }
 
+    public GameObject settingsPanel;
+
     void Awake()
     {
         Instance=this;
@@ -32,6 +34,16 @@ public class pauseManager : MonoBehaviour
             ui.LoadFromPlayer(player);
     }
 
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
+    }
+
     public void ResumeGame()
     {
         LevelUpManager levelUp = FindFirstObjectByType<LevelUpManager>();
@@ -51,6 +63,7 @@ public class pauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
+        soundManager.Instance.PlayMusic("MainMenuMusic");
         SceneManager.LoadScene(0);
     }
 }

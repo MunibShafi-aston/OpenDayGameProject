@@ -9,7 +9,6 @@ public class LanceShot : ability
     public float abilDamage = 0f;
     public float duration = 3f;
     public float tickRate = 0.5f;
-
     public override void Activate(GameObject parent)
     {
         PlayerStats stats = parent.GetComponent<PlayerStats>();
@@ -28,5 +27,8 @@ public class LanceShot : ability
 
         LanceProjectile proj = lance.GetComponent<LanceProjectile>();
         proj.Setup(direction, speed, abilDamage, duration, tickRate);
+        
+        soundManager.Instance.PlaySFX("LanceAbility");
+
     }
 }

@@ -5,7 +5,13 @@ public class MainMenu : MonoBehaviour
     [Header("Panels")]
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
+    soundManager SoundManager;
 
+
+    void Start()
+    {
+        soundManager.Instance.PlayMusic("MainMenuMusic");
+    }
     public void CharSelect()
     {
         SceneManager.LoadScene(1);

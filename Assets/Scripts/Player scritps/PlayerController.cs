@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     
     PlayerStats stats;
     autoFire autoFire;
+    soundManager SoundManager;
 
     Rigidbody2D rb;
     public Animator animator;
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour
 
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+            soundManager.Instance.PlaySFX("Shoot");
             }
         }
 

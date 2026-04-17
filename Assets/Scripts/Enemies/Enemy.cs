@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
 
     public EnemyData enemyData;
+    public System.Action OnDeath;
 
     public GameObject xpOrbPrefab;
     public int xpAmount = 5;
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     public float health;
     public bool isDead = false;
+    public bool isBoss = false;
     
 
     public float Health{
@@ -99,6 +101,9 @@ public class Enemy : MonoBehaviour
 
         if (chase != null)
         chase.StopMovement();
+
+        Debug.Log("Enemy Defeated called");
+        OnDeath?.Invoke();
 
         if(enemyData.enemyType == EnemyType.Bomber){
             Explode();

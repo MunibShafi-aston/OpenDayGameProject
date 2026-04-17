@@ -9,6 +9,7 @@ public class rangedSlashAbility : ability
     public float lifetime = 0.6f;
     public float damage = 3f;
 
+    soundManager SoundManager;
     public override void Activate(GameObject parent)
     {
         Vector2 mouse = Mouse.current.position.ReadValue();
@@ -26,5 +27,7 @@ public class rangedSlashAbility : ability
         rangedSlashProjectile proj = slash.GetComponent<rangedSlashProjectile>();
 
         proj.Setup(direction, speed, damage, lifetime);
+        soundManager.Instance.PlaySFX("WolfAbil1");
+
     }
 }

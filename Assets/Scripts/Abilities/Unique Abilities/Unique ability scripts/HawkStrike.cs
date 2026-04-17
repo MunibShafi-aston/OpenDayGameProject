@@ -42,7 +42,7 @@ public class HawkStrikeAbility : ability
                 closest = e;
             }
         }
-
+        soundManager.Instance.PlaySFX("HawkAbility");
         return closest;
     }
 }

@@ -16,10 +16,14 @@ public class BossController : MonoBehaviour
 
     public float minDowntime = 1f;
     public float maxDowntime = 5f;
-    
     void Start()
     {
         enemy = GetComponent<Enemy>();
+
+        if (enemy.isBoss)
+        {
+            enemy.OnDeath += HandleBossDeath; 
+        }
 
         dashBurst = GetComponent<BossDashBurst>();
         meteorShower = GetComponent<BossMeteorShower>();
@@ -144,5 +148,10 @@ public class BossController : MonoBehaviour
     void EnterPhase3(){
         currentPhase = BossPhase.Phase3;
         Debug.Log("Boss entered phase 3");
+    }
+    void HandleBossDeath()
+    {
+        Debug.Log("BossController received death");
+        GameOverUI.Instance.TriggerGameWon();
     }
 }

@@ -23,6 +23,7 @@ public class CharacterSelect : MonoBehaviour
             return;
         }
         
+        soundManager.Instance.PlayMusic("GameMusic"); 
         SceneManager.LoadScene(2);
     }
     

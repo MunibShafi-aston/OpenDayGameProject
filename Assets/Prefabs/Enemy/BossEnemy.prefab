@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 300180842095969140}
   - component: {fileID: 3485158821677996480}
   - component: {fileID: 6126691806440022717}
-  - component: {fileID: 5748009296142651086}
   - component: {fileID: 802601751453927966}
   - component: {fileID: 7676952995271733934}
   - component: {fileID: 1251940476104853599}
+  - component: {fileID: 1750082157096917672}
   m_Layer: 7
   m_Name: BossEnemy
   m_TagString: Enemy
@@ -122,6 +122,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2773029280554232769
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,6 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: -1246702749
   m_SortingLayer: 4
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 5293266808972169152, guid: 32e9d62aec5344546958743e5a80eb22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -176,7 +178,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6157851273160562893
 Rigidbody2D:
@@ -290,6 +291,7 @@ MonoBehaviour:
   xpAmount: 3
   health: 0
   isDead: 0
+  isBoss: 1
 --- !u!114 &6126691806440022717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,20 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   damage: 1
---- !u!114 &5748009296142651086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6621477874747398323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31527aadd0686f748802e898dd049d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossController
-  minDowntime: 1.2
-  maxDowntime: 2.5
 --- !u!114 &802601751453927966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,3 +358,17 @@ MonoBehaviour:
   slamRadius: 3
   slamDamage: 3
   shockwavePrefab: {fileID: 8207707683602927219, guid: d5e37c9d5b49ec842bd06cc03320698d, type: 3}
+--- !u!114 &1750082157096917672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621477874747398323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31527aadd0686f748802e898dd049d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossController
+  minDowntime: 1
+  maxDowntime: 5

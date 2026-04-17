@@ -19,3 +19,6 @@ MonoBehaviour:
   icon: {fileID: -3704797317323321870, guid: 784be8deafcaef74ab2e3ef2c7fb5cda, type: 3}
   dashDistance: 3
   dashDuration: 0.1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
