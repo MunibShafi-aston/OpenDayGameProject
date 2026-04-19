@@ -29,8 +29,8 @@ MonoBehaviour:
   damageReduction: 0.3
   explosionRadius: 0
   explosionDamage: 0
-  sprite: {fileID: 5293266808972169152, guid: 32e9d62aec5344546958743e5a80eb22, type: 3}
-  animatorController: {fileID: 0}
+  sprite: {fileID: -2424553518018739129, guid: fdb0453ecc0140040aa4c00578f4a633, type: 3}
+  animatorController: {fileID: 9100000, guid: f32daa3953ca6034f8b36be51e0ac404, type: 2}
   xpOrbPrefab: {fileID: 0}
   xpAmount: 5
   gameObjectPrefab: {fileID: 0}

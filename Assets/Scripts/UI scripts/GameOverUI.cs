@@ -30,7 +30,7 @@ public class GameOverUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-        public void TriggerGameWon()
+    public void TriggerGameWon()
     {
         Debug.Log("TriggerGameWon called"); 
         if (gameEnded) return;

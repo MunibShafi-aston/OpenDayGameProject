@@ -4,6 +4,7 @@ using System.Collections;
 public class BossController : MonoBehaviour
 {
     Enemy enemy;
+    Animator animator;
     
     enum BossPhase {Phase1,Phase2,Phase3}
     BossPhase currentPhase;
@@ -19,6 +20,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         enemy = GetComponent<Enemy>();
+        animator = GetComponent<Animator>();
 
         if (enemy.isBoss)
         {
@@ -52,11 +54,13 @@ public class BossController : MonoBehaviour
 
     void UseDashBurst()
     {
+        animator.SetTrigger("Dash");
         dashBurst.StartDashBurst();
     }
     
     void UseMeteorShower()
     {
+        animator.SetTrigger("Meteor");
         meteorShower.StartMeteorShower();
     }
     
@@ -151,7 +155,16 @@ public class BossController : MonoBehaviour
     }
     void HandleBossDeath()
     {
+        enemy.isDead = true;
+        StopAllCoroutines();
+
+        animator.SetTrigger("Die");
         Debug.Log("BossController received death");
+    }
+
+        public void ShowWinScreen()
+    {
+        Debug.Log("Win screen triggered from animation");
         GameOverUI.Instance.TriggerGameWon();
     }
 }
