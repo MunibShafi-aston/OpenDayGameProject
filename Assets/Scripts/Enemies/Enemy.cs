@@ -106,22 +106,25 @@ public class Enemy : MonoBehaviour
         OnDeath?.Invoke();
 
         if(enemyData.enemyType == EnemyType.Bomber){
+ 
+            animator.SetTrigger("Defeated");
             Explode();
+
+            StartCoroutine(RemoveAfterAnimation());
             return;
         }
 
 
         Debug.Log($"{gameObject.name} is dead. Triggering death animation.");
-        if (HasAnimatorTrigger("Defeated"))
-        {
-          animator.SetTrigger("Defeated");
-        }
-        else
-        {
-            RemoveEnemy();
-        }
-    }
+        animator.SetTrigger("Defeated");
 
+        Invoke(nameof(RemoveEnemy), 1f);
+    }
+    private System.Collections.IEnumerator RemoveAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.3f);
+        RemoveEnemy();
+    }
     bool HasAnimatorTrigger(string triggerName)
     {
         if (animator == null || animator.runtimeAnimatorController == null)
@@ -151,8 +154,6 @@ public class Enemy : MonoBehaviour
                 player.TakeDamage(enemyData.explosionDamage);
             }
         }
-
-        RemoveEnemy();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

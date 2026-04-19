@@ -18,7 +18,13 @@ public class EnemyProjectile : MonoBehaviour
     {
         speed = projectileSpeed;
         damage = projectileDamage;
+
+        Vector2 dir = direction.normalized;
+
         rb.linearVelocity = direction.normalized * speed;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void OnTriggerEnter2D(Collider2D other)

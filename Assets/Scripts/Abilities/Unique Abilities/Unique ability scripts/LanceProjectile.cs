@@ -13,6 +13,9 @@ public class LanceProjectile : MonoBehaviour
 
     PlayerStats stats;
 
+    Rigidbody2D rb;
+
+
     public void Setup(Vector3 dir, float spd, float dmg, float life, float tick)
     {
         direction = dir.normalized;
@@ -23,6 +26,8 @@ public class LanceProjectile : MonoBehaviour
 
         lifetime = life;
         tickTimer = tick;
+        rb = GetComponent<Rigidbody2D>();
+
 
         stats = FindFirstObjectByType<PlayerStats>();
         
@@ -33,11 +38,12 @@ public class LanceProjectile : MonoBehaviour
         
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        rb.linearVelocity = direction * speed;
     }
 
     void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
 
         lifetime -= Time.deltaTime;
 
@@ -45,21 +51,20 @@ public class LanceProjectile : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    float lastHitTime;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
 
         Enemy enemy = other.GetComponentInParent<Enemy>();
         if (enemy == null) return;
 
-        tickTimer -= Time.deltaTime;
+        if (Time.time < lastHitTime) return;
 
-        if (tickTimer <= 0)
-        {
-            float baseDamage = damage + stats.DealDamage()*0.5f;
-            enemy.TankDamage(baseDamage);
+        float baseDamage = damage + stats.DealDamage() * 0.5f;
+        enemy.TankDamage(baseDamage);
 
-            tickTimer = tickRate;
-        }
+        lastHitTime = Time.time + tickRate;
     }
 }

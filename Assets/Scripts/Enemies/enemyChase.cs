@@ -79,6 +79,12 @@ public class enemyChase : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDefeated || isFrozen)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+ 
         if (PlayerStats == null)
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
@@ -105,6 +111,25 @@ public class enemyChase : MonoBehaviour
         Vector2 toPlayer = player.position - transform.position;
         float distance = toPlayer.magnitude;
         Vector2 direction = toPlayer.normalized;
+
+    EnemyType type = GetComponent<Enemy>().enemyData.enemyType;
+
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+    switch (type)
+    {
+        case EnemyType.Melee:
+            transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            break;
+
+        case EnemyType.Bomber:
+        case EnemyType.Tank:
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            break;
+
+        default:
+            break;
+    }
 
         Vector2 moveDir = Vector2.zero;
 
@@ -176,11 +201,6 @@ public class enemyChase : MonoBehaviour
                 shootTimer = shootCooldown;
             }
         }
-
-        if (moveDir.x < 0)
-            spriteRenderer.flipX = true;
-        else if (moveDir.x > 0)
-            spriteRenderer.flipX = false;
     }
 
    bool TryMove(Vector2 direction, float speed)

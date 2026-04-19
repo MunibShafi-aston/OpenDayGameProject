@@ -30,7 +30,7 @@ MonoBehaviour:
   explosionRadius: 0
   explosionDamage: 0
   sprite: {fileID: -4808164070042335456, guid: dce7cb20748e7ac49b2ce3d1c87bc2d1, type: 3}
-  animatorController: {fileID: 9100000, guid: 8f8c296d4e7f9cb4bbec890d99e7caef, type: 2}
+  animatorController: {fileID: 9100000, guid: a603739791d60df498e1797b8ded9a4b, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
   xpAmount: 20
   gameObjectPrefab: {fileID: 7175968368154757714, guid: c19ac19015ba12341af02cd1cf3dc0ad, type: 3}
