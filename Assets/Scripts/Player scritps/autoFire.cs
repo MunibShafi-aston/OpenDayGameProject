@@ -6,8 +6,6 @@ public class autoFire : MonoBehaviour
 {
     private bool autoFireEnabled = false;
 
-    private float fireTimer;
-
     [SerializeField] private TMP_Text autoFireText;
 
     private PlayerController attackScript;
@@ -24,19 +22,16 @@ public class autoFire : MonoBehaviour
 
     void Update()
     {
-        if (!autoFireEnabled)
+        if (!autoFireEnabled || attackScript == null)
             return;
 
-        if (attackScript == null)
-            return;
-
-        fireTimer -= Time.deltaTime;
-
-        if (fireTimer <= 0f)
-        {   
-            attackScript.animator.SetTrigger("isAttk"); 
+        if (attackScript.fireTimer <= 0f)
+        {
+            attackScript.animator.SetTrigger("isAttk");
             attackScript.Shoot();
-            fireTimer = playerStats.attackSpeed;
+
+            attackScript.fireTimer =
+                attackScript.fireRate / Mathf.Max(0.01f, playerStats.attackSpeed);
         }
     }
 
