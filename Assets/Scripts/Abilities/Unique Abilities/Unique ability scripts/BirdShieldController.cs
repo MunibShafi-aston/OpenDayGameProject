@@ -51,6 +51,8 @@ public class BirdShieldOrbit : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
         {
+
+            soundManager.Instance.PlaySFX("ShieldBlock");
             if (other.CompareTag("Enemy"))
             {
                 Enemy enemy = other.GetComponentInParent<Enemy>();

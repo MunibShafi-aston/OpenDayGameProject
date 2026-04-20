@@ -12792,7 +12792,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 1389473555}
   bossPrefab: {fileID: 6621477874747398323, guid: 4e32dc73be24de544a4f76d0cae71747, type: 3}
   playerTransform: {fileID: 1807332929}
-  spawnTime: 0
+  spawnTime: 10
   spawn: 1
   timer: 0
   spawnDistance: 5

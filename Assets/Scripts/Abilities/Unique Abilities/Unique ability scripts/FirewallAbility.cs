@@ -13,7 +13,7 @@ public class FirewallAbility : ability
     public float damage = 2f;
     public float tickRate = 1f;
 
-    public float spawnDistance = 5f; // distance from player
+    public float spawnDistance = 5f;
 
     public override void Activate(GameObject parent)
     {
@@ -46,6 +46,7 @@ public class FirewallAbility : ability
                 Quaternion.identity
             );
 
+            soundManager.Instance.PlaySFX("FireWall");
             FirewallSegment segment = fire.GetComponent<FirewallSegment>();
 
             if (segment != null)

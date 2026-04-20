@@ -17,6 +17,7 @@ public class BowPistolAbility : ability
 
     public override void Activate(GameObject parent)
     {
+        soundManager.Instance.PlaySFX("BowPistolSummon");
         GameObject pistol = Instantiate(
             bowPistolPrefab,
             parent.transform.position,

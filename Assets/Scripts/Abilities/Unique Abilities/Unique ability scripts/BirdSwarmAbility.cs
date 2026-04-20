@@ -20,6 +20,8 @@ public class BirdSwarmAbility : ability
 
         List<Enemy> nearbyEnemies = new List<Enemy>();
 
+        soundManager.Instance.PlaySFX("BirdSummon");
+
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Enemy"))

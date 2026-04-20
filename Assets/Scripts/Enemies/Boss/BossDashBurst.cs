@@ -24,7 +24,7 @@ public class BossDashBurst : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        sr = GetComponent<SpriteRenderer>(); // 👈 ADD THIS
+        sr = GetComponent<SpriteRenderer>();
     }
 
     public void StartDashBurst()
@@ -39,6 +39,7 @@ public class BossDashBurst : MonoBehaviour
         isAttacking = true;
         rb.linearVelocity = Vector2.zero;
 
+        soundManager.Instance.PlaySFX("BossDash");
 
         Vector2 rawDir = (player.position - transform.position);
 
@@ -53,6 +54,8 @@ public class BossDashBurst : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         SpawnSpikes();
+        soundManager.Instance.PlaySFX("spikeSound");   
+
 
         isAttacking = false;
     }

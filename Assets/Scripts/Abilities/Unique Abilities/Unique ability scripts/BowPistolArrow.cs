@@ -21,6 +21,7 @@ public class BowPistolArrow : MonoBehaviour
         
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
+        soundManager.Instance.PlaySFX("Arrow");
         Destroy(gameObject, 5f);
     }
 

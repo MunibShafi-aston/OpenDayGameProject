@@ -10,6 +10,7 @@ public class lightningAbility : ability
 
     public override void Activate(GameObject parent)
     {
+        soundManager.Instance.PlaySFX("LightningStrike");
         Enemy closestEnemy = FindClosestEnemy(parent.transform.position);
         
         if (closestEnemy == null)

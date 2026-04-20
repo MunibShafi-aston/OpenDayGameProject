@@ -49,6 +49,7 @@ public class BossSpawner : MonoBehaviour
         if (bossSpawned) return;
 
         Vector2 spawnPos = GetSpawnPosition();
+        soundManager.Instance.PlayMusic("BossMusic"); 
 
         Instantiate(bossPrefab, spawnPos, Quaternion.identity);
         bossSpawned = true;

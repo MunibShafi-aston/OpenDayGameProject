@@ -54,6 +54,7 @@ public class BossGroundPound : MonoBehaviour
             yield return null;
         }
 
+        soundManager.Instance.PlaySFX("BossGroundPound");
         SlamDamage();
         SpawnShockwave();
 

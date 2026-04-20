@@ -21,6 +21,7 @@ public class BossMeteorShower : MonoBehaviour
     public void StartMeteorShower()
     {
         StartCoroutine(MeteorRoutine());
+        soundManager.Instance.PlaySFX("BossHowl");
     }
 
     IEnumerator MeteorRoutine()
@@ -30,7 +31,6 @@ public class BossMeteorShower : MonoBehaviour
             Vector2 targetPos = (Vector2)player.position +
                                 Random.insideUnitCircle * spawnRadius;
 
-            // Warning indicator
             if (warningPrefab != null)
             {
                 Instantiate(warningPrefab, targetPos, Quaternion.identity);

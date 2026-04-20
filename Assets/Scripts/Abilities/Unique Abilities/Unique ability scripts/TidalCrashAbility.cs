@@ -13,6 +13,7 @@ public class TidalCrashAbility : ability
 
     public override void Activate(GameObject parent)
     {
+        soundManager.Instance.PlaySFX("TidalWave");
         Vector2 mouse = Mouse.current.position.ReadValue();
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouse);
         mouseWorld.z = 0;

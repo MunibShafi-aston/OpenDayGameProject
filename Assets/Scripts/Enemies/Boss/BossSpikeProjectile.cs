@@ -12,13 +12,13 @@ public class BossSpikeProjectile : MonoBehaviour
     public void Init(Vector2 dir)
     {
         direction = dir.normalized;
+        transform.up = direction;
         Destroy(gameObject, lifetime);
     }
 
     void Update()
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)

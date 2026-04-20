@@ -6,9 +6,17 @@ public class BossMeteor : MonoBehaviour
     public int damage = 2;
     public float lifeTime = 5f;
 
+    private static float lastSoundTime = 0f;
+    public float soundCooldown = 1f;
+
     void Start()
     {
         Destroy(gameObject,lifeTime);
+        if (Time.time >= lastSoundTime + soundCooldown)
+            {
+                soundManager.Instance.PlaySFX("BossMeteor");
+                lastSoundTime = Time.time; // Reset the shared timer
+            }
     }
 
     void Update()
