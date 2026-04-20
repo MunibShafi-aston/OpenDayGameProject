@@ -174,13 +174,28 @@ public class BossController : MonoBehaviour
     void HandleBossDeath()
     {
         enemy.isDead = true;
-        StopAllCoroutines();
+        StopAllCoroutines(); 
+
+        dashBurst.StopAllCoroutines();
+        dashBurst.enabled = false;
+        
+        meteorShower.StopAllCoroutines();
+        meteorShower.enabled = false;
+        
+        groundPound.StopAllCoroutines();
+        groundPound.enabled = false;
+
         animator.SetBool("IsDead", true);
+
+        if (soundManager.Instance != null)
+        {
+            soundManager.Instance.StopAllSFX();
+        }
 
         Debug.Log("BossController received death");
     }
 
-        public void ShowWinScreen()
+    public void ShowWinScreen()
     {
         Debug.Log("Win screen triggered from animation");
         GameOverUI.Instance.TriggerGameWon();

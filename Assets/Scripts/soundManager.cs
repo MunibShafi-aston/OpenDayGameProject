@@ -46,7 +46,10 @@ public class soundManager : MonoBehaviour
             Debug.LogWarning("Sound not found: " + name);
         }
     }
-
+    public void StopAllSFX()
+    {
+        sfxSource.Stop();
+    }
     public void PlayMusic(string name)
     {
         if (soundDict.TryGetValue(name, out AudioClip clip))
