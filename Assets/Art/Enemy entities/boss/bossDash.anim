@@ -24,13 +24,13 @@ AnimationClip:
       value: {fileID: 768287586856155494, guid: df79e368879289e44b38574de6e7182b, type: 3}
     - time: 0.083333336
       value: {fileID: -3656438665826453754, guid: df79e368879289e44b38574de6e7182b, type: 3}
-    - time: 0.16666667
+    - time: 0.25
       value: {fileID: 7490552393521262916, guid: df79e368879289e44b38574de6e7182b, type: 3}
-    - time: 0.33333334
+    - time: 0.41666666
       value: {fileID: 6498642769243117255, guid: df79e368879289e44b38574de6e7182b, type: 3}
-    - time: 0.5
-      value: {fileID: 7490552393521262916, guid: df79e368879289e44b38574de6e7182b, type: 3}
     - time: 0.5833333
+      value: {fileID: 7490552393521262916, guid: df79e368879289e44b38574de6e7182b, type: 3}
+    - time: 0.6666667
       value: {fileID: 87099709, guid: df79e368879289e44b38574de6e7182b, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666667
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -92,7 +92,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.6666667
+  - time: 0.75
     functionName: ResetDashAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
