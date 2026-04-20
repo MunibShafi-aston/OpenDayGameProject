@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: BetaCharacter
   maxHealth: 10
-  damage: 150
+  damage: 10
   summonDamage: 5
   moveSpeed: 4
   attackSpeed: 1
-  defense: 5
+  defense: 2
   cooldownReduction: 0
-  critChance: 0.01
+  critChance: 0.05
   characterSprite: {fileID: 6864778800241408347, guid: c940aba3dcd573c4398c29cb8a26816a, type: 3}
   animatorController: {fileID: 9100000, guid: 3cc0d31e5c645b048822db2f1e1cf1db, type: 2}
   characterDescription: A wolf man knight
