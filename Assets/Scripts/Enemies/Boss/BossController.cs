@@ -54,14 +54,32 @@ public class BossController : MonoBehaviour
 
     void UseDashBurst()
     {
-        animator.SetTrigger("Dash");
+        animator.SetBool("IsDashing", true);
+    }
+    public void StartDashFromAnimation()
+    {
         dashBurst.StartDashBurst();
     }
+
+    public void ResetDashAnimation()
+    {
+        animator.SetBool("IsDashing", false);
+    }
+
+
     
     void UseMeteorShower()
     {
-        animator.SetTrigger("Meteor");
+        animator.SetBool("IsMeteor", true);
         meteorShower.StartMeteorShower();
+        StartCoroutine(ResetMeteorAnimation());
+
+    }
+
+    IEnumerator ResetMeteorAnimation()
+    {
+        yield return new WaitForSeconds(1.2f);
+        animator.SetBool("IsMeteor", false);
     }
     
     void UseGroundPound()
@@ -157,8 +175,8 @@ public class BossController : MonoBehaviour
     {
         enemy.isDead = true;
         StopAllCoroutines();
+        animator.SetBool("IsDead", true);
 
-        animator.SetTrigger("Die");
         Debug.Log("BossController received death");
     }
 

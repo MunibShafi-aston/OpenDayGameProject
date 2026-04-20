@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22456c2df8a596e4183b3ba7b42f3287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossDashBurst
-  dashSpeed: 12
+  dashSpeed: 15
   dashDuration: 0.5
   chargeTime: 0.5
   spikePrefab: {fileID: 1723604898034533660, guid: 6fde620a54d87a14e8f97b1981fc7f36, type: 3}

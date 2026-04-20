@@ -17,10 +17,14 @@ public class BossDashBurst : MonoBehaviour
     Transform player;
     bool isAttacking;
 
+    SpriteRenderer sr;
+    int facingDirection = -1;
+
    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        sr = GetComponent<SpriteRenderer>(); // 👈 ADD THIS
     }
 
     public void StartDashBurst()
@@ -28,15 +32,20 @@ public class BossDashBurst : MonoBehaviour
         if (isAttacking) return;
         StartCoroutine(DashBurstRoutine());
     }
+    
 
     IEnumerator DashBurstRoutine()
     {
         isAttacking = true;
         rb.linearVelocity = Vector2.zero;
 
-        yield return new WaitForSeconds(chargeTime);
 
-        Vector2 dashDir = (player.position - transform.position).normalized;
+        Vector2 rawDir = (player.position - transform.position);
+
+        facingDirection = rawDir.x > 0 ? 1 : -1;
+        sr.flipX = (facingDirection == 1);
+        Vector2 dashDir = rawDir.normalized;
+
         rb.linearVelocity = dashDir * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
