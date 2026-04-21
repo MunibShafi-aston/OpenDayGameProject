@@ -36,6 +36,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7525771522025852899
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -81,6 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -1112026701
   m_SortingLayer: 5
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 5353841184698615464, guid: 79ea1fb1721d3744e8d0b5b754c1339d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,7 +92,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &8692796744528411084
 BoxCollider2D:
@@ -150,6 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e15a57e6c3d4d44eb9e0f829732194f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fireballProjectile
-  damage: 5
-  speed: 5
+  speed: 7
   lifetime: 3

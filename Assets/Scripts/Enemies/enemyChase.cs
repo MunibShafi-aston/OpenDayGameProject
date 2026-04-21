@@ -150,34 +150,38 @@ public class enemyChase : MonoBehaviour
         
 
 
-        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
+    bool allowRepel = distance > disableRepelNearPlayer;
 
-        Vector2 separation = Vector2.zero;
-        int neighbourCount = 0;
-
-        foreach (var col in nearbyEnemies)
+        if (allowRepel)
         {
-            if (col.gameObject == gameObject) continue;
+            Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, repelRadius, enemyLayer);
 
-            Vector2 away = (Vector2)(transform.position - col.transform.position);
-            float dist = away.magnitude;
+            Vector2 separation = Vector2.zero;
+            int neighbourCount = 0;
 
-            if (dist > 0 && dist < repelRadius) 
+            foreach (var col in nearbyEnemies)
             {
-                float strength = (repelRadius - dist) / repelRadius; 
-                separation += away.normalized * strength; 
-                neighbourCount++;
+                if (col.gameObject == gameObject) continue;
+
+                Vector2 away = (Vector2)(transform.position - col.transform.position);
+                float dist = away.magnitude;
+
+                if (dist > 0 && dist < repelRadius)
+                {
+                    float strength = (repelRadius - dist) / repelRadius;
+                    separation += away.normalized * strength;
+                    neighbourCount++;
+                }
+            }
+
+            if (neighbourCount > 0)
+            {
+                separation /= neighbourCount;
+                moveDir += separation * repelStrength;
             }
         }
 
-        if (neighbourCount > 0)
-        {
-            separation /= neighbourCount;
-            moveDir +=  Vector2.ClampMagnitude(separation * repelStrength, 0.6f); 
-        }
-
-
-        moveDir = Vector2.ClampMagnitude(moveDir, 1f);
+        moveDir = moveDir.normalized;
 
         bool moved = TryMove(moveDir, moveSpeed);
 

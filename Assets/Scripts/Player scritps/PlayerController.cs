@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour
         if(!canMove) return;
 
         canMove = false;
+        soundManager.Instance.PlaySFX("PlayerDeath");
         animator.SetBool("isDead",true);
         
         abilityHolder ah = GetComponent<abilityHolder>();

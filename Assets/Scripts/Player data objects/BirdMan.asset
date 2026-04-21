@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BirdMan
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: BirdMan
-  maxHealth: 9
-  damage: 7
+  maxHealth: 100
+  damage: 8
   summonDamage: 10
-  moveSpeed: 4
+  moveSpeed: 5
   attackSpeed: 1
   defense: 3
   cooldownReduction: 0

@@ -6475,7 +6475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageNumberManager
   damagePopupPrefab: {fileID: 8819336425157711017, guid: 3cf5c0f305c4bf04fb94ff295dc323dc, type: 3}
-  canvas: {fileID: 1539796884}
+  canvas: {fileID: 1417597463}
 --- !u!4 &852454814
 Transform:
   m_ObjectHideFlags: 0
@@ -10332,6 +10332,7 @@ MonoBehaviour:
   spawnInterval: 1.5
   maxEnemies: 30
   spawnRadius: 8
+  difficultyMultiplier: 1
   gameTimer: 0
   spawnTimeline:
   - {fileID: 11400000, guid: 08b626e1d26f1b047b4602033d48037c, type: 2}
@@ -10477,6 +10478,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400772871}
   m_CullTransparentMesh: 1
+--- !u!1 &1417597462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1417597463}
+  m_Layer: 5
+  m_Name: DamagePopUpLayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1417597463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417597462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1539796884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1425131833
 GameObject:
   m_ObjectHideFlags: 0
@@ -10983,6 +11019,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1747348893}
+  - {fileID: 1417597463}
   - {fileID: 822649476}
   - {fileID: 2057445510}
   - {fileID: 76134044}
@@ -12792,7 +12829,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 1389473555}
   bossPrefab: {fileID: 6621477874747398323, guid: 4e32dc73be24de544a4f76d0cae71747, type: 3}
   playerTransform: {fileID: 1807332929}
-  spawnTime: 10
+  spawnTime: 300
   spawn: 1
   timer: 0
   spawnDistance: 5

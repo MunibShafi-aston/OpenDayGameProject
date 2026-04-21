@@ -5,7 +5,7 @@ public class HawkDive : MonoBehaviour
     Enemy currentTarget;
     PlayerStats stats;
 
-    float speed = 15f;
+    public float speed = 15f;
     float radius;
     float bonusDamage;
 
@@ -23,13 +23,11 @@ public class HawkDive : MonoBehaviour
     {
         if (hasHit) return;
 
-        // If target is gone or dead → retarget
         if (currentTarget == null || currentTarget.isDead)
         {
             currentTarget = FindClosestEnemy();
         }
 
-        // If still no target → just destroy
         if (currentTarget == null)
         {
             Destroy(gameObject);

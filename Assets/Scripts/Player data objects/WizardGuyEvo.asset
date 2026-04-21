@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: WizardGuyEvo
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEvolution
   evolutionName: WizardGuy Evo
-  requiredLevel: 2
-  bonusMaxHealth: 3
+  requiredLevel: 10
+  bonusMaxHealth: 30
   bonusDamage: 5
   bonusMoveSpeed: 0.5
   bonusAttackSpeed: 0.5
   bonusDefense: 2
-  bonusCritChance: 0.15
+  bonusCritChance: 0.12
   evolvedSprite: {fileID: -7721266407851096846, guid: ec98f636498751b4db111493e69b6520, type: 3}
   animatorController: {fileID: 9100000, guid: 27ea376b934803e4da09f277cab0f88b, type: 2}
   newAbilities: []

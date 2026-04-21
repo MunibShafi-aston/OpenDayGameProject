@@ -21,7 +21,7 @@ MonoBehaviour:
   enemyType: 0
   maxHealth: 500
   moveSpeed: 1
-  contactDamage: 0
+  contactDamage: 15
   attackRange: 0
   attackCooldown: 0
   enemyProjectilePrefab: {fileID: 0}

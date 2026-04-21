@@ -18,8 +18,8 @@ MonoBehaviour:
   description: Birdman commands birds to hunt their own individual targets
   icon: {fileID: -2683241834665522883, guid: 9e91a5f66328ace4db5b40d24e358c49, type: 3}
   birdPrefab: {fileID: 1559968411075879303, guid: c8fadc4c8f58ae646b665aace404c01d, type: 3}
-  birdCount: 2
+  birdCount: 4
   duration: 5
-  bonusDamage: 15
+  bonusDamage: 6
   spawnRadius: 1
-  enemySearchRadius: 8
+  enemySearchRadius: 6

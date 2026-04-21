@@ -19,9 +19,9 @@ MonoBehaviour:
   phase3Sprite: {fileID: 0}
   enemyName: Melee
   enemyType: 0
-  maxHealth: 100
-  moveSpeed: 3
-  contactDamage: 1
+  maxHealth: 35
+  moveSpeed: 3.5
+  contactDamage: 8
   attackRange: 0
   attackCooldown: 0
   enemyProjectilePrefab: {fileID: 0}
@@ -32,5 +32,5 @@ MonoBehaviour:
   sprite: {fileID: 4583994919419862699, guid: fceb38faf98769740a77328b0f3e8768, type: 3}
   animatorController: {fileID: 9100000, guid: 9408ed047d116a643b4901fd001d6931, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 3
+  xpAmount: 5
   gameObjectPrefab: {fileID: 3725479264430058751, guid: fe9edb85c7b75be469eba416304ecb2b, type: 3}

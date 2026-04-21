@@ -17,7 +17,7 @@ MonoBehaviour:
   activeTime: 0
   description: 10% chance to do residual burn damage
   icon: {fileID: 0}
-  burnChance: 0.1
-  burnMaxStacks: 1
-  burnDamagePerSecond: 5
+  burnChance: 0.2
+  burnMaxStacks: 3
+  burnDamagePerSecond: 2
   burnDuration: 3

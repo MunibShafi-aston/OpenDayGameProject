@@ -17,5 +17,5 @@ MonoBehaviour:
   activeTime: 0
   description: 
   icon: {fileID: 0}
-  freezeChance: 0.05
-  freezeDuration: 2
+  freezeChance: 0.25
+  freezeDuration: 1.2

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEvolution
   evolutionName: BirdMan Evo
   requiredLevel: 10
-  bonusMaxHealth: 3
+  bonusMaxHealth: 30
   bonusDamage: 5
-  bonusMoveSpeed: 0.2
+  bonusMoveSpeed: 0.5
   bonusAttackSpeed: 0.5
   bonusDefense: 2
-  bonusCritChance: 0.1
+  bonusCritChance: 0.05
   evolvedSprite: {fileID: 7535830642326790892, guid: 7e3e1c868abf6034ea63febce818c9a8, type: 3}
   animatorController: {fileID: 9100000, guid: 494ddf0dd8424d1408b5a903d9ab0ff8, type: 2}
   newAbilities: []

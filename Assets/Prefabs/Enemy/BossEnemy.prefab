@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   enemyData: {fileID: 11400000, guid: 9c195b6934bcd434abaaf0569d92ab62, type: 2}
   xpOrbPrefab: {fileID: 2645619598240672048, guid: 8a5b2ad5f838a9d4ea29de049d4c570f, type: 3}
-  xpAmount: 3
+  xpAmount: 0
   health: 0
   isDead: 0
   isBoss: 1

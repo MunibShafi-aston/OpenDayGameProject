@@ -131,6 +131,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (isDead) return;
 
+        soundManager.Instance.PlaySFX("PlayerTakeDamage");
         float finalDamage = Mathf.Max(amount - defense, 1f);
         currentHealth -= finalDamage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -176,7 +177,7 @@ public void addXP(float amount)
     {
         currentXP -= xpToNextLevel;
         level++;
-        xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * xpGrowthRate);
+        xpToNextLevel = Mathf.RoundToInt((xpToNextLevel * xpGrowthRate) + (level * 5f));
         LevelUp();
     }
 
@@ -187,7 +188,7 @@ public void addXP(float amount)
 void LevelUp()
 {
     Debug.Log("LEVEL UP! Now Level " + level);
-    
+    soundManager.Instance.PlaySFX("LevelUp");
     if (!hasEvolved && evolutionData != null && level >= evolutionData.requiredLevel)
         {
             Evolve();

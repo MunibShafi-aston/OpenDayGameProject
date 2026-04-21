@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BetaCharacter
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: BetaCharacter
-  maxHealth: 10
+  maxHealth: 110
   damage: 10
   summonDamage: 5
   moveSpeed: 4

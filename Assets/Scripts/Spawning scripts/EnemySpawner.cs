@@ -17,8 +17,13 @@ public class EnemySpawnner : MonoBehaviour
     public List<EnemySpawnEntry> spawnTimeline;
     public List<EnemySpawnEntry> activeEnemies=new();
     int nextUnlockIndex = 0;
+
+    public static EnemySpawnner Instance;
+
+    public int CurrentDifficultyLevel => Mathf.FloorToInt(gameTimer / 60f);
     void Start()
     {
+        Instance = this;
         player = GameObject.FindGameObjectWithTag("Player").transform;    
     }
     
@@ -52,30 +57,38 @@ public class EnemySpawnner : MonoBehaviour
         }
 
     }
-void SpawnEnemy()
-{
-    if (activeEnemies.Count == 0) return;
-
-    int totalWeight = 0;
-    foreach (var entry in activeEnemies)
+    void SpawnEnemy()
     {
-        totalWeight += entry.weight;
-    }
+        if (activeEnemies.Count == 0) return;
 
-    int roll = Random.Range(0, totalWeight);
-
-    foreach (var entry in activeEnemies)
-    {
-        if (roll < entry.weight)
+        int totalWeight = 0;
+        foreach (var entry in activeEnemies)
         {
-            Vector2 spawnPos = GetSpawnPosition();
-            Instantiate(entry.enemyData.gameObjectPrefab, spawnPos, Quaternion.identity);
-            return;
+            totalWeight += entry.weight;
         }
 
-        roll -= entry.weight;
+        int roll = Random.Range(0, totalWeight);
+
+        foreach (var entry in activeEnemies)
+        {
+            if (roll < entry.weight)
+            {
+                Vector2 spawnPos = GetSpawnPosition();
+
+                GameObject enemyObj = Instantiate(entry.enemyData.gameObjectPrefab, spawnPos, Quaternion.identity);
+
+                Enemy enemy = enemyObj.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.unlockTimeUsed = entry.unlockTime;
+                }
+
+                return;
+            }
+
+            roll -= entry.weight;
+        }
     }
-}
 
     Vector2 GetSpawnPosition()
     {

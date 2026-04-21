@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public bool isDead = false;
     public bool isBoss = false;
     
+    public float unlockTimeUsed;
+
 
     public float Health{
         get {return health;}
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
+                soundManager.Instance.PlaySFX("EnemyTakeDamage");
                 print("hit");
                 if (HasAnimatorTrigger("Defeated"))
                 {
@@ -51,13 +54,21 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        health = enemyData.maxHealth;
+        int currentLevel = EnemySpawnner.Instance != null 
+            ? EnemySpawnner.Instance.CurrentDifficultyLevel 
+            : 0;
+
+        int unlockLevel = Mathf.FloorToInt(unlockTimeUsed / 60f);
+        int difflevel = Mathf.Max(0, currentLevel - unlockLevel);
+
+        health = enemyData.maxHealth + (difflevel * 5);
         xpAmount = enemyData.xpAmount;
         xpOrbPrefab = enemyData.xpOrbPrefab;
 
         if (chase != null)
         {
             chase.Init(enemyData);
+            chase.moveSpeed += difflevel * 0.2f;
         }
 
         if (enemyData.sprite != null)
@@ -68,9 +79,10 @@ public class Enemy : MonoBehaviour
 
         enemyDamageDeal damageDealer = GetComponentInChildren<enemyDamageDeal>();
         if (damageDealer != null)
-            damageDealer.damage = enemyData.contactDamage;  
+        {
+            damageDealer.damage = enemyData.contactDamage + (difflevel * 5);
+        }
     }
-    
     public float TankDamage(float amount)
     {
         if (isDead) return 0f;
@@ -98,6 +110,8 @@ public class Enemy : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+
+        DisableHitboxes();
 
         if (chase != null)
         chase.StopMovement();
@@ -193,5 +207,14 @@ public class Enemy : MonoBehaviour
 
             Destroy(gameObject);
         }
+    void DisableHitboxes()
+    {
+        Collider2D[] cols = GetComponentsInChildren<Collider2D>();
+
+        foreach (Collider2D col in cols)
+        {
+            col.enabled = false;
+        }
+    }
 }
 

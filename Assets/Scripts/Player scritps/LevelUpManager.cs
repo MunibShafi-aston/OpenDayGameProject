@@ -65,7 +65,7 @@ public class LevelUpManager : MonoBehaviour
     public void UpgradeDamage()
     {
         if (availableStatPoints <= 0) return;
-        playerStats.damage += 1f;
+        playerStats.damage += 1.5f;
         availableStatPoints--;
         UpdateStatButtons();
     }
@@ -73,7 +73,7 @@ public class LevelUpManager : MonoBehaviour
     public void UpgradeMoveSpeed()
     {
         if (availableStatPoints <= 0) return;
-        playerStats.moveSpeed += 0.2f;
+        playerStats.moveSpeed += 0.15f;
         availableStatPoints--;
         UpdateStatButtons();
     }
@@ -81,7 +81,7 @@ public class LevelUpManager : MonoBehaviour
     public void UpgradeAttackSpeed()
     {
         if (availableStatPoints <= 0) return;
-        playerStats.attackSpeed += 0.1f;
+        playerStats.attackSpeed += 0.08f;
         availableStatPoints--;
         UpdateStatButtons();
     }
@@ -105,8 +105,8 @@ public class LevelUpManager : MonoBehaviour
     public void UpgradeMaxHealth()
     {
         if (availableStatPoints <= 0) return;
-        playerStats.maxHealth += 2f;
-        playerStats.currentHealth += 2f;
+        playerStats.maxHealth += 5f;
+        playerStats.currentHealth += 5f;
 
         playerHealth hpUI = playerStats.GetComponent<playerHealth>();
         if (hpUI != null)

@@ -27,7 +27,7 @@ public class rangedSlashAbility : ability
         rangedSlashProjectile proj = slash.GetComponent<rangedSlashProjectile>();
 
         proj.Setup(direction, speed, damage, lifetime);
-        soundManager.Instance.PlaySFX("WolfAbil1");
+        soundManager.Instance.PlaySFX("PistolWhip");
 
     }
 }

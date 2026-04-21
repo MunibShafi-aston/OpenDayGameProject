@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Increased Fire Power
   cooldownTime: 0
   activeTime: 0
-  description: Increase total damage stat by +5
+  description: Increase total damage stat by +2
   icon: {fileID: -3087267703306335981, guid: 9bd6114ac5d83104c996bcc53d79ce63, type: 3}
-  damageIncrease: 5
+  damageIncrease: 2

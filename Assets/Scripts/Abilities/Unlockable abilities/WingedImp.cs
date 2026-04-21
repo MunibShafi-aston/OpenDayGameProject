@@ -8,8 +8,8 @@ public class WingedImp : MonoBehaviour
     float detectionRadius;
     float damage;
 
-    float moveSpeed = 4f;
-    float attackCooldown = 1f;
+    public float moveSpeed = 4f;
+    public float attackCooldown = 1f;
     float attackTimer;
 
     PlayerStats stats;
