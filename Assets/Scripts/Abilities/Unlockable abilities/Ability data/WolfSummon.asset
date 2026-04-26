@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldownTime: 0
   activeTime: 0
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 7444046612802208997, guid: a4c689cc7ff4c204e9d54f1399c8bb67, type: 3}
   wolfPrefab: {fileID: 5904973156848304252, guid: 6d3393cac5fb59543b1c4bab8a7f5c10, type: 3}
   summonCount: 1
   followDistance: 2

@@ -8,7 +8,7 @@ public class scytheSpin : ability
     public float rotationSpeed = 180f; 
     public float damage = 2f;       
 
-    public override void Tick(float deltaTime, GameObject parent)
+    public override void Tick(float deltaTime, GameObject parent, int stacks)
     {
         bool alreadyExists = false;
         foreach (Transform child in parent.transform)

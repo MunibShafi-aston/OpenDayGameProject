@@ -11,9 +11,11 @@ public class abilityManager : MonoBehaviour
 
     void Update()
     {
-        foreach (ability ab in holder.unlockedAbilities)
+        foreach (var pair in holder.unlockedAbilities)
         {
-            ab.Tick(Time.deltaTime, gameObject);
+            ability ab = pair.Key;
+            int stacks = pair.Value;
+            ab.Tick(Time.deltaTime, gameObject, stacks);
         }
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldownTime: 0
   activeTime: 0
   description: 10% chance to do residual burn damage
-  icon: {fileID: 0}
+  icon: {fileID: -9167098407794639708, guid: a3ba2ab908e9b1241897beef632ae022, type: 3}
   burnChance: 0.2
   burnMaxStacks: 3
   burnDamagePerSecond: 2

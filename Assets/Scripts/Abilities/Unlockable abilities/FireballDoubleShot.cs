@@ -16,8 +16,10 @@ public class FireballDoubleShot : ability
 
         fireball fb = null;
 
-        foreach (ability ab in holder.unlockedAbilities)
+        foreach (var pair in holder.unlockedAbilities)
         {
+            ability ab = pair.Key;
+            
             fb = ab as fireball;
             if (fb != null)
                 break;

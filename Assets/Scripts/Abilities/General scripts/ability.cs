@@ -13,7 +13,7 @@ public class ability : ScriptableObject
     {
         
     }
-    public virtual void Tick(float deltaTime, GameObject parent)
+    public virtual void Tick(float deltaTime, GameObject parent, int stacks)
     {
         
     }

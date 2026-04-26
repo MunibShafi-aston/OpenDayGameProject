@@ -10,7 +10,7 @@ public class summonWolf : ability
 
 
 
-    public override void Tick(float deltaTime, GameObject parent)
+    public override void Tick(float deltaTime, GameObject parent, int stacks)
     {
         int existingSummons = parent.GetComponentsInChildren<summonController>().Length;
         if (existingSummons > 0) return;

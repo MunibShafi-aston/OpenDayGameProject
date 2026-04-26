@@ -8,6 +8,7 @@ public class soundManager : MonoBehaviour
     [Header("Audio Sources")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    [Range(0f, 1f)] public float masterVolume = 1f;
 
     [Header("Sound Library")]
     public List<Sound> sounds = new List<Sound>();
@@ -31,8 +32,22 @@ public class soundManager : MonoBehaviour
         {
             soundDict[sound.name] = sound.clip;
         }
-    }
 
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        ApplyVolume();
+    }
+    
+    void ApplyVolume()
+    {
+        musicSource.volume = masterVolume;
+        sfxSource.volume = masterVolume;
+    }    
+    public void SetVolume(float volume)
+        {
+            masterVolume = volume;
+            ApplyVolume();
+            PlayerPrefs.SetFloat("MasterVolume", volume);
+        }
     public void PlaySFX(string name)
     {
         if (soundDict.TryGetValue(name, out AudioClip clip))
@@ -60,7 +75,7 @@ public class soundManager : MonoBehaviour
             musicSource.Stop();
             musicSource.clip = clip;
             musicSource.loop = true;
-            musicSource.volume = 0.3f;
+            ApplyVolume();
             musicSource.Play();
         }
     }

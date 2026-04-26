@@ -14,7 +14,7 @@ public class fireball : ability
 
     float timer;
 
-    public override void Tick(float deltaTime, GameObject parent)
+    public override void Tick(float deltaTime, GameObject parent, int stacks)
     {
         timer += deltaTime;
 

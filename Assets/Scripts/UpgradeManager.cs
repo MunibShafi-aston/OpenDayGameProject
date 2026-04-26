@@ -6,6 +6,7 @@ public class UpgradeManager : MonoBehaviour
     public GameObject UpgradeCardPrefab;
     public Transform CardsContainer;
     public List<upgradeBase> allUpgrades = new List<upgradeBase>();
+    public List<upgradeBase> repeatUpgrades = new List<upgradeBase>();
 
     private LevelUpManager levelUpManager;
     private abilityHolder playerAbilityHolder;
@@ -60,23 +61,33 @@ public class UpgradeManager : MonoBehaviour
 
         availableUpgrades.Add(upgrade);
     }
+    
+    availableUpgrades.AddRange(repeatUpgrades);
 
-        numberOfChoices = Mathf.Min(numberOfChoices, availableUpgrades.Count);
+    if(availableUpgrades.Count == 0)
+    {
+        Debug.LogWarning("No available upgrades to show!");
+        return;
+    }
 
-        for (int i = 0; i < numberOfChoices; i++)
+    numberOfChoices = Mathf.Min(numberOfChoices, availableUpgrades.Count);
+
+    for (int i = 0; i < numberOfChoices; i++)
+    {
+        int randomIndex = Random.Range(0, availableUpgrades.Count);
+        upgradeBase chosenUpgrade = availableUpgrades[randomIndex];
+
+        if(!repeatUpgrades.Contains(chosenUpgrade))
         {
-            int randomIndex = Random.Range(0, availableUpgrades.Count);
-            upgradeBase chosenUpgrade = availableUpgrades[randomIndex];
-
             availableUpgrades.RemoveAt(randomIndex);
+        }
+        GameObject cardGO = Instantiate(UpgradeCardPrefab, CardsContainer);
+        UpgradeCardUI cardUI = cardGO.GetComponent<UpgradeCardUI>();
 
-            GameObject cardGO = Instantiate(UpgradeCardPrefab, CardsContainer);
-            UpgradeCardUI cardUI = cardGO.GetComponent<UpgradeCardUI>();
+        if (cardUI != null)
+            cardUI.Setup(chosenUpgrade, levelUpManager);
 
-            if (cardUI != null)
-                cardUI.Setup(chosenUpgrade, levelUpManager);
-
-            Debug.Log("Showing upgrade card: " + chosenUpgrade.upgradeName);
+        Debug.Log("Showing upgrade card: " + chosenUpgrade.upgradeName);
         }
     }
 

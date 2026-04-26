@@ -16,6 +16,6 @@ MonoBehaviour:
   cooldownTime: 0
   activeTime: 0
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 3161842345059722650, guid: 49a3600229c3ce24daa9b8cb05041869, type: 3}
   freezeChance: 0.25
   freezeDuration: 1.2

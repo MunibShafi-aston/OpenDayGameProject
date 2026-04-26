@@ -15,5 +15,7 @@ MonoBehaviour:
   name: Double fireball
   cooldownTime: 0
   activeTime: 0
+  description: 
+  icon: {fileID: 5353841184698615464, guid: 79ea1fb1721d3744e8d0b5b754c1339d, type: 3}
   extraProjectiles: 1
   maxProjectiles: 2

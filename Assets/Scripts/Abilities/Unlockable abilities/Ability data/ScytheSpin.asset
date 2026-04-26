@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldownTime: 0
   activeTime: 1
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 3700810548614518524, guid: 3f8f8d33afda1424d9076ce01c432544, type: 3}
   scythePrefab: {fileID: 3087944469981465114, guid: d72aea0bd8195984798a36148bc458c9, type: 3}
   radius: 2
   rotationSpeed: 180

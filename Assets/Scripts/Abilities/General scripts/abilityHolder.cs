@@ -11,7 +11,7 @@ public class abilityHolder : MonoBehaviour
     public ability Ability3; //set to R
 
     [Header("Unlocked auto abilities")]   
-    public List<ability> unlockedAbilities = new List<ability>();
+    public Dictionary<ability, int> unlockedAbilities = new Dictionary<ability, int>();
 
     float[] cooldownTimes = new float[4];
     float[] activeTimes = new float[4];
@@ -38,19 +38,22 @@ public class abilityHolder : MonoBehaviour
 
 
     void Update()
-     {
+    {
         if (pauseManager.Instance != null && pauseManager.Instance.IsPaused)
-        return;
+            return;
 
         UpdateAbility(0, AbilityDash);
         UpdateAbility(1, Ability1);
         UpdateAbility(2, Ability2);
         UpdateAbility(3, Ability3);
-        
-        foreach (ability abil in unlockedAbilities)
+
+        foreach (var pair in unlockedAbilities)
         {
-            if(abil!=null)
-                abil.Tick(Time.deltaTime, gameObject);
+            ability abil = pair.Key;
+            int stacks = pair.Value;
+
+            if (abil != null)
+                abil.Tick(Time.deltaTime, gameObject, stacks);
         }
     }
 
@@ -107,18 +110,17 @@ public class abilityHolder : MonoBehaviour
     {
         if (newAbility == null) return;
 
-        if (unlockedAbilities.Contains(newAbility))
+        if (unlockedAbilities.ContainsKey(newAbility))
         {
-            Debug.Log($"{newAbility.name} is already unlocked.");
-            return;
+            unlockedAbilities[newAbility]++;
+        }
+        else
+        {
+            unlockedAbilities[newAbility] = 1;
+            newAbility.Activate(gameObject); 
         }
 
-        if (newAbility != null)
-            newAbility.Activate(gameObject);
-
-        unlockedAbilities.Add(newAbility);
-
-        Debug.Log($"Unlocked ability: {newAbility.name}");
+        Debug.Log($"Ability {newAbility.name} now has {unlockedAbilities[newAbility]} stacks");
     }
     
     public float GetCooldownRemaining(int index)
@@ -153,7 +155,7 @@ public class abilityHolder : MonoBehaviour
         if (Ability2 == checkAbility) return true;
         if (Ability3 == checkAbility) return true;
 
-        return unlockedAbilities.Contains(checkAbility);
+        return unlockedAbilities.ContainsKey(checkAbility);
     }
 
     public void ResetAbilities()
