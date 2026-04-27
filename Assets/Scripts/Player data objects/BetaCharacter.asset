@@ -25,10 +25,8 @@ MonoBehaviour:
   animatorController: {fileID: 9100000, guid: 3cc0d31e5c645b048822db2f1e1cf1db, type: 2}
   characterDescription: A fallen noble bound forever to a suit of cursed, seamless
     plate armor. Having traded his hollow vows and rusted blade for the cold reliability
-    of a firearm, he stalks the frontline as a living siege engine. The heavy kick
-    of his gun only masks a deeper darkness. With every drop of blood spilled, the
-    beast beneath the iron grows more restless, fueling his fire with animalistic
-    fury.
+    of a firearm, he stalks the frontline as a living siege engine.With every drop
+    of blood spilled, the animalistic rage grows from within.
   Ability1: {fileID: 11400000, guid: ec32f800aa1db3a4fa7ec17143105857, type: 2}
   Ability2: {fileID: 11400000, guid: b2f86fde115a0984e82043ef6d5fc366, type: 2}
   Ability3: {fileID: 11400000, guid: b86b9a3cb690e2a40816460b382b93c3, type: 2}
