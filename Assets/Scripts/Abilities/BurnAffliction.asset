@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BurnAffliction
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Bullet burn
-  description: 10% chance to burn any enemy hit with main attack
+  description: 20% chance to burn any enemy hit with main attack
   icon: {fileID: -9167098407794639708, guid: a3ba2ab908e9b1241897beef632ae022, type: 3}
   category: 3
   requiredUpgrades: []

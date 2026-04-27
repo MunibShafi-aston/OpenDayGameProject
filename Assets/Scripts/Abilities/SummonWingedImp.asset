@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SummonWingedImp
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: Summon Blood Imp
-  description: Summons 2 blood imps to fight for you which each do 10 damage
+  description: Summons 2 blood imps to fight for you
   icon: {fileID: 577515058735743043, guid: 9a366b35e860f1d4c882c7497d22772a, type: 3}
   category: 1
   requiredUpgrades: []

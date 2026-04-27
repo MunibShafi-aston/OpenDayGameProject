@@ -15,7 +15,10 @@ MonoBehaviour:
   name: Burn
   cooldownTime: 0
   activeTime: 0
-  description: 10% chance to do residual burn damage
+  description: '20% chance to burn any enemy hit with main attack
+
+    Burn does
+    residual damage of 2 for 3 seconds'
   icon: {fileID: -9167098407794639708, guid: a3ba2ab908e9b1241897beef632ae022, type: 3}
   burnChance: 0.2
   burnMaxStacks: 3

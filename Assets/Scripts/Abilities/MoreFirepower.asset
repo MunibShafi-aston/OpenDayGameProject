@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoreFirepower
   m_EditorClassIdentifier: Assembly-CSharp::abilityUnlockUpgrade
   upgradeName: More firepower
-  description: Increase amount of damage done +5 Damage
+  description: Increase amount of damage done +2 Damage
   icon: {fileID: -3087267703306335981, guid: 9bd6114ac5d83104c996bcc53d79ce63, type: 3}
   category: 2
   requiredUpgrades: []

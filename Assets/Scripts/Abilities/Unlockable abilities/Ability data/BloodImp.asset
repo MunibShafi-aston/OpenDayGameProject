@@ -15,8 +15,9 @@ MonoBehaviour:
   name: Blood Imps
   cooldownTime: 0
   activeTime: 0
-  description: Summon 2 blood imps to fight for you
+  description: Summon 2 Blood imps to fight for you dealing damage on contact with
+    an enemy
   icon: {fileID: 577515058735743043, guid: 9a366b35e860f1d4c882c7497d22772a, type: 3}
   impPrefab: {fileID: 7744498901249067071, guid: 5cb14dd3c2253f94199c461bbe608fc5, type: 3}
   detectionRadius: 6
-  impDamage: 5
+  impDamage: 2

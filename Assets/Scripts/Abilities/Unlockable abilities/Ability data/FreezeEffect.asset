@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Freeze
   cooldownTime: 0
   activeTime: 0
-  description: 
+  description: Have a 25% chance to freeze an enemies movement for 1.2 seconds
   icon: {fileID: 3161842345059722650, guid: 49a3600229c3ce24daa9b8cb05041869, type: 3}
   freezeChance: 0.25
   freezeDuration: 1.2

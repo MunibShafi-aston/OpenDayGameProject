@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     
     public float unlockTimeUsed;
 
+    static float globalLastSoundTime;
+
 
     public float Health{
         get {return health;}
@@ -32,7 +34,11 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                soundManager.Instance.PlaySFX("EnemyTakeDamage");
+                if (Time.time > globalLastSoundTime + 0.5f) {
+                    soundManager.Instance.PlaySFX("EnemyTakeDamage");
+                    globalLastSoundTime = Time.time;
+                }    
+                
                 print("hit");
                 if (HasAnimatorTrigger("Defeated"))
                 {

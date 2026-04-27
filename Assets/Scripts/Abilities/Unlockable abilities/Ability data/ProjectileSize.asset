@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Bigger Projectiles
   cooldownTime: 0
   activeTime: 0
-  description: Increase all weapon like projectiles size by 25%
+  description: gain a 25% size increase to your main projectile
   icon: {fileID: 2890398341575493308, guid: c963224422697984c91be8eca8ca7019, type: 3}
   sizeIncrease: 0.25
