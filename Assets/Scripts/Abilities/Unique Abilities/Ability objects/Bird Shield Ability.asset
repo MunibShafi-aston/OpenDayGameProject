@@ -15,7 +15,8 @@ MonoBehaviour:
   name: Bird Shield
   cooldownTime: 10
   activeTime: 6
-  description: Summon a bird shield to protect from incoming damage
+  description: "Summon bird shields to protect from incoming damage and knock back
+    enemies who touch it \n\nCooldown: 6 seconds"
   icon: {fileID: 3222460734523098880, guid: 0629b07f60d3883468a06c177b072325, type: 3}
   birdPrefab: {fileID: 1325093139788468757, guid: c80ee9e1c7a8f2c4594c5cff2cb6bb58, type: 3}
   birdCount: 3

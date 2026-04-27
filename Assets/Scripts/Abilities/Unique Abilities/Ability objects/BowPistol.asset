@@ -15,7 +15,10 @@ MonoBehaviour:
   name: Bow pistol
   cooldownTime: 10
   activeTime: 20
-  description: 'Bow pistol gets summoned by a mage friend '
+  description: 'The knight reads off an ancient scroll summoning a bow pistol to
+    assist him in his journey
+
+    Cooldown: 10 Seconds'
   icon: {fileID: -415446080585258355, guid: b10f515a219f3744397176bc34d8e687, type: 3}
   bowPistolPrefab: {fileID: 7708915633274412179, guid: 99572c7914d644e4497bbdb6b45fb0aa, type: 3}
   radius: 1

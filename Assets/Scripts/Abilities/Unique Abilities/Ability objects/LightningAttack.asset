@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: LightningAttack
   m_EditorClassIdentifier: Assembly-CSharp::lightningAbility
   name: Lightning Strike
-  cooldownTime: 2.5
+  cooldownTime: 4
   activeTime: 1
-  description: The player summons lightning from the sky auto targetting and dealing
+  description: 'The player summons lightning from the sky auto targetting and dealing
     damage to the nearest enemy
+
+
+    Cooldown: 4 seconds'
   icon: {fileID: -2983090718515566234, guid: e3f86dab553ebed4490c9d9cccd2e056, type: 3}
   lightningPrefab: {fileID: 4806726459376530346, guid: 70d7fb0a699dd5542b18a19c1ccd6de4, type: 3}
   damage: 18

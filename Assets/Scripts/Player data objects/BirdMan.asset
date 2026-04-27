@@ -23,10 +23,10 @@ MonoBehaviour:
   critChance: 0.01
   characterSprite: {fileID: -4379801795658354850, guid: 00fab7a8f7ee13a47b1c9a087db3f8d9, type: 3}
   animatorController: {fileID: 9100000, guid: e2a0bd0173a4189498e44a495d766fad, type: 2}
-  characterDescription: 'A crow that has had its DNA heavily modified in a military
-    experiment to enhance its strength
-
-'
+  characterDescription: A military experiment gone wrong. Part crow, part man, with
+    a heavy gun grafted to his arm. He uses his high-tech DNA to dominate the battlefield,
+    combining heavy ballistic fire with the ability to summon avian reinforcements
+    to swarm his enemies.
   Ability1: {fileID: 11400000, guid: 712ab8d7e0f7d834fb8991856179c290, type: 2}
   Ability2: {fileID: 11400000, guid: de0e869bdbc94834f8df7504dd8cb54a, type: 2}
   Ability3: {fileID: 11400000, guid: eedc651a796bd014ab1206088838ecbf, type: 2}
